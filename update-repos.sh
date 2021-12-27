@@ -1,6 +1,5 @@
 #! /bin/bash
 
-ZABUD_HOME="$HOME/Zabud"
 FOLDER=$(echo "${PWD}")
 
 branch="develop"
