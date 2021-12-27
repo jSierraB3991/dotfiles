@@ -18,5 +18,5 @@ cd -
 
 cd $ZABUD_HOME/zabud-discovery-ms
 sudo sudo docker build -t zabud-discovery:1.0 .
-sudo docker run --rm -d -p 8761 --name zabud-discovery zabud-discovery:1.0
+sudo docker run --rm -d -p 8761:8761 --name zabud-discovery zabud-discovery:1.0
 cd -
