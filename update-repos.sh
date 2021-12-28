@@ -1,6 +1,6 @@
 #! /bin/bash
-
 FOLDER=$(echo "${PWD}")
+ZABUD_HOME=$HOME/Zabud
 
 branch="develop"
 for repo in $(ls $ZABUD_HOME)
