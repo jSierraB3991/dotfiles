@@ -1,0 +1,13 @@
+#List all topics
+bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+#Create topic
+bin/kafka-topics.sh --create --partitions 1 --replication-factor 1 --topic quickstart-events --bootstrap-server localhost:9092
+#Describir topic
+bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092
+
+
+
+#Produce data in topic
+bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
+#Consumer data in topic
+bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
