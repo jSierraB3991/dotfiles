@@ -15,6 +15,7 @@ if [ ! -d $GITHUB_HOME/JSierraB3991/Docker ]; then
     cd -   
 fi
 
+sudo docker run --rm --name activemq -d -p 8161:8161 -p 61616:61616 rmohr/activemq:5.14.0-alpine
 cd $GITHUB_HOME/JSierraB3991/Docker
 sudo docker-compose -f kafka-compose.yml up -d
 cd -
@@ -23,3 +24,5 @@ cd $ZABUD_HOME/zabud-discovery-ms
 #sudo sudo docker build -t zabud-discovery:1.0 .
 sudo docker run --rm -d -p 8761:8761 --name zabud-discovery zabud-discovery:1.0
 cd -
+
+
