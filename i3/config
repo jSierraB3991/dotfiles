@@ -44,8 +44,8 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 2%-
 bindsym XF86MonBrightnessUp exec brightnessctl set +2%
 
 # Start in configurations
-exec --no-startup-id "picom --config /home/juan-sierra/.config/picom/picom.conf"
-exec --no-startup-id "feh --bg-fill /home/juan-sierra/Images/Wallpapers/736779.png"
+exec --no-startup-id "picom --config $HOME/.config/picom/picom.conf"
+exec --no-startup-id "feh --bg-fill $HOME/Images/Wallpapers/736779.png"
 bindsym $mod+Shift+n exec ~/.config/i3/scripts/empty_workspace
 focus_follows_mouse no
 title_align center
@@ -237,7 +237,7 @@ bindsym $mod+Shift+o exec /opt/roboto/bin/robo3t
 
 # start screenchot full screen
 bindsym $mod+z exec xfce4-screenshooter
-bindsym Print exec xfce4-screenshooter -w --save /home/juan-sierra/Images
+bindsym Print exec xfce4-screenshooter -w --save $HOME/Images
 
 # Start folder pcmanfm
 #bindsym $mod+n exec kitty ranger
