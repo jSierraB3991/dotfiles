@@ -40,8 +40,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use brightnessctl, required install
-bindsym XF86MonBrightnessDown exec brightnessctl set 30%-
-bindsym XF86MonBrightnessUp exec brightnessctl set +30%
+bindsym XF86MonBrightnessDown exec brightnessctl set 2%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +2%
 
 # Start in configurations
 exec --no-startup-id "picom --config /home/juan-sierra/.config/picom/picom.conf"
@@ -227,9 +227,11 @@ bindsym $mod+Shift+o exec /opt/roboto/bin/robo3t
 
 # start screenchot full screen
 bindsym $mod+z exec xfce4-screenshooter
-bindsym $mod+Shift+s exec xfce4-screenshooter -w --save /home/juan-sierra/Images
+bindsym Print exec xfce4-screenshooter -w --save /home/juan-sierra/Images
 
-
+# Start folder pcmanfm
+#bindsym $mod+n exec kitty ranger
+bindsym $mod+n exec pcmanfm
 
 # Define colors variables:
 set $darkbluetrans	#08052be6
@@ -243,8 +245,6 @@ set $darkgrey		#383c4a
 set $grey		#b0b5bd
 set $mediumgrey		#8b8b8b
 set $yellowbrown	#e1b700
-
-
 
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
