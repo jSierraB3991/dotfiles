@@ -44,6 +44,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 2%-
 bindsym XF86MonBrightnessUp exec brightnessctl set +2%
 
 # Start in configurations
+exec --no-startup-id "polybar &"
 exec --no-startup-id "picom --config $HOME/.config/picom/picom.conf"
 exec --no-startup-id "feh --bg-fill $HOME/Images/Wallpapers/736779.png"
 bindsym $mod+Shift+n exec ~/.config/i3/scripts/empty_workspace
