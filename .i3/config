@@ -209,10 +209,16 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
+    colors {
+        background ##0000000
+        statusline #FFFFFF
+    }
+    i3bar_command i3bar --transparency
+    font pango:Hack Nerd Font Bold 10
+    workspace_buttons no
     position top
     status_command ~/github/bumblebee-status/bumblebee-status -m cpu memory \
-                 battery time pasink pasource \
-                 -p time.format="%H:%M" \
+                 nic disk pasink pasource battery datetime \
                  -t solarized-powerline
 }
 
@@ -225,7 +231,6 @@ bar {
     }
     #tray_output none
     #tray_padding 10
-    #workspace_buttons no
     binding_mode_indicator no
     workspace_min_width 40
     strip_workspace_numbers yes
@@ -277,7 +282,7 @@ for_window [class="^.*"] border pixel 3
 #i3 gaps configuration
 smart_gaps on
 smart_borders on
-set $inner_gaps 10
+set $inner_gaps 5
 set $outer_gaps 5
 
 gaps inner $inner_gaps
