@@ -1,4 +1,4 @@
-    URxvt.font: xft:Terminus:pixelsize=16
+URxvt.font: xft:JetBrainsMono:pixelsize=14
 
 
 ! special
