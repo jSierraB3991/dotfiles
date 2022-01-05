@@ -12,7 +12,7 @@ if [ $# -eq 1 ] || [ $# -eq 2 ]; then
                 echo "" > "$HOME/logs/$1.log"
 
                 cd $REPO_HOME/$1
-                echo "clean project"
+                echo "clean project && install dependencies, see file ~/logs/$1.log"
                 mvn clean install -l "$HOME/logs/$1.log"
 
                 echo "coping image"
