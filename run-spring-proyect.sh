@@ -6,14 +6,15 @@ if [ $# -eq 1 ] || [ $# -eq 2 ]; then
         if [ $# -eq 2 ]; then
             if [ "$2" == "-y" ] || [ "$2" == "-Y" ] || 
                 [ "$2" == "-s" ] || [ "$2" == "-S" |]; then
+                if [ ! -d $HOME/logs ]; then
+                    mkdir $HOME/logs
+                fi
+                echo "" > "$HOME/logs/$1.log"
 
                 cd $REPO_HOME/$1
                 echo "clean project"
-                $(mvn clean)
-                echo "revolvin dependencies"
-                $(mvn -e -B dependency:resolve)
-                echo "Installing dependecies"
-                $(mvn -e -B package)
+                mvn clean install -l "$HOME/logs/$1.log"
+
                 echo "coping image"
                 cp "target/$1-0.0.1-SNAPSHOT.jar" "target/$1.jar"
                 cd -
