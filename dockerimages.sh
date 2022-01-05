@@ -25,6 +25,9 @@ sudo docker-compose -f kafka-compose.yml up -d
 cd -
 
 cd $ZABUD_HOME/zabud-discovery-ms
+if [ ! -f $ZABUD_HOME/zabud-discovery-ms/Dockerfile ]; then
+    cp $GITHUB_HOME/JSierraB3991/Docker/spring-Dockerfile ./Dockerfile
+fi
 #sudo sudo docker build -t zabud-discovery:1.0 .
 sudo docker run --rm -d -p 8761:8761 --name zabud-discovery zabud-discovery:1.0
 cd -
