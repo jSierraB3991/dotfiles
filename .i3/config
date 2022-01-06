@@ -224,23 +224,23 @@ bar {
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-    colors {
-        background ##0000000
-        statusline #FFFFFF
-    }
+#bar {
+#    colors {
+#        background ##0000000
+#        statusline #FFFFFF
+#    }
     #tray_output none
     #tray_padding 10
-    binding_mode_indicator no
-    workspace_min_width 40
-    strip_workspace_numbers yes
-    strip_workspace_name no
-    separator_symbol " < "
-    i3bar_command i3bar --transparency
-    font pango:Hack Nerd Font Bold 11
-    status_command i3status
-    position bottom
-}
+#    binding_mode_indicator no
+#    workspace_min_width 40
+#    strip_workspace_numbers yes
+#    strip_workspace_name no
+#    separator_symbol " < "
+#    i3bar_command i3bar --transparency
+#    font pango:Hack Nerd Font Bold 11
+#    status_command i3status
+#    position bottom
+#}
 
 # start intellij idea
 bindsym $mod+Shift+i exec /opt/intellij-idea/bin/idea.sh
