@@ -1,6 +1,5 @@
 URxvt.font: xft:JetBrainsMono:pixelsize=14
 
-
 ! special
 *.foreground:   #a8a19f
 *.background:   #1b1918
@@ -38,22 +37,18 @@ URxvt.font: xft:JetBrainsMono:pixelsize=14
 *.color7:       #a8a19f
 *.color15:      #f1efee
 
-
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-
 URxvt.iso14755: false
-
 URxvt.iso14755_52: false
-
 
 URxvt.scrollBar: false
 
-
 URxvt.depth: 32
-
 URxvt.background:[80]#000000
 
-
 URxvt.internalBorder: 10
+
+URxvt.cursorBlink:          false
+URxvt.cursorColor:          #657b83
+URxvt.cursorUnderline:      true
