@@ -217,7 +217,7 @@ bar {
     font pango:Hack Nerd Font Bold 10
     workspace_buttons no
     position top
-    status_command ~/github/bumblebee-status/bumblebee-status -m cpu memory \
+    status_command ~/github/bumblebee-status/bumblebee-status -m cpu \
                  nic disk pasink pasource battery datetime \
                  -t solarized-powerline
 }
