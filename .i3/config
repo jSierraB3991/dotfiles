@@ -42,7 +42,7 @@ bindsym $mod+Return exec kitty
 # start a new web browser
 bindsym $mod+f exec firefox
 #firefox developer
-bindsym $mod+shift+d exec /opt/firefox/firefox
+bindsym $mod+shift+f exec /opt/firefox/firefox
 
 
 # kill focused window
