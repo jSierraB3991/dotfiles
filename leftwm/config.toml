@@ -15,6 +15,12 @@ modifier = ["modkey"]
 key = "Return"
 
 [[keybind]]
+command = "Execute"
+value = "rxvt"
+modifier = ["modkey", "Shift"]
+key = "Return"
+
+[[keybind]]
 command = "CloseWindow"
 modifier = ["modkey", "Shift"]
 key = "q"
@@ -235,3 +241,9 @@ command = "Execute"
 value = "xfce4-screenshooter -w --save $HOME/Images"
 modifier = ["modkey", "Shift"]
 key = "z"
+
+[[keybind]]
+command = "Execute"
+value = "pcmanfm"
+modifier = ["modkey"]
+key = "n"
