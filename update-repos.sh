@@ -8,14 +8,13 @@ do
     if [ -d $ZABUD_HOME/$repo ] && [ -d $ZABUD_HOME/$repo/.git ]; then
 	cd $ZABUD_HOME/$repo
         if [ "$repo" == "akatsuki-repo" ]; then
-            for branch in $(git branch -l)
+            for branch in $(echo "dev qa local")
             do
 		if [ ! -f $branch ]; then
                     git checkout $branch
                     git pull origin $branch
                 fi
             done
-            git checkout local
         else
             branch=$(git branch --show-current)
             git pull origin $branch
