@@ -1,0 +1,2 @@
+fedora: sudo dnf copr enable atim/leftwm -y && sudo dnf install leftwm
+arch  : (AUR) paru -S leftwm
