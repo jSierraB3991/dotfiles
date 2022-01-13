@@ -1,1 +1,1 @@
-<img source="https://github.com/jSierraB3991/dotfiles/blob/main/leftwm/Fedora-left-wm.png" />
+<img src="https://raw.githubusercontent.com/jSierraB3991/dotfiles/main/leftwm/Fedora-left-wm.png" />
