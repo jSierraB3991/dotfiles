@@ -177,6 +177,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+#bumblebee-status https://github.com/tobi-wan-kenobi/bumblebee-status.git
 bar {
     colors {
         background ##0000000
@@ -188,7 +189,7 @@ bar {
     position top
     status_command ~/github/bumblebee-status/bumblebee-status \
                  -m title cpu nic disk pasink pasource battery datetime \
-                 -t solarized-powerline
+                 -t dracula-powerline
 }
 
 # start intellij idea
