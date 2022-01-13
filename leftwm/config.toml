@@ -1,17 +1,17 @@
 modkey = "Mod4"
 workspaces = []
-tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 
 [[keybind]]
 command = "Execute"
 value = "rofi -show drun"
 modifier = ["modkey"]
-key = "p"
+key = "d"
 
 [[keybind]]
 command = "Execute"
 value = "kitty"
-modifier = ["modkey", "Shift"]
+modifier = ["modkey"]
 key = "Return"
 
 [[keybind]]
@@ -141,6 +141,12 @@ modifier = ["modkey"]
 key = "9"
 
 [[keybind]]
+command = "GotoTag"
+value = "10"
+modifier = ["modkey"]
+key = "0"
+
+[[keybind]]
 command = "MoveToTag"
 value = "1"
 modifier = ["modkey", "Shift"]
@@ -195,6 +201,12 @@ modifier = ["modkey", "Shift"]
 key = "9"
 
 [[keybind]]
+command = "MoveToTag"
+value = "10"
+modifier = ["modkey", "Shift"]
+key = "0"
+
+[[keybind]]
 command = "Execute"
 value = "firefox"
 modifier = ["modkey"]
@@ -206,5 +218,20 @@ value = "/opt/firefox/firefox"
 modifier = ["modkey", "Shift"]
 key = "f"
 
+[[keybind]]
+command = "Execute"
+value = "/opt/intellij-idea/bin/idea.sh"
+modifier = ["modkey", "Shift"]
+key = "i"
 
+[[keybind]]
+command = "Execute"
+value = "xfce4-screenshooter"
+modifier = ["modkey"]
+key = "z"
 
+[[keybind]]
+command = "Execute"
+value = "xfce4-screenshooter -w --save $HOME/Images"
+modifier = ["modkey", "Shift"]
+key = "z"
