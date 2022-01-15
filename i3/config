@@ -37,7 +37,8 @@ title_align center
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
+bindsym $mod+shift+Return exec rxvt
 
 # start a new web browser
 bindsym $mod+f exec firefox
