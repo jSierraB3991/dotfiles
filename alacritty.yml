@@ -1,11 +1,3 @@
-# Configuration for Alacritty, the GPU enhanced terminal emulator.
-
-# Import additional configuration files
-#
-# Imports are loaded in order, skipping all missing files, with the importing
-# file being loaded last. If a field is already present in a previous import, it
-# will be replaced.
-#
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
 #import:
@@ -105,16 +97,9 @@
 font:
   # Normal (roman) font face
   normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
     family: Hack Nerd Font
 
-    # The `style` can be specified to pick a specific face.
-    style: Bold
+    style: Regular
 
   # Bold font face
   #bold:
@@ -150,8 +135,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 11.0
-
+  size: 10
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
   # spacing.
@@ -203,20 +187,6 @@ colors:
     magenta: '#B48EAD'
     cyan:    '#8FBCBB'
     white:   '#ECEFF4'
-
-  # Dim colors
-  #
-  # If the dim colors are not set, they will be calculated automatically based
-  # on the `normal` colors.
-  #dim:
-  #  black:   '#131415'
-  #  red:     '#864343'
-  #  green:   '#777c44'
-  #  yellow:  '#9e824c'
-  #  blue:    '#556a7d'
-  #  magenta: '#75617b'
-  #  cyan:    '#5b7d78'
-  #  white:   '#828482'
 
   # Indexed Colors
   #
@@ -270,9 +240,6 @@ colors:
   #command: None
 
 # Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
 background_opacity: 0.9
 
 #selection:
@@ -284,24 +251,18 @@ background_opacity: 0.9
   #save_to_clipboard: false
 
 cursor:
-  # Cursor style
   style:
     # Cursor shape
-    #
-    # Values for `shape`:
-    #   - ▇ Block
     #   - _ Underline
     #   - | Beam
     shape: Beam
 
     # Cursor blinking state
-    #
-    # Values for `blinking`:
     #   - Never: Prevent the cursor from ever blinking
     #   - Off: Disable blinking by default
     #   - On: Enable blinking by default
     #   - Always: Force the cursor to always blink
-    #blinking: Off
+    blinking: Always
 
   # Vi mode cursor style
   #
