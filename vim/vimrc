@@ -6,9 +6,9 @@ set shiftround
 
 set number
 syntax on
+filetype plugin indent on
 set cursorline
 set relativenumber
-
 
 set textwidth=80
 set colorcolumn=+1
@@ -16,7 +16,8 @@ set colorcolumn=+1
 set incsearch
 set hlsearch
 
-
+"Map keys
+map <F3> : NERDTreeToggle
 
 "Auto instalaci`on de plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -43,6 +44,12 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', { 'do': { -> 'yarn install' } }
 Plug 'davidhalter/jedi-vim'
+
+"Rust plugin
+Plug 'rust-lang/rust.vim'
+
+"Nerd Tree
+Plug 'preservim/nerdtree'
 
 "cerrador de simbolos
 Plug 'dhruvasagar/vim-pairify'
