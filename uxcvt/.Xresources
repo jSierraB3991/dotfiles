@@ -1,5 +1,5 @@
 !URxvt.font: xft:JetBrainsMono:pixelsize=14
-URxvt.font:  xft:Hack Nerd Font Mono:style=Bold:size=12
+URxvt.font:  xft:Hack Nerd Font:style=Regular:size=10
 
 ! special
 *.foreground:   #a8a19f
