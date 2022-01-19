@@ -21,7 +21,7 @@ if [ $# -eq 1 ] || [ $# -eq 2 ]; then
             fi
         fi
         if [ -f "$REPO_HOME/$1/target/$1.jar" ]; then
-            screen java -jar "$REPO_HOME/$1/target/$1.jar"
+            java -jar "$REPO_HOME/$1/target/$1.jar"
         else
             echo "Not exist file $1.jar"
         fi
