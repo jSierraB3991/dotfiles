@@ -8,3 +8,6 @@ alias tree="lsd --tree"
 alias catt="/usr/bin/cat"
 alias git-tree="git log --all --graph --decorate --oneline"
 alias neofetch="/usr/bin/neofetch --ascii ~/.config/neofetch/ascii.txt"
+
+alias run-zabud-core="$DOTFILES/run-spring-proyect.sh zabud-tronos-core-ms $1 > ~/logs/zabud-tronos-core-ms-nohup.log 2>&1 &"
+alias run-zabud-inscription="$DOTFILES/run-spring-proyect.sh zabud-inscriptions-ms $1 > ~/logs/zabud-inscriptions-ms-nohup.log 2>&1 &"
