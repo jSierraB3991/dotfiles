@@ -9,8 +9,6 @@ alias catt="/usr/bin/cat"
 alias git-tree="git log --all --graph --decorate --oneline"
 alias neofetch="/usr/bin/neofetch --ascii ~/.config/neofetch/ascii.txt"
 
-
-
 function run-zabud-core() {
     FOLDER=${PWD}
     cd ~/logs
