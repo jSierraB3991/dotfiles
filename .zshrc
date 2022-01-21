@@ -9,8 +9,21 @@ alias catt="/usr/bin/cat"
 alias git-tree="git log --all --graph --decorate --oneline"
 alias neofetch="/usr/bin/neofetch --ascii ~/.config/neofetch/ascii.txt"
 
-alias run-zabud-core="nohup $DOTFILES/run-spring-proyect.sh zabud-tronos-core-ms $1 &"
-alias run-zabud-inscription="nohup $DOTFILES/run-spring-proyect.sh zabud-inscriptions-ms $1 &"
+
+
+function run-zabud-core() {
+    FOLDER=${PWD}
+    cd ~/logs
+    nohup $DOTFILES/run-spring-proyect.sh zabud-tronos-core-ms $1 &
+    cd $FOLDER
+}
+
+function run-zabud-inscription() {
+    FOLDER=${PWD}
+    cd ~/logs
+    nohup $DOTFILES/run-spring-proyect.sh zabud-inscriptions-ms $1 &
+    cd $FOLDER
+}
 
 ################################################################################
 ################################## GIT SSH #####################################
