@@ -11,8 +11,8 @@ key = "d"
 [[keybind]]
 command = "Execute"
 value = "rofi -show combi -theme Monokai -icon-theme Tela-circle -show-icons" 
-modifier = ["modkey", "Shift"]
-key = "d"
+modifier = ["modkey"]
+key = "Tab"
 
 [[keybind]]
 command = "Execute"
