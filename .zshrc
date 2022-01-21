@@ -37,3 +37,6 @@ fi
 
 unset env
 #
+
+
+alias show-docker="sudo docker ps --format \"table {{.State}}\\t{{.Names}}\\t{{.ID}}\\t{{.Image}}\""
