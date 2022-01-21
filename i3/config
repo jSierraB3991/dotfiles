@@ -49,7 +49,8 @@ bindsym $mod+shift+f exec /opt/firefox/firefox
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id rofi -show drun -theme Monokai -icon-theme   Tela-circle -show-icons
+bindsym $mod+Shift+d exec --no-startup-id rofi -show combi -theme Monokai -icon-theme  Tela-circle -show-icons
 # A more modern dmenu replacement is rofi:
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
