@@ -127,3 +127,6 @@ super + alt + f
 
 super + n
     pcmanfm
+
+super + shift +x
+    i3lock -c 00000
