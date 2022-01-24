@@ -1,3 +1,5 @@
+#! /bin/bash
+
 GITHUB_HOME=$HOME/github
 ZABUD_HOME=$HOME/Zabud
 
@@ -6,9 +8,19 @@ if [ ! -d $GITHUB_HOME ]; then
 fi
 
 sudo docker run --rm -d -p 27017:27017 --name mongo-inscription mongo:5.0.3-focal
-sudo docker run --rm -d -p 5432:5432 --name pg-inscription -v $ZABUD_HOME/data/pg-inscription:/var/lib/postgresql/data -e POSTGRES_USER=postgre -e POSTGRES_DB=zabud-inscription -e POSTGRES_PASSWORD=root postgres:12.9-alpine
-sudo docker run --rm -d -p 5433:5432 --name pg-core -v $ZABUD_HOME/data/pg-core:/var/lib/postgresql/data -e POSTGRES_USER=postgre -e POSTGRES_DB=zabud-core -e POSTGRES_PASSWORD=root postgres:12.9-alpine
-sudo docker run --rm -d -p 5434:5432 --name pg-notification -v $ZABUD_HOME/data/pg-notification:/var/lib/postgresql/data -e POSTGRES_USER=postgre -e POSTGRES_DB=zabud-notification -e POSTGRES_PASSWORD=root postgres:12.9-alpine
+
+function run-postgre-database(){
+    port=$1
+    name=$2
+    sudo docker run --rm -d -p $port:5432 \
+                            --name $name \
+                            -v $ZABUD_HOME/data/$name:/var/lib/postgresql/data \
+                            -e POSTGRES_USER=postgre -e POSTGRES_DB=$name -e POSTGRES_PASSWORD=root \
+                            postgres:12.9-alpine
+}
+run-postgre-database 5432 zabud-inscription
+run-postgre-database 5433 zabud-core
+run-postgre-database 5434 zabud-notification
 
 if [ ! -d $GITHUB_HOME/JSierraB3991/Docker ]; then
     if [ ! -d $GITHUB_HOME/JSierraB3991 ]; then
@@ -28,8 +40,22 @@ cd $ZABUD_HOME/zabud-discovery-ms
 if [ ! -f $ZABUD_HOME/zabud-discovery-ms/Dockerfile ]; then
     cp $GITHUB_HOME/JSierraB3991/Docker/spring-Dockerfile ./Dockerfile
 fi
-#sudo sudo docker build -t zabud-discovery:1.0 .
-sudo docker run --rm -d -p 8761:8761 --name zabud-discovery zabud-discovery:1.0
 cd -
 
+application="zabud-discovery"
+version="1.0"
+dockerimage=$(sudo docker images --format "{{.Repository}}" $application:$version)
+if [ "$dockerimage" == "" ]; then
+    read -p "you image $application:$version not exists, Dou you like build image?: " response
 
+    if [ $response == "y" ] || [ $response == "s" ] || [ $response == "Y" ] || [ $response == "S" ]; then
+        cd $ZABUD_HOME/zabud-discovery-ms
+        sudo sudo docker build -t zabud-discovery:1.0 .
+    fi
+fi
+dockerimage=$(sudo docker images --format "{{.Repository}}" $application:$version)
+if [ "$dockerimage" != "" ]; then
+    sudo docker run --rm -d -p 8761:8761 --name $application $application:$version
+fi
+
+cd -
