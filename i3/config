@@ -38,7 +38,7 @@ title_align center
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec kitty
 
 # start a new web browser
 bindsym $mod+f exec chromium
@@ -177,6 +177,9 @@ bindsym Print exec xfce4-screenshooter -w --save $HOME/Images
 
 # Start folder pcmanfm
 bindsym $mod+n exec pcmanfm
+
+# Lock Desktop
+bindsym $mod+x exec i3lock-fancy
 
 # Define colors variables:
 set $darkbluetrans	#08052be6
