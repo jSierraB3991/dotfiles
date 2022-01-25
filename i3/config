@@ -10,7 +10,7 @@ font pango: Hack Nerd Font 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -28,8 +28,9 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 2%-
 bindsym XF86MonBrightnessUp exec brightnessctl set +2%
 
 # Start in configurations
-exec --no-startup-id "picom --config $HOME/.config/picom/picom.conf"
+exec --no-startup-id "picom --experimental-backends"
 exec --no-startup-id "feh --bg-fill $HOME/Images/Wallpapers/736779.png"
+exec --no-startup-id "mate-appearance-properties &"
 focus_follows_mouse no
 title_align center
 
@@ -37,11 +38,10 @@ title_align center
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
-bindsym $mod+shift+Return exec rxvt
+bindsym $mod+Return exec gnome-terminal
 
 # start a new web browser
-bindsym $mod+f exec firefox
+bindsym $mod+f exec chromium
 #firefox developer
 bindsym $mod+shift+f exec /opt/firefox/firefox
 
@@ -51,27 +51,12 @@ bindsym $mod+Shift+q kill
 
 bindsym $mod+d exec --no-startup-id rofi -show drun -theme Monokai -icon-theme   Tela-circle -show-icons
 bindsym $mod+Shift+d exec --no-startup-id rofi -show combi -theme Monokai -icon-theme  Tela-circle -show-icons
-# A more modern dmenu replacement is rofi:
-# There also is i3-dmenu-desktop which only displays applications shipping a
-# .desktop file. It is a wrapper around dmenu, so you need that installed.
-
-# change focus
-# bindsym $mod+j focus left
-# bindsym $mod+k focus down
-# bindsym $mod+l focus up
-# bindsym $mod+ntilde focus right
 
 # change focus with arrow keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-
-# move focused window
-# bindsym $mod+Shift+j move left
-# bindsym $mod+Shift+k move down
-# bindsym $mod+Shift+l move up
-# bindsym $mod+Shift+ntilde move right
 
 # move focused window with arrow keys:
 bindsym $mod+Shift+Left move left
@@ -85,9 +70,6 @@ bindsym $mod+h split h
 # split in vertical orientation
 bindsym $mod+v split v
 
-# enter fullscreen mode for the focused container
-#bindsym $mod+f fullscreen toggle
-
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
@@ -95,12 +77,6 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-
-# focus the parent container
-# bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -159,12 +135,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-
-        #bindsym j resize shrink width 3 px or  ppt
-        #bindsym k resize grow height 3 px or 3 ppt
-        #bindsym l resize shrink height 3 px or 3 ppt
-        #bindsym ntilde resize grow width 3 px or 3 ppt
-
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 3 px or 3 ppt
         bindsym Down resize grow height 3 px or 3 ppt
@@ -180,13 +150,14 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #bumblebee-status https://github.com/tobi-wan-kenobi/bumblebee-status.git
+# Need pip and pip install i3ipc
 bar {
     colors {
         background ##0000000
         statusline #FFFFFF
     }
     i3bar_command i3bar --transparency
-    font pango:Hack Nerd Font Bold 10
+    font pango:Hack Nerd Font Bold 9
     workspace_buttons no
     position top
     status_command ~/github/bumblebee-status/bumblebee-status \
@@ -205,7 +176,6 @@ bindsym $mod+z exec xfce4-screenshooter
 bindsym Print exec xfce4-screenshooter -w --save $HOME/Images
 
 # Start folder pcmanfm
-bindsym $mod+Shift+n exec kitty ranger
 bindsym $mod+n exec pcmanfm
 
 # Define colors variables:
@@ -229,7 +199,7 @@ client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
 client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 
 # https://github.com/tobi-wan-kenobi/bumblebee-status
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 1
 
 #i3 gaps configuration
 smart_gaps on
