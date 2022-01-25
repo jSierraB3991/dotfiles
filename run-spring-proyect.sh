@@ -1,3 +1,5 @@
+#!/bin/bash
+
 REPO_HOME=$HOME/Zabud
 
 if [ $# -eq 1 ] || [ $# -eq 2 ]; then
