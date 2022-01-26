@@ -72,7 +72,7 @@ bindsym $mod+v split v
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+#bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -126,8 +126,20 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# move focused container to workspace
+bindcode $mod+Shift+87 move container to workspace number $ws1
+bindcode $mod+Shift+88 move container to workspace number $ws2
+bindcode $mod+Shift+89 move container to workspace number $ws3
+bindcode $mod+Shift+83 move container to workspace number $ws4
+bindcode $mod+Shift+84 move container to workspace number $ws5
+bindcode $mod+Shift+85 move container to workspace number $ws6
+bindcode $mod+Shift+79 move container to workspace number $ws7
+bindcode $mod+Shift+80 move container to workspace number $ws8
+bindcode $mod+Shift+81 move container to workspace number $ws9
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
