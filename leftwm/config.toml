@@ -1,6 +1,6 @@
 modkey = "Mod4"
 workspaces = []
-tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 [[keybind]]
 command = "Execute"
@@ -16,14 +16,8 @@ key = "Tab"
 
 [[keybind]]
 command = "Execute"
-value = "alacritty"
+value = "kitty"
 modifier = ["modkey"]
-key = "Return"
-
-[[keybind]]
-command = "Execute"
-value = "rxvt"
-modifier = ["modkey", "Shift"]
 key = "Return"
 
 [[keybind]]
@@ -226,13 +220,7 @@ key = "f"
 
 [[keybind]]
 command = "Execute"
-value = "/opt/firefox/firefox"
-modifier = ["modkey", "Shift"]
-key = "f"
-
-[[keybind]]
-command = "Execute"
-value = "/opt/intellij-idea/bin/idea.sh"
+value = "com.google.AndroidStudio"
 modifier = ["modkey", "Shift"]
 key = "i"
 
@@ -253,3 +241,15 @@ command = "Execute"
 value = "pcmanfm"
 modifier = ["modkey"]
 key = "n"
+
+[[keybind]]
+command = "Execute"
+value = "i3lock -c 000000"
+modifier = ["modkey"]
+key = "x"
+
+[[keybind]]
+command = "Execute"
+value = "i3lock-fancy"
+modifier = ["modkey", "Shift"]
+key = "x"
