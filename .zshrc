@@ -8,7 +8,8 @@ alias tree="lsd --tree"
 alias catt="/usr/bin/cat"
 alias git-tree="git log --all --graph --decorate --oneline"
 alias neofetch="/usr/bin/neofetch --ascii ~/.config/neofetch/ascii.txt"
-alias show-docker="sudo docker ps --format \"table {{.State}}\\t{{.Names}}\\t{{.ID}}\\t{{.Image}}\""
+alias podman="sudo docker"
+alias show-podman-containers="podman ps --format \"table {{.State}}\\t{{.Names}}\\t{{.ID}}\\t{{.Image}}\""
 
 function run-zabud-core() {
     FOLDER=${PWD}
