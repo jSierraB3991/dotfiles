@@ -9,11 +9,20 @@ services:
     kafka:
         image: wurstmeister/kafka
         container_name: kafka
+        depends_on:
+          - zookeeper
         ports:
           - "9092:9092"
         environment:
             KAFKA_ADVERTISED_HOST_NAME: localhost
             KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+
+    activemq:
+        image: rmohr/activemq:5.14.0-alpine
+        container_name: activemq
+        ports:
+          - "8161:8161"
+          - "61616:61616"
     
     zabud-inscription:
         image: postgres:12.9-alpine
