@@ -8,6 +8,7 @@ set number
 syntax on
 filetype plugin indent on
 set cursorline
+set cursorcolumn
 set relativenumber
 
 set textwidth=80
