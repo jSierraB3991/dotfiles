@@ -1,0 +1,52 @@
+version: '4'
+
+services:
+    zookeeper:
+        image: wurstmeister/zookeeper
+        container_name: zookeeper
+        ports:
+            - "2181:2181"
+    kafka:
+        image: wurstmeister/kafka
+        container_name: kafka
+        ports:
+            - "9092:9092"
+        environment:
+            KAFKA_ADVERTISED_HOST_NAME: localhost
+            KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    
+    zabud-inscription:
+        image: postgres:12.9-alpine
+        container_name: zabud-inscription
+        ports:
+            - "5432:5432"
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_DB: zabud-inscription
+            POSTGRES_PASSWORD: root
+        volumes:
+          - ~/Zabud/data/zabud-inscription:/var/lib/postgressql/data
+
+    zabud-core:
+        image: postgres:12.9-alpine
+        container_name: zabud-core
+        ports:
+            - "5433:5432"
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_DB: zabud-core
+            POSTGRES_PASSWORD: root
+        volumes:
+          - ~/Zabud/data/zabud-core:/var/lib/postgressql/data
+
+    zabud-notification:
+        image: postgres:12.9-alpine
+        container_name: zabud-notification
+        ports:
+            - "5434:5432"
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_DB: zabud-notification
+            POSTGRES_PASSWORD: root
+        volumes:
+          - ~/Zabud/data/zabud-notification:/var/lib/postgressql/data
