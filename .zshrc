@@ -9,6 +9,11 @@ alias catt="/usr/bin/cat"
 alias git-tree="git log --all --graph --decorate --oneline"
 alias neofetch="/usr/bin/neofetch --ascii ~/.config/neofetch/ascii.txt"
 alias podman="sudo docker"
+alias podman-stop-all-containers="sudo docker stop \$(sudo docker ps -q)"
+alias podman-remove-all-containers="sudo docker rm \$(sudo docker ps -aq)"
+alias podman-stop-and-remove-all-containers="podman-stop-all-containers && podman-remove-all-containers"
+alias podman-compose="sudo docker-compose"
+
 alias show-podman-containers="podman ps -a --format \"table {{.State}}\\t{{.Names}}\\t{{.ID}}\\t{{.Image}}\""
 
 function run-zabud-core() {
