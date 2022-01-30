@@ -28,23 +28,15 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "shift"], "l", lazy.layout.grow()),
     ([mod, "shift"], "h", lazy.layout.shrink()),
 
-    # Toggle floating
-    # ([mod, "shift"], "f", lazy.window.toggle_floating()),
-
     # Move windows up or down in current stack
     ([mod, "shift"], "j", lazy.layout.shuffle_down()),
     ([mod, "shift"], "k", lazy.layout.shuffle_up()),
 
     # Toggle between different layouts as defined below
     ([mod], "Tab", lazy.next_layout()),
-    #([mod, "shift"], "Tab", lazy.prev_layout()),
 
     # Kill window
     ([mod], "w", lazy.window.kill()),
-
-    # Switch focus of monitors
-    # ([mod], "period", lazy.next_screen()),
-    # ([mod], "comma", lazy.prev_screen()),
 
     # Restart Qtile
     ([mod, "control"], "r", lazy.restart()),
@@ -59,6 +51,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # Browser
     ([mod], "f", lazy.spawn("firefox")),
+    ([mod], "i", lazy.spawn("com.google.AndroidStudio")),
 
     # File Explorer
     ([mod, "shift"], "n", lazy.spawn("kitty ranger")),
@@ -66,6 +59,9 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # Terminal
     ([mod], "Return", lazy.spawn("kitty")),
+    # Lock screen
+    ([mod], "z", lazy.spawn("i3lock -c 000000")),
+    ([mod, "shift"], "z", lazy.spawn("i3lock-fancy")),
 
     # Redshift
     ([mod], "r", lazy.spawn("redshift -O 2400")),
@@ -74,9 +70,6 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Screenshot
     ([mod], "s", lazy.spawn("xfce4-screenshooter")),
     ([mod, "shift"], "s", lazy.spawn("xfce4-screenshooter -f -s Imágenes")),
-
-    # Screenshots
-    # Key([mod], 'print', lazy.spawn("xfce4-screenshoter")),
 
     # ------------ Hardware Configs ------------
 
