@@ -30,7 +30,6 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +2%
 # Start in configurations
 exec --no-startup-id "picom --experimental-backends"
 exec --no-startup-id "feh --bg-fill $HOME/Images/Wallpapers/736779.png"
-exec --no-startup-id "mate-appearance-properties &"
 focus_follows_mouse no
 title_align center
 
@@ -213,7 +212,6 @@ client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
 client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
 client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 
-# https://github.com/tobi-wan-kenobi/bumblebee-status
 for_window [class="^.*"] border pixel 1
 
 #i3 gaps configuration
