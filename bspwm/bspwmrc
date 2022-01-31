@@ -20,3 +20,4 @@ bspc rule -a Screenkey manage=off
 feh --bg-fill ~/Imágenes/Wallpapers/gentoo.jpg
 ~/.config/polybar/launch.sh
 picom --experimental-backends &
+/usr/bin/conky &
