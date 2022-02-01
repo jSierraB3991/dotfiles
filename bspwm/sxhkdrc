@@ -125,12 +125,19 @@ alt + super + {Left,Down,Up,Right}
 super + alt + f
     /opt/firefox/firefox
 
+super + alt + i
+   /opt/sts/SpringToolSuite4
+
 super + n
     pcmanfm
 
 super + shift + n
     i3lock -c 000000
 
-
 super + shift + z
     xfce4-screenshooter
+
+super + shift + x
+    i3lock-fancy
+super +  x
+    i3lock
