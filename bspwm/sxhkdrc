@@ -131,13 +131,8 @@ super + alt + i
 super + n
     pcmanfm
 
-super + shift + n
-    i3lock -c 000000
-
 super + shift + z
     xfce4-screenshooter
 
-super + shift + x
-    i3lock-fancy
 super +  x
-    i3lock
+    i3lock -c 000000
