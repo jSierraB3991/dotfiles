@@ -37,7 +37,8 @@ wmname = 'LG3D'
 
 autostart = [
     "feh --bg-fill /home/lelouch-lamperouge/Imágenes/Emilico_From_ShadowsHouse_Python.jpg",
-    "picom &"
+    "picom &",
+    "conky &"
 ]
 for x in autostart:
     os.system(x)
