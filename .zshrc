@@ -13,6 +13,8 @@ alias podman-stop-all-containers="sudo docker stop \$(sudo docker ps -q)"
 alias podman-remove-all-containers="sudo docker rm \$(sudo docker ps -aq)"
 alias podman-stop-and-remove-all-containers="podman-stop-all-containers && podman-remove-all-containers"
 alias podman-compose="sudo docker-compose"
+alias run-pg-platzi="podman run --rm -d --name pg-platzi -e POSTGRES_USER=postgres -e POSTGRES_DB=platzi -e POSTGRES_PASSWORD=root postgres:12.9-alpine"
+alias run-maria-platzi="podman run --rm -d --name mariadb-platzi -e MARIADB_USER=mariadb -e MARIADB_ROOT_PASSWORD=chroot -e MARIADB_PASSWORD=root mariadb:10.6.5-focal"
 
 alias show-podman-containers="podman ps -a --format \"table {{.State}}\\t{{.Names}}\\t{{.ID}}\\t{{.Image}}\""
 
