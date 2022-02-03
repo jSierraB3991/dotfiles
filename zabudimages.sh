@@ -1,8 +1,5 @@
 #! /bin/bash
 
-GITHUB_HOME=$HOME/github
-ZABUD_HOME=$HOME/Zabud
-
 if [ ! -d $GITHUB_HOME ]; then
     mkdir $GITHUB_HOME
 fi

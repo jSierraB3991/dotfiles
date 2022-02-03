@@ -1,8 +1,6 @@
 #! /bin/bash
 
-ZABUD_HOME=$HOME/Zabud
 CURRENT_DIR=${PWD}
-
 if [ -d $ZABUD_HOME ]; then
 
     for repository in $(ls $ZABUD_HOME); do

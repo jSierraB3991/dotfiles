@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPO_HOME=$HOME/Zabud
+REPO_HOME=$ZABUD_HOME
 
 if [ $# -eq 1 ] || [ $# -eq 2 ]; then
     echo "$REPO_HOME/$1"
