@@ -17,6 +17,12 @@ services:
             KAFKA_ADVERTISED_HOST_NAME: localhost
             KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
 
+    mongo-inscription:
+        image: mongo:5.0.3-focal
+        container_name: mongo-inscription
+        ports:
+          - "27017:27017"
+
     activemq:
         image: rmohr/activemq:5.14.0-alpine
         container_name: activemq
@@ -30,7 +36,7 @@ services:
         ports:
           - "5432:5432"
         environment:
-            POSTGRES_USER: postgres
+            POSTGRES_USER: postgre
             POSTGRES_DB: zabud-inscription
             POSTGRES_PASSWORD: root
         volumes:
@@ -42,7 +48,7 @@ services:
         ports:
           - "5433:5432"
         environment:
-            POSTGRES_USER: postgres
+            POSTGRES_USER: postgre
             POSTGRES_DB: zabud-core
             POSTGRES_PASSWORD: root
         volumes:
@@ -54,7 +60,7 @@ services:
         ports:
           - "5434:5432"
         environment:
-            POSTGRES_USER: postgres
+            POSTGRES_USER: postgre
             POSTGRES_DB: zabud-notification
             POSTGRES_PASSWORD: root
         volumes:
