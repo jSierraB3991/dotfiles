@@ -40,7 +40,7 @@ services:
             POSTGRES_DB: zabud-inscription
             POSTGRES_PASSWORD: root
         volumes:
-          - ~/Zabud/data/zabud-inscription:/var/lib/postgressql/data
+          - /home/juan-sierra/Zabud/data/zabud-inscription:/var/lib/postgressql/data
 
     zabud-core:
         image: postgres:12.9-alpine
@@ -52,7 +52,7 @@ services:
             POSTGRES_DB: zabud-core
             POSTGRES_PASSWORD: root
         volumes:
-          - ~/Zabud/data/zabud-core:/var/lib/postgressql/data
+          - /home/juan-sierra/Zabud/data/zabud-core:/var/lib/postgressql/data
 
     zabud-notification:
         image: postgres:12.9-alpine
@@ -64,4 +64,4 @@ services:
             POSTGRES_DB: zabud-notification
             POSTGRES_PASSWORD: root
         volumes:
-          - ~/Zabud/data/zabud-notification:/var/lib/postgressql/data
+          - /home/juan-sierra/Zabud/data/zabud-notification:/var/lib/postgressql/data
