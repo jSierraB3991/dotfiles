@@ -9,3 +9,8 @@
 
 <h2> ParrotOs Home With Bspwm </h2>
 <img src="https://raw.githubusercontent.com/jSierraB3991/dotfiles/main/bspwm/parrot_bspwm.png" />
+
+<h2> ParrotOs Home With SpectrWm </h2>
+<img src="https://raw.githubusercontent.com/jSierraB3991/dotfiles/main/spectrwm/parrot-home-spctrwm.png" />
+
+
