@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  sql-server-db:
+    image: mcr.microsoft.com/mssql/server:2019-CU13-ubuntu-20.04
+    container_name: dotnet-database
+    enviroment:
+      SA_PASSWORD: "yourStrong(!)Password"
+      MSSQL_PID: Express
+    ports:
+      - "1433:1433"
+    volumes:
+      /data/docker/dotnet/
+
+  dotnet-app:
+    image: dotnet-app-image:1.0
+    container_name: dotnet-app-container
+    ports:
+      - "5024:5024"
+
+  

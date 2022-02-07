@@ -1,0 +1,13 @@
+FROM mcr.microsoft.com/dotnet/sdk:5.0.403-alpine3.14-amd64 AS build
+WORKDIR /webapp
+EXPOSE 80
+EXPOSE 5024
+COPY ./*.csproj ./
+RUN dotnet restore
+COPY . .
+RUN dotnet publish -c Release -o out
+
+FROM mcr.microsoft.com/dotnet/sdk:5.0.403-alpine3.14-amd64
+WORKDIR /app
+COPY --from=build /webapp/out ./
+ENTRYPOINT [ "dotnet", "app.dll" ]
