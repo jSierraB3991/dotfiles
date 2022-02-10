@@ -17,18 +17,24 @@ alias podman-compose="sudo docker-compose"
 alias run-pg-platzi="podman run --rm -d --name pg-platzi -e POSTGRES_USER=postgres -e POSTGRES_DB=platzi -e POSTGRES_PASSWORD=root postgres:12.9-alpine"
 alias run-maria-platzi="podman run --rm -d --name mariadb-platzi -e MARIADB_USER=mariadb -e MARIADB_ROOT_PASSWORD=chroot -e MARIADB_PASSWORD=root mariadb:10.6.5-focal"
 
-alias show-podman-containers="podman ps -a --format \"table {{.State}}\\t{{.Names}}\\t{{.ID}}\\t{{.Image}}\""
+alias podman-containers="podman ps -a --format \"table {{.State}}\\t{{.Names}}\\t{{.ID}}\\t{{.Image}}\""
 
 function run-zabud-core() {
     FOLDER=${PWD}
-    cd ~/logs
+    if [ ! -d ~/logs/core ]; then
+	mkdir ~/logs/core
+    fi
+    cd ~/logs/core
     nohup $DOTFILES/run-spring-proyect.sh zabud-tronos-core-ms $1 &
     cd $FOLDER
 }
 
 function run-zabud-inscription() {
     FOLDER=${PWD}
-    cd ~/logs
+    if [ ! -d ~/logs/inscription ]; then
+	mkdir ~/logs/inscription
+    fi
+    cd ~/logs/inscription
     nohup $DOTFILES/run-spring-proyect.sh zabud-inscriptions-ms $1 &
     cd $FOLDER
 }
