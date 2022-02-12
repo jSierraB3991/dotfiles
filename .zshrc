@@ -25,7 +25,8 @@ function run-zabud-core() {
 	mkdir ~/logs/core
     fi
     cd ~/logs/core
-    nohup $DOTFILES/run-spring-proyect.sh zabud-tronos-core-ms $1 &
+    #nohup 
+    $DOTFILES/scripts/run-spring-proyect.sh zabud-tronos-core-ms $1 &
     cd $FOLDER
 }
 
@@ -35,7 +36,8 @@ function run-zabud-inscription() {
 	mkdir ~/logs/inscription
     fi
     cd ~/logs/inscription
-    nohup $DOTFILES/run-spring-proyect.sh zabud-inscriptions-ms $1 &
+    #nohup 
+    $DOTFILES/scripts/run-spring-proyect.sh zabud-inscriptions-ms $1 &
     cd $FOLDER
 }
 
