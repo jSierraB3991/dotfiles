@@ -1,7 +1,6 @@
 #! /bin/bash
 FOLDER=$(echo "${PWD}")
 
-branch="develop"
 set -e
 
 if [ $# -eq 1 ] && [ "$1" != "-y" ]; then
@@ -25,6 +24,7 @@ do
             fi
         else
             branch=$(git branch --show-current)
+            #branch="develop"
             git pull origin $branch
         fi
 
