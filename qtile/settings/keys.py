@@ -68,8 +68,8 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "shift"], "r", lazy.spawn("redshift -x")),
 
     # Screenshot
-    ([mod], "s", lazy.spawn("xfce4-screenshooter")),
-    ([mod, "shift"], "s", lazy.spawn("xfce4-screenshooter -f -s Imágenes")),
+    ([mod], "s", lazy.spawn("/home/lelouch-lamperouge/.config/bin/scrot.sh -m")),
+    ([mod, "shift"], "s", lazy.spawn("/home/lelouch-lamperouge/.config/bin/scrot.sh -s")),
 
     # ------------ Hardware Configs ------------
 
