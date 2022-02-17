@@ -29,7 +29,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +2%
 
 # Start in configurations
 exec --no-startup-id "picom --experimental-backends"
-exec --no-startup-id "feh --bg-fill $HOME/Images/Wallpapers/736779.png"
+exec --no-startup-id "feh --bg-fill $HOME/Images/Wallpapers/wallhaven-lq51ll.png"
 focus_follows_mouse no
 title_align center
 
@@ -40,9 +40,9 @@ floating_modifier $mod
 bindsym $mod+Return exec tilix
 
 # start a new web browser
-bindsym $mod+f exec chromium
+bindsym $mod+shift+f exec chromium
 #firefox developer
-bindsym $mod+shift+f exec /opt/firefox/firefox
+bindsym $mod+f exec /opt/firefox/firefox
 
 
 # kill focused window
@@ -160,22 +160,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-#bumblebee-status https://github.com/tobi-wan-kenobi/bumblebee-status.git
-# Need pip and pip install i3ipc
-bar {
-    colors {
-        background ##0000000
-        statusline #FFFFFF
-    }
-    i3bar_command i3bar --transparency
-    font pango:Hack Nerd Font Bold 9
-    workspace_buttons no
-    position top
-    status_command ~/github/bumblebee-status/bumblebee-status \
-                 -m title cpu nic disk pasink pasource battery datetime \
-                 -t dracula-powerline
-}
-
 # start intellij idea
 bindsym $mod+Shift+i exec /opt/intellij-idea/bin/idea.sh
 
@@ -183,8 +167,8 @@ bindsym $mod+Shift+i exec /opt/intellij-idea/bin/idea.sh
 bindsym $mod+Shift+o exec /opt/roboto/bin/robo3t
 
 # start screenchot full screen
-bindsym $mod+z exec xfce4-screenshooter
-bindsym Print exec xfce4-screenshooter -w --save $HOME/Images
+bindsym $mod+z exec /home/juan-sierra/.config/bin/scrot.sh -s
+bindsym Print exec /home/juan-sierra/.config/bin/scrot.sh -m
 
 # Start folder pcmanfm
 bindsym $mod+n exec pcmanfm
@@ -222,3 +206,31 @@ set $outer_gaps 5
 
 gaps inner $inner_gaps
 gaps outer $outer_gaps
+
+bar {
+    font pango:Noto Sans Regular 12, FontAwesome 12
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    position bottom
+    i3bar_command i3bar --transparency
+#    it could be that you have no primary display set: set one (xrandr --output <output> --primary)
+#    reference: https://i3wm.org/docs/userguide.html#_tray_output
+    tray_output primary
+    tray_padding 0
+
+#    When strip_workspace_numbers is set to yes,
+#    any workspace that has a name of the form
+#    “[n][:][NAME]” will display only the name.
+    strip_workspace_numbers yes
+    strip_workspace_name no
+
+    colors {
+	separator          $purple
+	background         $darkgrey
+	statusline         $white
+#                          		border 		        bg		txt		indicator
+	focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
+	active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
+	inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
+	urgent_workspace	$urgentred	    	$urgentred	$white		$purple
+    }
+}
