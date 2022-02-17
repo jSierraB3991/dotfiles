@@ -1,10 +1,10 @@
 # Qtile
 
-![Qtile](../../.screenshots/qtile.png)
+![Qtile](./arch-qtile.png)
 
 ***Idioma***
 - 🇪🇸 Español
-- [🇺🇸 English](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile)
+- [🇺🇸 English](https://github.com/jSierraB3991/dotfiles/blob/main/qtile)
 
 ## Instalación (Arch)
 
