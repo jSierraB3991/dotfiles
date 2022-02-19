@@ -19,7 +19,7 @@ leftwm-command "LoadTheme $SCRIPTPATH/theme.toml"
 
 #set background
 if [ -x "$(command -v feh)" ]; then
-  feh --bg-scale ~/Images/rin_rust.png
+  feh --bg-scale ~/Images/Wallpapers/toxic.jpg
 fi
 
 
