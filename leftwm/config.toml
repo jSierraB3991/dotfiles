@@ -37,12 +37,6 @@ modifier = ["modkey", "Shift"]
 key = "x"
 
 [[keybind]]
-command = "Execute"
-value = "slock"
-modifier = ["modkey", "Control"]
-key = "l"
-
-[[keybind]]
 command = "MoveToLastWorkspace"
 modifier = ["modkey", "Shift"]
 key = "w"
@@ -226,13 +220,13 @@ key = "i"
 
 [[keybind]]
 command = "Execute"
-value = "xfce4-screenshooter"
+value = "~/.config/bin/scrot.sh -m"
 modifier = ["modkey"]
 key = "z"
 
 [[keybind]]
 command = "Execute"
-value = "xfce4-screenshooter -w --save $HOME/Images"
+value = "~/.config/bin/scrot.sh -s"
 modifier = ["modkey", "Shift"]
 key = "z"
 
@@ -252,4 +246,4 @@ key = "x"
 command = "Execute"
 value = "i3lock-fancy"
 modifier = ["modkey", "Shift"]
-key = "x"
+key = "l"
