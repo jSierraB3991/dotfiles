@@ -11,9 +11,6 @@ if [ -d $ZABUD_HOME ]; then
                  " is: $(git branch --show-current)"
         fi
     done
-
-else
-    cowsay "directory $ZABUD_HOME no found"
 fi
 
 cd $CURRENT_DIR
