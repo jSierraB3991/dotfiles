@@ -214,12 +214,6 @@ key = "f"
 
 [[keybind]]
 command = "Execute"
-value = "com.google.AndroidStudio"
-modifier = ["modkey", "Shift"]
-key = "i"
-
-[[keybind]]
-command = "Execute"
 value = "~/.config/bin/scrot.sh -m"
 modifier = ["modkey"]
 key = "z"
