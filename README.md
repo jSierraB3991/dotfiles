@@ -1,4 +1,4 @@
-<h2> Parrot with i3 wm</h2>
+<h2> Artix With Open RC with i3 wm</h2>
 <img src="https://raw.githubusercontent.com/jSierraB3991/dotfiles/main/i3/artix-openrc-i3.png" />
 
 <h2> Arch with left wm</h2>
