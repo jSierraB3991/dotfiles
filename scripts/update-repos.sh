@@ -25,11 +25,12 @@ do
         else
             branch=$(git branch --show-current)
             #branch="develop"
+            #git checkout develop
             git pull origin $branch
         fi
 
     else
-        cowsay -f tux "$repo not is a repository"
+        echo -f tux "$repo not is a repository"
     fi
 done
 cd $FOLDER
