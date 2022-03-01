@@ -29,7 +29,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +2%
 
 # Start in configurations
 exec --no-startup-id "picom --experimental-backends"
-exec --no-startup-id "feh --bg-fill $HOME/Images/Wallpapers/wallhaven-lq51ll.png"
+exec --no-startup-id "feh --bg-fill /home/juan-sierra/Images/ciudad-por-la-noche-estilo-anime-5480.webp"
 focus_follows_mouse no
 title_align center
 
@@ -37,12 +37,12 @@ title_align center
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec tilix
+bindsym $mod+Return exec xfce4-terminal
 
 # start a new web browser
-bindsym $mod+shift+f exec chromium
+bindsym $mod+shift+f exec flatpak run org.chromium.Chromium
 #firefox developer
-bindsym $mod+f exec /opt/firefox/firefox
+bindsym $mod+f exec firefox
 
 
 # kill focused window
@@ -168,7 +168,7 @@ bindsym $mod+Shift+i exec /opt/intellij-idea/bin/idea.sh
 bindsym $mod+Shift+o exec /opt/roboto/bin/robo3t
 
 # start screenchot full screen
-bindsym $mod+z exec xfce4-screenshooter -r -d 1 -s /home/juan-sierra/Images/
+bindsym $mod+z exec /home/juan-sierra/.config/bin/scrot.sh -s
 bindsym Print exec /home/juan-sierra/.config/bin/scrot.sh -m
 
 # Start folder pcmanfm
@@ -191,10 +191,10 @@ set $mediumgrey		#8b8b8b
 set $yellowbrown	#e1b700
 
 # define colors for windows:
-#class		        	border		bground		text		indicator	child_border
+#class		            border	bground		text		indicator	child_border
 client.focused		    $lightblue	$darkblue	$white		$purple		$mediumgrey
 client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
-client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
+client.focused_inactive	    $darkblue	$darkblue	$grey		$purple		$black
 client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 
 for_window [class="^.*"] border pixel 1
@@ -202,8 +202,8 @@ for_window [class="^.*"] border pixel 1
 #i3 gaps configuration
 smart_gaps on
 smart_borders on
-set $inner_gaps 5
-set $outer_gaps 5
+set $inner_gaps 7
+set $outer_gaps 7
 
 gaps inner $inner_gaps
 gaps outer $outer_gaps

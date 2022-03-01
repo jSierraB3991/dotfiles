@@ -63,7 +63,6 @@ where:
     -p  preferred launcher (rofi or zenity)
 
 This script depends on:
-  - systemd,
   - i3,
   - rofi or zenity."
 
@@ -104,9 +103,9 @@ function command_exists() {
 }
 
 # systemctl required
-if ! command_exists systemctl ; then
-  exit 1
-fi
+#if ! command_exists systemctl ; then
+#  exit 1
+#fi
 
 # menu defined as an associative array
 typeset -A menu
@@ -118,7 +117,7 @@ menu=(
   [ Reboot]="systemctl reboot"
   [ Suspend]="systemctl suspend"
   [ Hibernate]="systemctl hibernate"
-  [ Lock]="i3lock-fancy"
+  [ Lock]="i3lock -c 000000"
   [ Logout]="i3-msg exit"
   [ Cancel]=""
 )
