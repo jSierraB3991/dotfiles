@@ -10,7 +10,7 @@ font pango: Hack Nerd Font 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -29,7 +29,8 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +2%
 
 # Start in configurations
 exec --no-startup-id "picom --experimental-backends"
-exec --no-startup-id "feh --bg-fill /home/juan-sierra/Images/ciudad-por-la-noche-estilo-anime-5480.webp"
+exec --no-startup-id "feh --bg-fill /home/juan-sierra/Images/1646233827.png"
+exec --no-startup-id "connman-gtk"
 focus_follows_mouse no
 title_align center
 
@@ -162,7 +163,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # start intellij idea
-bindsym $mod+Shift+i exec /opt/intellij-idea/bin/idea.sh
+bindsym $mod+Shift+i exec /opt/sts/SpringToolSuite4
 
 #start roboto
 bindsym $mod+Shift+o exec /opt/roboto/bin/robo3t
@@ -175,7 +176,7 @@ bindsym Print exec /home/juan-sierra/.config/bin/scrot.sh -m
 bindsym $mod+n exec pcmanfm
 
 # Lock Desktop
-bindsym $mod+x exec i3lock-fancy
+bindsym $mod+x exec i3lock -c 000000
 
 # Define colors variables:
 set $darkbluetrans	#08052be6
