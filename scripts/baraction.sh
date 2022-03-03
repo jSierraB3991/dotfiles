@@ -178,8 +178,8 @@ clockinfo() {
 }
 
 temp_info() {
-    temp=$(~/.config/i3/scripts/temperature | tail -1)
-    echo -e "$temp"
+    temp=$(~/.config/i3/scripts/temperature | head -1)
+    echo $temp
 }
 
 
