@@ -120,7 +120,7 @@ vpnconnection() {
     if [ $state = 1 ]; then
 	echo "ﱾ $vpn_ip"
     else
-	echo ""
+	echo " No VPN"
     fi
 }
 
@@ -177,6 +177,11 @@ clockinfo() {
     echo $(date "+%H:%M:%S")
 }
 
+temp_info() {
+    temp=$(~/.config/i3/scripts/temperature | tail -1)
+    echo -e "$temp"
+}
+
 
 SLEEP_SEC=2
 #loops forever outputting a line every SLEEP_SEC secs
@@ -187,7 +192,7 @@ while :; do
 #	$(vpn); \
 #	$(network); \
 #	$(vol)"
-    echo "+@fg=1; $(cpuicon) +@fg=0; $(cpu) +@fg=1; $(memicon) +@fg=0; $(mem) +@fg=3; $(hddicon) +@fg=0; $(hdd) +@fg=4; $(networkicon) +@fg=0; $(ipaddress) +@fg=4; $(vpnconnection) +@fg=1; $(dateinfo) +@fg=4; $(clockicon) +@fg=0; $(clockinfo)"
-#    sleep $SLEEP_SEC
+    echo "+@fg=1; $(cpuicon) +@fg=0; $(cpu) +@fg=1; $(memicon) +@fg=0; $(mem) +@fg=3; $(hddicon) +@fg=0; $(hdd) +@fg=4; $(networkicon) +@fg=0; $(ipaddress) +@fg=4; $(vpnconnection) +@fg=1; $(temp_info) +@fg=4; $(clockicon) +@fg=0; $(clockinfo)"
+    sleep $SLEEP_SEC
 done
 
