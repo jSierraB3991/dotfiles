@@ -2,8 +2,6 @@ alias ll="lsd -l"
 alias la="lsd -lA"
 alias ll-tree="lsd -l --tree"
 alias cat="bat --paging=never"
-alias public-ip="curl -s checkip.dyndns.org | grep -Eo '[0-9.]+'"
-alias forticlient-vpn-ip="ip addres | grep vpn | tail -1 | grep -Eo '[0-9.]+' | head -1"
 alias tree="lsd --tree"
 alias catt="/usr/bin/cat"
 alias git-tree="git log --all --graph --decorate --oneline"
@@ -13,32 +11,9 @@ alias podman-stop-all-containers="sudo docker stop \$(sudo docker ps -q)"
 alias podman-remove-all-containers="sudo docker rm \$(sudo docker ps -aq)"
 alias podman-stop-and-remove-all-containers="podman-stop-all-containers && podman-remove-all-containers"
 alias podman-compose="sudo docker-compose"
-alias run-pg-platzi="podman run --rm -d --name pg-platzi -e POSTGRES_USER=postgres -e POSTGRES_DB=platzi -e POSTGRES_PASSWORD=root postgres:12.9-alpine"
 alias run-maria-platzi="podman run --rm -d --name mariadb-platzi -e MARIADB_USER=mariadb -e MARIADB_ROOT_PASSWORD=chroot -e MARIADB_PASSWORD=root mariadb:10.6.5-focal"
 
 alias podman-containers="podman ps -a --format \"table {{.State}}\\t{{.Names}}\\t{{.ID}}\\t{{.Image}}\""
-
-function run-zabud-core() {
-    FOLDER=${PWD}
-    if [ ! -d ~/logs/core ]; then
-	mkdir ~/logs/core
-    fi
-    cd ~/logs/core
-    #nohup 
-    $DOTFILES/scripts/run-spring-proyect.sh zabud-tronos-core-ms $1 &
-    cd $FOLDER
-}
-
-function run-zabud-inscription() {
-    FOLDER=${PWD}
-    if [ ! -d ~/logs/inscription ]; then
-	mkdir ~/logs/inscription
-    fi
-    cd ~/logs/inscription
-    #nohup 
-    $DOTFILES/scripts/run-spring-proyect.sh zabud-inscriptions-ms $1 &
-    cd $FOLDER
-}
 
 ################################################################################
 ################################## GIT SSH #####################################
