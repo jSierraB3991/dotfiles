@@ -1,0 +1,2 @@
+kind create cluster                                         Create Cluster wwith one Node
+                    --config <file-config-multinode>.yml    Create Cluster multi-node
