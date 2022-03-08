@@ -108,7 +108,7 @@ fi
 }
 
 ipaddress() {
-    address="$(curl -s checkip.dyndns.org | grep -Eo '[0-9.]+')"
+    address="$(curl --silent https://whatismyipaddress.com/es/mi-ip | grep 'Your IP'  | grep -Eo '[0-9.]+' | tail -1)"
     echo "$address"
     #echo "181.150.229.192"
 }
@@ -178,8 +178,21 @@ clockinfo() {
 }
 
 temp_info() {
-    temp=$(~/.config/i3/scripts/temperature | head -1)
-    echo $temp
+    icon=""
+    label="0"
+    temp=$(~/.config/bin/temperature)
+    temp_number=$( printf "%.0f" $temp )
+    if [ $temp_number -gt 50 ] && [ $temp_number -lt 65 ]; then
+        icon=""
+        label="1"
+    elif [ $temp_number -gt 65 ] && [ $temp_number -lt 75 ]; then
+        icon=""
+        label="2"
+    elif [ $temp_number -gt 75 ]; then
+        icon=""
+        label="3"
+    fi
+    echo "+@fg=$label; $icon $temp"
 }
 
 
@@ -192,7 +205,7 @@ while :; do
 #	$(vpn); \
 #	$(network); \
 #	$(vol)"
-    echo "+@fg=1; $(cpuicon) +@fg=0; $(cpu) +@fg=1; $(memicon) +@fg=0; $(mem) +@fg=3; $(hddicon) +@fg=0; $(hdd) +@fg=4; $(networkicon) +@fg=0; $(ipaddress) +@fg=4; $(vpnconnection) +@fg=1; $(temp_info) +@fg=4; $(clockicon) +@fg=0; $(clockinfo)"
+    echo "+@fg=1; $(cpuicon) +@fg=0; $(cpu) +@fg=1; $(memicon) +@fg=0; $(mem) +@fg=3; $(hddicon) +@fg=0; $(hdd) +@fg=4; $(networkicon) +@fg=0; $(ipaddress) +@fg=4; $(vpnconnection) $(temp_info) +@fg=4; $(clockicon) +@fg=0; $(clockinfo)"
     sleep $SLEEP_SEC
 done
 
