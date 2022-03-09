@@ -126,8 +126,10 @@ vpnconnection() {
 
 ## BATTERY
 bat() {
-    batstat="$(cat /sys/class/power_supply/BAT0/status)"
-    battery="$(cat /sys/class/power_supply/BAT0/capacity)"
+    battery="BAT1"
+
+    batstat="$(cat /sys/class/power_supply/$battery/status)"
+    battery="$(cat /sys/class/power_supply/$battery/capacity)"
     if [ $batstat = 'Unknown' ]; then
         batstat=""
     elif [[ $battery -ge 5 ]] && [[ $battery -le 19 ]]; then
@@ -205,7 +207,7 @@ while :; do
 #	$(vpn); \
 #	$(network); \
 #	$(vol)"
-    echo "+@fg=1; $(cpuicon) +@fg=0; $(cpu) +@fg=1; $(memicon) +@fg=0; $(mem) +@fg=3; $(hddicon) +@fg=0; $(hdd) +@fg=4; $(networkicon) +@fg=0; $(ipaddress) +@fg=4; $(vpnconnection) $(temp_info) +@fg=4; $(clockicon) +@fg=0; $(clockinfo)"
+    echo "+@fg=1; $(cpuicon) +@fg=0; $(cpu) +@fg=1; $(memicon) +@fg=0; $(mem) +@fg=3; $(hddicon) +@fg=0; $(hdd) +@fg=4; $(networkicon) +@fg=0; $(ipaddress) +@fg=4; $(vpnconnection) $(temp_info) $(bat) +@fg=4; $(clockicon) +@fg=0; $(clockinfo)"
     sleep $SLEEP_SEC
 done
 
