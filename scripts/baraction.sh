@@ -184,13 +184,13 @@ temp_info() {
     label="0"
     temp=$(~/.config/bin/temperature)
     temp_number=$( printf "%.0f" $temp )
-    if [ $temp_number -gt 50 ] && [ $temp_number -lt 65 ]; then
+    if [ $temp_number -ge 50 ] && [ $temp_number -lt 65 ]; then
         icon=""
         label="1"
-    elif [ $temp_number -gt 65 ] && [ $temp_number -lt 75 ]; then
+    elif [ $temp_number -ge 65 ] && [ $temp_number -lt 75 ]; then
         icon=""
         label="2"
-    elif [ $temp_number -gt 75 ]; then
+    elif [ $temp_number -ge 75 ]; then
         icon=""
         label="3"
     fi
