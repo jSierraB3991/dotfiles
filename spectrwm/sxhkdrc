@@ -9,3 +9,7 @@ XF86MonBrightnessUp
 
 XF86MonBrightnessDown
     brightnessctl set 10%-
+
+
+Print
+    /home/juan-sierra/.config/bin/scrot.sh -m
