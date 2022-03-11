@@ -1,0 +1,11 @@
+#XF86Audio{Play,Stop,Prev,Next}
+#    mpc {toggle,stop,prev,next}
+
+XF86Audio{Mute,LowerVolume,RaiseVolume}
+    /home/juan-sierra/.config/bin/volumen {mute, down, up}
+
+XF86MonBrightnessUp
+    brightnessctl set +10%
+
+XF86MonBrightnessDown
+    brightnessctl set 10%-
