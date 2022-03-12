@@ -8,6 +8,11 @@ if [ $# -eq 1 ] && [ "$1" != "-y" ]; then
     exit 1
 fi
 
+if [ -z $ZABUD_HOME ]; then
+    echo "The enviroment variable ZABUD_HOME is required"
+    exit 1
+fi
+
 for repo in $(ls $ZABUD_HOME)
 do
     if [ -d $ZABUD_HOME/$repo ] && [ -d $ZABUD_HOME/$repo/.git ]; then

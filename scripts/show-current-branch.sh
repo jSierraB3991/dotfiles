@@ -1,5 +1,12 @@
 #! /bin/bash
 
+set -e
+
+if [ -z $ZABUD_HOME ]; then
+    echo "The enviroment variable ZABUD_HOME is required"
+    exit 1
+fi
+
 CURRENT_DIR=${PWD}
 if [ -d $ZABUD_HOME ]; then
 
