@@ -36,7 +36,7 @@ focus_on_window_activation = 'urgent'
 wmname = 'LG3D'
 
 autostart = [
-    "feh --bg-fill /home/lelouch-lamperouge/Imágenes/Emilico_From_ShadowsHouse_Python.jpg",
+    "feh --bg-fill /home/lelouch-lamperouge/Images/Wallpapers/wallhaven-lq51ll.png",
     "picom &",
     "conky &"
 ]

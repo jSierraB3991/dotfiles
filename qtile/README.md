@@ -1,6 +1,6 @@
 # Qtile
 
-![Qtile](./arch-qtile.png)
+![Qtile](./arch-qtile-fish.png)
 
 ***Language***
 - [🇪🇸 Español](./README.es.md)
