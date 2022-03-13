@@ -1,4 +1,3 @@
-alias neofetch="/usr/bin/neofetch --ascii ~/.config/neofetch/ascii.txt"
 alias podman-stop-all-containers="sudo docker stop \$(sudo docker ps -q)"
 alias podman-remove-all-containers="sudo docker rm \$(sudo docker ps -aq)"
 alias podman-stop-and-remove-all-containers="podman-stop-all-containers && podman-remove-all-containers"
