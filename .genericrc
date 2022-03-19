@@ -6,3 +6,5 @@ alias tree="lsd --tree"
 alias catt="/usr/bin/cat"
 alias git-tree="git log --all --graph --decorate --oneline"
 alias neofetch="/usr/bin/neofetch --ascii ~/.config/neofetch/ascii.txt"
+
+ alias podman-containers="sudo docker ps -a --format \"table {{.State}}\\t{{.Names}}\\t{{.ID}}\\t{{.Image}}\""
