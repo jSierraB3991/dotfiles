@@ -29,7 +29,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +10%
 
 # Start in configurations
 exec --no-startup-id "picom --experimental-backends"
-exec --no-startup-id "feh --bg-fill /home/juan-sierra/Images/1646233827.png"
+exec --no-startup-id "feh --bg-fill /home/juan-sierra/Images/837042.png"
 exec --no-startup-id "connman-gtk"
 focus_follows_mouse no
 title_align center
