@@ -1,0 +1,7 @@
+problem     =>  org.bluez.Error.Blocked
+solution    =>  rfkill block bluetooth
+                rfkill unblock bluetooth
+
+problem     =>  org.bluez.Error.Failed Input/output error
+solution    =>  Install bluez-hid2hci
+                https://djorborn.medium.com/bluetoothctl-failed-to-connect-org-bluez-error-failed-54040f12b4f8
