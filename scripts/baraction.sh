@@ -208,6 +208,6 @@ while :; do
 #	$(network); \
 #	$(vol)"
     echo "+@fg=1; $(cpuicon) +@fg=0; $(cpu) +@fg=1; $(memicon) +@fg=0; $(mem) +@fg=3; $(hddicon) +@fg=0; $(hdd) +@fg=4; $(networkicon) +@fg=0; $(ipaddress) +@fg=4; $(vpnconnection) $(temp_info) $(bat) +@fg=4; $(clockicon) +@fg=0; $(clockinfo)"
-    sleep $SLEEP_SEC
+    #sleep $SLEEP_SEC
 done
 
