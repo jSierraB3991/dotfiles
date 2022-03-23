@@ -1,5 +1,14 @@
 #!/bin/bash
 declare -A moptions
+
+echo "Restarting bluetooth service"
+sudo rc-service bluetoothd restart
+
+echo "Config agent"
+bluetoothctl agent on
+bluetoothctl default-agent
+bluetoothctl power on
+
 question=''
 bluetoothctl devices | {
     while read line
