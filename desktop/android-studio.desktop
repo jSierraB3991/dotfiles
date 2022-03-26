@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=2021.1.1
+Name=Android Studio
+GenericName=Integrated Development Enviroment For Android
+Comment=Develop your amazing Android apps with Java Or Kotlin
+Keywords=Java;Android:Kotlin
+Exec=/opt/android-studio/bin/studio.sh
+Icon=android-studio
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=android-studio
+Categories=Development;
+

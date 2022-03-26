@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.4.4
+Name=Robo3T
+GenericName=NoSql Database Manager
+Comment=Management your Dabase NoSql
+Keywords=Mongo;
+Exec=/opt/robo3t/bin/robo3t
+Icon=studio-3t
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=robo3t
+Categories=Development;
+

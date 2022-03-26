@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=2022
+Name=Intellij Idea
+GenericName=Integrated Development Enviroment
+Comment=Develop your amazing app with Java Or Kotlin
+Keywords=Java;Android:Kotlin
+Exec=/opt/intellij-idea/bin/idea.sh
+Icon=intellij
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=Intellij-idea
+Categories=Development;

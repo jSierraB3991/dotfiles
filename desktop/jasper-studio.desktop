@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=6.19.0
+Name=JasperSoft Studio
+GenericName=Designer of reports
+Comment=JasperSoft is editing software for TIBCO JasperReports
+Keywords=Report;Java;
+Exec=/opt/jasper/Jaspersoft\ Studio
+Icon=/opt/jasper/icon.xpm
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=JasperSoft
+Categories=IDE;Development
+MimeType=application/jrxml

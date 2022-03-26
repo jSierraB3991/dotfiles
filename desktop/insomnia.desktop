@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=2022.1.1
+Name=Insomnia
+GenericName=Api Rest Test
+Comment=Testing you Api Rest Or Other Api Rest
+Keywords=Rest;
+Exec=/opt/insomnia/insomnia
+Icon=insomnia
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=insonmina
+Categories=Development;Test;
+

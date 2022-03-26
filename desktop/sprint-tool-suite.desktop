@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=4.13.1
+Name=Spring Tool Suite
+GenericName=Integrated Development Enviroment
+Comment=Develop your amazing app with Java With Spring Framework
+Keywords=Java;
+Exec=/opt/sts/SpringToolSuite4
+Icon=spring-tool-suite
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=string-tool-suite
+Categories=Development;
+

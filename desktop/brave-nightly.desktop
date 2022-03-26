@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.38.32
+Name=Brave
+GenericName=Web Browser
+Comment=Browse the World Wide Web
+Keywords=Internet;WWW;Browser;Web;Explorer
+Exec=/opt/brave/brave
+Icon=brave-browser
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+StartupNotify=true
+StartupWMClass=brave-browser
+Categories=Network;WebBrowser;
