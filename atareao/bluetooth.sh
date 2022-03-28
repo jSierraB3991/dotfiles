@@ -2,19 +2,6 @@
 
 declare -A moptions
 
-response=$(bluetoothctl info)
-if [ "$response" != "Missing device address argument" ]; then
-    echo "Devic Connect"
-    set 1
-else
-    #echo "Restarting bluetooth service"
-    #sudo rc-service bluetoothd restart
-    echo "Config agent"
-    bluetoothctl agent on
-    bluetoothctl default-agent
-    bluetoothctl power on
-fi
-
 question=''
 bluetoothctl devices | {
     while read line
