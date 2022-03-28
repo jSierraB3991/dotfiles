@@ -108,7 +108,7 @@ fi
 }
 
 ipaddress() {
-    address="$(curl --silent https://whatismyipaddress.com/es/mi-ip | grep 'Your IP'  | grep -Eo '[0-9.]+' | tail -1)"
+    address="$(curl -s checkip.dyndns.org | grep -Eo '[0-9.]+')"
     echo "$address"
     #echo "181.150.229.192"
 }
