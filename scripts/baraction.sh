@@ -108,9 +108,15 @@ fi
 }
 
 ipaddress() {
-    address="$(curl -s checkip.dyndns.org | grep -Eo '[0-9.]+')"
-    echo "$address"
-    #echo "181.150.229.192"
+
+    file="/home/juan-sierra/.config/baraction/data.txt"
+    curl -s checkip.dyndns.org > $file 
+
+    if [ "$(cat $file | wc -l)" = "1" ]; then
+        echo "$(cat $file | grep -Eo '[0-9.]+')"
+    else
+        echo "BAD GATEWAY"
+    fi
 }
 
 vpnconnection() {
