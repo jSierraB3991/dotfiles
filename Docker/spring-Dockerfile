@@ -8,6 +8,6 @@ RUN mvn -e -B package
 
 
 FROM openjdk:11.0.13-jre-slim-buster
-COPY --from=builder /app/target/app.jar .
-CMD ["java", "-jar", "./demo-app.jar"]
+COPY --from=builder /app/target/**.jar app.jar
+CMD ["java", "-jar", "./app.jar"]
 

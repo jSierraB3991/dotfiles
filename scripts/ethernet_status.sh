@@ -1,3 +1,9 @@
-#! /bin/bash
- 
-echo "%{F#2495e7} %{F#ffffff}$(curl --silent http://ident.me)"
+
+    file="/home/juan-sierra/.config/bin/data.txt"
+    curl -s checkip.dyndns.org > $file 
+
+    if [ "$(cat $file | wc -l)" = "1" ]; then
+        echo "$(cat $file | grep -Eo '[0-9.]+')"
+    else
+        echo "BAD GATEWAY"
+    fi
