@@ -117,7 +117,7 @@ menu=(
   [ Reboot]="systemctl reboot"
   [ Suspend]="systemctl suspend"
   [ Hibernate]="systemctl hibernate"
-  [ Lock]="i3lock -c 000000"
+  [ Lock]="i3lock-fancy"
   [ Logout]="i3-msg exit"
   [ Cancel]=""
 )
