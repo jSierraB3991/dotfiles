@@ -163,6 +163,9 @@ bindsym $mod+Shift+i exec /opt/intellij-idea/bin/idea.sh
 #start roboto
 bindsym $mod+Shift+o exec /opt/roboto/bin/robo3t
 
+#bluetooth-menu
+bindsym $mod+Shift+b exec /usr/bin/bluetooth-menu
+
 # start screenchot full screen
 bindsym $mod+z exec xfce4-screenshooter -w -s ~/Images/
 bindsym $mod+Shift+z exec xfce4-screenshooter -r -s ~/Images/
