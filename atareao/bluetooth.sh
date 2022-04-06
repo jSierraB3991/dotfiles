@@ -12,7 +12,7 @@ bluetoothctl devices | {
         moptions["${option:1}"]="${mac}"
         question+="${option:1}\n"
     done
-    ans=$(echo -e "${question::-2}" | rofi -show combi -theme Monokai -icon-theme Tela-circle -dmenu)
+    ans=$(echo -e "${question::-2}" | rofi -show combi -dmenu)
     rs=$?
     if [ $rs -eq 0 ]
     then
