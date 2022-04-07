@@ -1,10 +1,10 @@
 # terminal emulator
 super + Return
-    alacritty
+    xfce4-terminal
 
 # program launcher
 super + d
-    rofi -show drun -show-icons
+    rofi -show drun -theme Monokai -icon-theme Tela-circle -show-icons
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -37,6 +37,10 @@ super + g
 #
 # state/flags
 #
+
+# set the window state
+#super + {t,shift + t,s,f}
+#	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
@@ -122,15 +126,13 @@ super + alt + f
     firefox
 
 super + alt + i
-   /opt/intellij-idea/bin/idea.sh
+   /opt/sts/SpringToolSuite4
 
 super + n
-    pcmanfm
+    thunar
 
 super + shift + z
-    xfce4-screenshooter -r -s ~/Images/
+    xfce4-screenshooter
 
 super +  x
     i3lock-fancy
-Print
-    xfce4-screenshooter -f -s ~/Images/
