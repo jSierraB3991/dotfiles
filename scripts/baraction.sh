@@ -100,23 +100,11 @@ wifi="$(ip a | grep wlan | grep inet | wc -l)"
 if [ $wire = 1 ]; then
     echo ""
 elif [ $wifi = 1 ]; then
-    echo ""
+    echo " $(nmcli dev wifi list | grep '*' | awk '{print $3 $4}')"
 else
     echo "睊"
 fi
 
-}
-
-ipaddress() {
-
-    file="/home/juan-sierra/.config/baraction/data.txt"
-    curl -s checkip.dyndns.org > $file 
-
-    if [ "$(cat $file | wc -l)" = "1" ]; then
-        echo "$(cat $file | grep -Eo '[0-9.]+')"
-    else
-        echo "BAD GATEWAY"
-    fi
 }
 
 vpnconnection() {
