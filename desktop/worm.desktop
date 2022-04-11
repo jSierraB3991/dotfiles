@@ -1,0 +1,6 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Worm
+Comment=Floating, tag based window manager
+Exec=worm
+Type=XSession
