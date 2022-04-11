@@ -32,13 +32,13 @@ services:
     
   zabud-postgre:
     image: postgres:12.9-alpine
-    container_name: zabud-postgre
+    container_name: postgre_zabud
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER: postgre
-      POSTGRES_DB: postgre
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
       POSTGRES_PASSWORD: root
     volumes:
-      - /home/juan-sierra/Zabud/data:/var/lib/postgresql/data
+      - /home/juan-sierra/Zabud/data/postgre_zabud/data:/var/lib/postgresql/data
 
