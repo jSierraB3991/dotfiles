@@ -109,10 +109,10 @@ fi
 
 vpnconnection() {
     state="$(ip a | grep vpn | grep inet | wc -l)"
-    vpn_ip="$(ip a | grep vpn | grep inet | grep -Eo '[0-9.]+' | head -1)"
+    name_fortivpn="$(/opt/forticlient/fortivpn status | grep VPN | awk '{$1=""; $2=""}{print $0}')"
 
     if [ $state = 1 ]; then
-	echo "ﱾ $vpn_ip"
+	echo "ﱾ $name_fortivpn"
     else
 	echo " No VPN"
     fi
