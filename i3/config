@@ -29,7 +29,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +10%
 
 # Start in configurations
 exec --no-startup-id "picom --experimental-backends"
-exec --no-startup-id "feh --bg-fill ~/github/Wallpapers/rem\ abrazo.png"
+exec --no-startup-id "feh --bg-fill ~/Source/Wallpapers/rem\ abrazo.png"
 focus_follows_mouse no
 title_align center
 
@@ -48,8 +48,8 @@ bindsym $mod+f exec firefox
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec --no-startup-id rofi -show drun -icon-theme   Tela-circle -show-icons
-bindsym $mod+Tab exec --no-startup-id rofi -show combi -icon-theme  Tela-circle -show-icons
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+bindsym $mod+Tab exec --no-startup-id rofi -show combi -show-icons
 
 # change focus with arrow keys:
 bindsym $mod+Left focus left
@@ -161,7 +161,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+i exec /opt/intellij-idea/bin/idea.sh
 
 #start roboto
-bindsym $mod+Shift+o exec /opt/roboto/bin/robo3t
+bindsym $mod+Shift+o exec ~/studio3t/Studio-3T
 
 #bluetooth-menu
 bindsym $mod+Shift+b exec /usr/bin/bluetooth-menu
@@ -200,14 +200,14 @@ client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 for_window [class="^.*"] border pixel 1
 
 #i3 gaps configuration
-smart_gaps on
-smart_borders on
+#smart_gaps on
+#smart_borders on
 set $inner_gaps 3
 set $outer_gaps 3
 set $gaps_chage 3
 
-gaps inner $inner_gaps
-gaps outer $outer_gaps
+#gaps inner $inner_gaps
+#gaps outer $outer_gaps
 
 bindsym --whole-window $mod+Button4 exec i3 gaps inner all plus $gaps_chage && i3 gaps outer all plus $gaps_chage && $refresh_i3status
 bindsym --whole-window $mod+Button5 exec i3 gaps inner all minus $gaps_chage && i3 gaps outer all minus $gaps_chage && $refresh_i3status
