@@ -155,7 +155,7 @@
     background = "#0B0F10"
     foreground = "#898c8d"
     timeout = 5
-    icon = /opt/anime/icon.svg
+    icon = /opt/anime/icon-low.svg
 
 [urgency_normal]
     background = "#0B0F10"
