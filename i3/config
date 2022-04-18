@@ -28,8 +28,9 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%
 
 # Start in configurations
-exec --no-startup-id "picom --experimental-backends"
-exec --no-startup-id "feh --bg-fill ~/Source/Wallpapers/rem\ abrazo.png"
+exec --no-startup-id picom --experimental-backends
+exec --no-startup-id clipcatd &
+exec --no-startup-id feh --bg-fill ~/Source/Wallpapers/rem\ abrazo.png
 focus_follows_mouse no
 title_align center
 
@@ -37,7 +38,7 @@ title_align center
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec alacritty
 
 # start a new web browser
 bindsym $mod+shift+f exec chromium
@@ -63,10 +64,8 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
+# split in orientation
 bindsym $mod+h split h
-
-# split in vertical orientation
 bindsym $mod+v split v
 
 #floating_minimum_size 1890 x 1030
@@ -176,6 +175,9 @@ bindsym $mod+n exec pcmanfm
 
 # Lock Desktop
 bindsym $mod+x exec i3lock-fancy
+
+#clipboard history
+bindsym $mod+shift+v exec clipcat-menu
 
 # Define colors variables:
 set $darkbluetrans	#08052be6
