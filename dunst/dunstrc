@@ -134,8 +134,6 @@
     # Scale larger icons down to this size, set to 0 to disable
     max_icon_size = 64
 
-    icon_path = /opt/anime
-
     # Define the corner radius of the notification window
     # in pixel size. If the radius is 0, you have no rounded
     # corners.
