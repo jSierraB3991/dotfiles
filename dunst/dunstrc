@@ -167,4 +167,4 @@
     background = "#0B0F10"
     foreground = "#c5c8c9"
     timeout = 10
-    icon = /opt/anime/icon.svg
+    icon = /opt/anime/icon-critical.svg
