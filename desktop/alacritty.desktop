@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=0.10.1
+Name=Alacritty
+GenericName=Terminal
+Comment=Hackeable Terminal For Linux Users
+Keywords=Terminal;Bash;Fish;Zsh
+Exec=/home/juan-sierra/.cargo/bin/alacritty
+Icon=alacritty
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=Alacritty
+Categories=Terminal
