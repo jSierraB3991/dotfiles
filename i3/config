@@ -30,6 +30,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +10%
 # Start in configurations
 exec --no-startup-id picom --experimental-backends
 exec --no-startup-id clipcatd &
+exec --no-startup-id dunst &
 exec --no-startup-id feh --bg-fill ~/Source/Wallpapers/rem\ abrazo.png
 focus_follows_mouse no
 title_align center
@@ -38,7 +39,7 @@ title_align center
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec $HOME/.cargo/bin/alacritty
 
 # start a new web browser
 bindsym $mod+shift+f exec chromium
