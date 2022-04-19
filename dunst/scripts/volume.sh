@@ -10,13 +10,19 @@ function get_volume {
 }
 
 function get_volume_icon {
-    if [ $1 -lt 34 ]
+
+    num=$1
+    if [ "$1" == "MUTE" ]; 
+        then num=0
+    fi
+
+    if [ $num -lt 34 ]
     then
         echo -n "audio-volume-low-symbolic.symbolic.png"
-    elif [ $1 -lt 67 ]
+    elif [ $num -lt 67 ]
     then
         echo -n "audio-volume-medium-symbolic.symbolic.png"
-    elif [ $1 -le 100 ]
+    elif [ $num -le 100 ]
     then
         echo -n "audio-volume-high-symbolic.symbolic.png"
     else
