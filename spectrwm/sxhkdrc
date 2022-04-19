@@ -2,14 +2,13 @@
 #    mpc {toggle,stop,prev,next}
 
 XF86Audio{Mute,LowerVolume,RaiseVolume}
-    /home/juan-sierra/.config/bin/volumen {mute, down, up}
+    /home/juan-sierra/.config/dunst/scripts/volume.sh {mute, down, up}
 
 XF86MonBrightnessUp
-    brightnessctl set +10%
+    $HOME/.config/dunst/scripts/brightness.sh
 
 XF86MonBrightnessDown
-    brightnessctl set 10%-
-
+    $HOME/.config/dunst/scripts/brightness.sh
 
 Print
     /home/juan-sierra/.config/bin/scrot.sh -m
