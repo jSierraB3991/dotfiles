@@ -218,7 +218,7 @@ bindsym --whole-window $mod+Button5 exec i3 gaps inner all minus $gaps_chage && 
 bar {
     font pango:Noto Sans Regular 12, FontAwesome 12
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
-    position top
+    position bottom
     i3bar_command i3bar --transparency
     tray_output primary
     tray_padding 0 
