@@ -13,9 +13,9 @@ while true; do
     do
         if [ "$line" != "" ]; then
             name_not=$(echo "notification$id")
-            notify-send "$line" -h string:x-canonical-private-synchronous:$name_not -u critical
+            notify-send "$line" -h string:x-canonical-private-synchronous:$name_not
             id=$( echo $id+1)
         fi
     done < ~/notas.txt
-    sleep 9
+    sleep 4
 done
