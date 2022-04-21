@@ -1,16 +1,16 @@
 #! /bin/bash
 
-num_ports=$(ss -tulpn | grep LISTEN | awk '{print $5}' | grep "^[0-9].*" | wc -l)
+num_ports=$(ss -tulpn | grep LISTEN | awk '{print $5}' | grep "^[1 | 0 | * ]" | wc -l)
 echo "ports listeng is: $num_ports"
-ports=$(ss -tulpn | grep LISTEN | awk '{print $5}' | grep "^[0-9].*" | awk 'BEGIN{FS=":"} {print $2}')
+ports=$(ss -tulpn | grep LISTEN | awk '{print $5}' | grep "^[1 | 0 | * ]" | awk 'BEGIN{FS=":"} {print $2}')
 
 while true; do
-    num_ports2=$(ss -tulpn | grep LISTEN | awk '{print $5}' | grep "^[0-9].*" | wc -l)
+    num_ports2=$(ss -tulpn | grep LISTEN | awk '{print $5}' | grep "^[1 | 0 | * ]" | wc -l)
     if [ "$num_ports" != "$num_ports2" ]; then
 
         port_change=23
         method="up"
-        ports_new=$(ss -tulpn | grep LISTEN | awk '{print $5}' | grep "^[0-9].*" | awk 'BEGIN{FS=":"} {print $2}')
+        ports_new=$(ss -tulpn | grep LISTEN | awk '{print $5}' | grep "^[1 | 0 | * ]" | awk 'BEGIN{FS=":"} {print $2}')
         is_add=1
         if [ $num_ports -lt $num_ports2 ]; then
             #up a service in a port

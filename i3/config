@@ -32,6 +32,7 @@ exec --no-startup-id picom --experimental-backends
 exec --no-startup-id clipcatd &
 exec --no-startup-id dunst &
 exec --no-startup-id feh --bg-fill ~/Source/Wallpapers/rem\ abrazo.png
+exec $HOME/scripts/run-notification.sh
 focus_follows_mouse no
 title_align center
 
@@ -167,9 +168,8 @@ bindsym $mod+Shift+o exec ~/studio3t/Studio-3T
 bindsym $mod+Shift+b exec /usr/bin/bluetooth-menu
 
 # start screenchot full screen
-bindsym $mod+z exec xfce4-screenshooter -w -s ~/Images/
-bindsym $mod+Shift+z exec xfce4-screenshooter -r -s ~/Images/
-bindsym Print exec xfce4-screenshooter -f -s ~/Images/
+bindsym $mod+z exec  /home/juan-sierra/.config/bin/scrot.sh -s
+bindsym Print exec  /home/juan-sierra/.config/bin/scrot.sh -m
 
 # Start folder pcmanfm
 bindsym $mod+n exec pcmanfm
