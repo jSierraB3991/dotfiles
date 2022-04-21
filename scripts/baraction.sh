@@ -100,7 +100,7 @@ wifi="$(ip a | grep wlan | grep inet | wc -l)"
 if [ $wire = 1 ]; then
     echo ""
 elif [ $wifi = 1 ]; then
-    echo " $(nmcli dev wifi list | grep '*' | awk '{print $3 $4}')"
+    echo " $(nmcli dev wifi list | grep '*' | awk '{$1="";$2=""} {print $0}' | awk 'BEGIN{FS="Infra"}{print $1}')"
 else
     echo "睊"
 fi
