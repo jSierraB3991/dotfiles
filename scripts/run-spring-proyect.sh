@@ -15,8 +15,10 @@ if [ $# -eq 1 ] || [ $# -eq 2 ]; then
 
                 cd $REPO_HOME/$1
                 echo "clean project && install dependencies, see file ~/logs/$1.log"
-		rm -rf ./target
-                mvn install -l "$HOME/logs/$1.log"
+                if [ -d ~/target ]; then
+        	    rm -rf ./target
+                fi
+                mvn -U -V -B -s settings.xml clean install -DskipTests=false -L "$HOME/logs/$1.log"
 
                 echo "coping image"
                 cp "target/$1-0.0.1-SNAPSHOT.jar" "target/$1.jar"
