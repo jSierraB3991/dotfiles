@@ -4,7 +4,7 @@
     origin = top-left
 
     ### Text ###
-    font = Iosevka Nerd Font 9
+    font = Hack Nerd Font 10
 
     # Allow a small subset of html markup:
     # <b>bold</b>
@@ -133,6 +133,18 @@
     # automatically after a crash.
     startup_notification = false
 
+    # Defines action of mouse event
+    # Possible values are:
+    # * none: Don't do anything.
+    # * do_action: If the notification has exactly one action, or one is marked as default,
+    #             invoke it. If there are multiple and no default, open the context menu.
+    # * close_current: Close current notification.
+    # * close_all: Close all notifications.
+    mouse_left_click = do_action
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
+
+
     # Browser for opening urls in context menu
     browser = /usr/bin/firefox
 
@@ -159,7 +171,7 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#0B0F10"
+    background = "#2B2B2B"
     foreground = "#898c8d"
     timeout = 5
     icon = /opt/anime/icon-low.svg
@@ -171,7 +183,8 @@
     icon = /opt/anime/icon.svg
 
 [urgency_critical]
-    background = "#0B0F10"
+    background = "#900000"
     foreground = "#c5c8c9"
+    frame_color = "#FF0000"
     timeout = 10
     icon = /opt/anime/icon-critical.svg
