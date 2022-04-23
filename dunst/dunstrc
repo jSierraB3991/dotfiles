@@ -173,18 +173,18 @@
 [urgency_low]
     background = "#2B2B2B"
     foreground = "#898c8d"
-    timeout = 5
+    timeout = 10
     icon = /opt/anime/icon-low.svg
 
 [urgency_normal]
     background = "#0B0F10"
     foreground = "#a7aaab"
-    timeout = 7
+    timeout = 15
     icon = /opt/anime/icon.svg
 
 [urgency_critical]
     background = "#900000"
     foreground = "#c5c8c9"
     frame_color = "#FF0000"
-    timeout = 10
+    timeout = 20
     icon = /opt/anime/icon-critical.svg
