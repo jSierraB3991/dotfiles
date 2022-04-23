@@ -31,7 +31,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +10%
 exec --no-startup-id picom --experimental-backends
 exec --no-startup-id clipcatd &
 exec --no-startup-id dunst &
-exec --no-startup-id feh --bg-fill ~/Source/Wallpapers/rem\ abrazo.png
+exec --no-startup-id feh --bg-fill ~/Source/Wallpapers/wallhaven-lq51ll.png
 exec $HOME/scripts/run-notification.sh
 focus_follows_mouse no
 title_align center
