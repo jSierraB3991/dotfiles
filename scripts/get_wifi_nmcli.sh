@@ -1,3 +1,3 @@
 #! /bin/bash
 
-nmcli dev wifi list | grep '*' | awk '{print $3 " " $4}'
+nmcli dev wifi list | grep '*' | awk '{$1="";$2=""; print $0}' | awk 'BEGIN{FS="Infra"}{print $1}'
