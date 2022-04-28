@@ -53,7 +53,7 @@ bindsym $mod+Shift+q kill
 
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
 bindsym $mod+Tab exec --no-startup-id rofi -show combi -show-icons
-bindsym $mod+p exec rofi -no-lazy-grab -show drun -theme ~/Source/dotfiles/rofi/global-menu/appsmenu.rasi -show-icons
+bindsym $mod+space exec rofi -no-lazy-grab -show drun -theme ~/Source/dotfiles/rofi/global-menu/appsmenu.rasi -show-icons
 
 # change focus with arrow keys:
 bindsym $mod+Left focus left
