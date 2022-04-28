@@ -1,10 +1,8 @@
 #! /bin/bash
 
-FILE='~/notas.txt'
-
-if [ ! -f $FILE ]; then
+if [ ! -f $HOME/notas.txt ]; then
     touch ~/notas.txt
-    echo "Now add task in file $FILE" > ~/notas.txt
+    echo "Now add task in file $HOME/notas.txt" > ~/notas.txt
 fi
 
 while true; do 
@@ -14,7 +12,7 @@ while true; do
         if [ "$line" != "" ]; then
             name_not=$(echo "notification$id")
             notify-send "$line" -h string:x-canonical-private-synchronous:$name_not
-            id=$( echo $id+1)
+            let id+=1
         fi
     done < ~/notas.txt
     sleep 4
