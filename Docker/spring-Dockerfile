@@ -1,13 +1,14 @@
-FROM maven:3-openjdk-11-slim AS builder
+FROM maven:3-openjdk-8 AS builder
 
 WORKDIR /app
 COPY pom.xml .
-RUN mvn -e -B dependency:resolve
+RUN mkdir -p /root/.m2 && mkdir /root/.m2/repository
+COPY settings.xml /root/.m2/
 COPY src ./src
-RUN mvn -e -B package
+RUN mvn -B -DskipTests install package
 
 
-FROM openjdk:11.0.13-jre-slim-buster
+FROM openjdk:8-jre-slim-buster
 COPY --from=builder /app/target/**.jar app.jar
 CMD ["java", "-jar", "./app.jar"]
 
