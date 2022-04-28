@@ -8,5 +8,5 @@ clipcatctl clear
 
 ~/scripts/notas.sh &
 ~/scripts/verify_battery.sh &
-~/scripts/power_pc_2am.sh &
-~/scripts/listeng_port_listeng.sh &
+~/Source/scripts/bash/power_pc_2am.sh &
+~/Source/scripts/bash/listeng_port_listeng.sh &
