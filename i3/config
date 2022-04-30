@@ -169,7 +169,7 @@ bindsym $mod+Shift+o exec ~/studio3t/Studio-3T
 bindsym $mod+Shift+b exec /usr/bin/bluetooth-menu
 
 # start screenchot full screen
-bindsym $mod+z exec  /home/juan-sierra/.config/bin/scrot.sh -s
+bindsym $mod+z exec  xfce4-screenshooter -r -s $HOME/Images/
 bindsym Print exec  /home/juan-sierra/.config/bin/scrot.sh -m
 
 # Start folder pcmanfm
