@@ -31,7 +31,6 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +10%
 exec --no-startup-id picom --experimental-backends
 exec --no-startup-id clipcatd &
 exec --no-startup-id dunst &
-exec --no-startup-id feh --bg-fill ~/Source/Wallpapers/wallhaven-lq51ll.png
 exec $HOME/scripts/run-notification.sh
 focus_follows_mouse no
 title_align center
@@ -49,7 +48,7 @@ bindsym $mod+f exec firefox
 
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 bindsym $mod+space exec --no-startup-id rofi -show drun -show-icons
 bindsym $mod+Tab exec --no-startup-id rofi -show combi -show-icons
