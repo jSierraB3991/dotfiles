@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-icon_path=/usr/share/icons/Adwaita/64x64/status/
+icon_path=/usr/share/icons/Papirus-Dark/symbolic/status/
 notify_id=506
 sink_nr=1   # use `pacmd list-sinks` to find out sink_nr
 
@@ -18,15 +18,15 @@ function get_volume_icon {
 
     if [ $num -lt 34 ]
     then
-        echo -n "audio-volume-low-symbolic.symbolic.png"
+        echo -n "audio-volume-low-symbolic.svg"
     elif [ $num -lt 67 ]
     then
-        echo -n "audio-volume-medium-symbolic.symbolic.png"
+        echo -n "audio-volume-medium-symbolic.svg"
     elif [ $num -le 100 ]
     then
-        echo -n "audio-volume-high-symbolic.symbolic.png"
+        echo -n "audio-volume-high-symbolic.svg"
     else
-        echo -n "audio-volume-overamplified-symbolic.symbolic.png"
+        echo -n "audio-volume-overamplified-symbolic.svg"
     fi
 }
 
@@ -42,7 +42,7 @@ function mute_notification {
 
     if [ "$muted" == "MUTE" ]
     then
-        dunstify -r $notify_id -u low -i ${icon_path}audio-volume-muted-symbolic.symbolic.png mute
+        dunstify -r $notify_id -u low -i ${icon_path}audio-volume-muted-symbolic.svg mute
     else
         dunstify -r $notify_id -u low -i ${icon_path}`get_volume_icon $muted` unmute
     fi
