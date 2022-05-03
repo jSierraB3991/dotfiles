@@ -5,10 +5,10 @@ XF86Audio{Mute,LowerVolume,RaiseVolume}
     /home/juan-sierra/.config/dunst/scripts/volume.sh {mute, down, up}
 
 XF86MonBrightnessUp
-    $HOME/.config/dunst/scripts/brightness.sh
+    $HOME/.config/dunst/scripts/brightness.sh up
 
 XF86MonBrightnessDown
-    $HOME/.config/dunst/scripts/brightness.sh
+    $HOME/.config/dunst/scripts/brightness.sh down
 
 Print
     /home/juan-sierra/.config/bin/scrot.sh -m
