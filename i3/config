@@ -50,6 +50,9 @@ bindsym $mod+f exec firefox
 # kill focused window
 bindsym $mod+q kill
 
+#Kill session
+bindsym $mod+Shift+q exit
+
 bindsym $mod+space exec --no-startup-id rofi -show drun -show-icons
 bindsym $mod+Tab exec --no-startup-id rofi -show combi -show-icons
 bindsym $mod+d exec rofi -no-lazy-grab -show drun -theme ~/Source/dotfiles/rofi/global-menu/appsmenu.rasi -show-icons
