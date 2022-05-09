@@ -11,8 +11,7 @@ clipcatd
 clipcatctl clear
 
 ~/Source/scripts/bash/change_automatic_wallpaper.sh &
-~/scripts/notas.sh &
-~/scripts/verify_battery.sh &
+~/Source/scripts/bash/verify_battery.sh &
 ~/Source/scripts/bash/power_pc_2am.sh &
 ~/Source/scripts/bash/listeng_port_listeng.sh &
 
