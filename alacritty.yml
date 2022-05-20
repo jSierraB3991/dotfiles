@@ -1,3 +1,11 @@
+cursor:
+  style:
+    shape: Beam
+    blinking: Always
+  blink_interval: 500
+  unfocused_hollow: true
+  thickness: 0.15
+
 colors:
   # Default colors
   primary:
@@ -29,41 +37,14 @@ colors:
 font:
   bold:
     family: Hack Nerd Font  
-    # family: mononoki Nerd Font
-    # family: agave Nerd Font
-    # family: Caskaydia Cove Nerd Font
-    # family: JetBrains Mono ExtraBold Nerd Font 
-    # family: Hurmit Nerd Font Mono
-    # family: DaddyTimeMono Nerd Font
-    # family: Iosevka NF
-    # family: Hack NF
-    # family: SpaceMono NF
   italic:
     family: Hack Nerd Font
-    # family: mononoki Nerd Font
-    # family: agave Nerd Font
-    # family: Caskaydia Cove Nerd Font
-    # family: JetBrains Mono Medium Nerd Font
-    # family: Hurmit Nerd Font Mono
-    # family: DaddyTimeMono Nerd Font
-    # family: Iosevka NF
-    # family: Hack NF
-    # family: SpaceMono NF
   normal:
     family: Hack Nerd Font
-    # family: mononoki Nerd Font
-    # family: agave Nerd Font
-    # family: Caskaydia Cove Nerd Font
-    # family: JetBrains Mono Medium Nerd Font
-    # family: Hurmit Nerd Font Mono
-    # family: DaddyTimeMono Nerd Font
-    # family: Iosevka NF
-    # family: Hack NF
-    # family: SpaceMono NF
     style: Regular
   size: 10
 
 window:
-  opacity: 0.955555
+  opacity: 0.95555
   padding:
     x: 2
