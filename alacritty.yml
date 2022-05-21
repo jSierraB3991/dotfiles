@@ -45,6 +45,6 @@ font:
   size: 10
 
 window:
-  opacity: 0.95555
+  opacity: 0.9
   padding:
     x: 2
