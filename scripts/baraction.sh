@@ -100,7 +100,8 @@ wifi="$(ip a | grep wlan | grep inet | wc -l)"
 if [ $wire = 1 ]; then
     echo ""
 elif [ $wifi = 1 ]; then
-    echo " $(nmcli dev wifi list | grep '*' | awk '{$1="";$2=""} {print $0}' | awk 'BEGIN{FS="Infra"}{print $1}')"
+    wifi_name=$(nmcli -f SSID,ACTIVE dev wifi | grep "sí" | sed 's/sí//g' | sed 's/ //g' )
+    echo "  $wifi_name"
 else
     echo "睊"
 fi
