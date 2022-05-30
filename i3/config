@@ -30,7 +30,7 @@ bindsym XF86MonBrightnessUp exec $HOME/.config/bin/brightness.sh up
 
 # Start in configurations
 exec --no-startup-id picom --experimental-backends
-exec $HOME/scripts/run-notification.sh
+exec $HOME/.config/i3/scripts/auto-start.sh
 focus_follows_mouse no
 title_align center
 
