@@ -10,27 +10,26 @@ font pango: Hack Nerd Font 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock-fancy to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+exec --no-startup-id setxkbmap -layout es 
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id  $HOME/.config/dunst/scripts/volume.sh up && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.config/dunst/scripts/volume.sh down && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id $HOME/.config/dunst/scripts/volume.sh mute && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id $HOME/.config/dunst/scripts/volume.sh mute && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id  $HOME/.config/bin/volumen up && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.config/bin/volumen down && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id $HOME/.config/dunst/bin/volumen mute && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id $HOME/.config/bin/volumen mute && $refresh_i3status
 
 # Use brightnessctl, required install
-bindsym XF86MonBrightnessDown exec $HOME/.config/dunst/scripts/brightness.sh down
-bindsym XF86MonBrightnessUp exec $HOME/.config/dunst/scripts/brightness.sh up
+bindsym XF86MonBrightnessDown exec $HOME/.config/bin/brightness.sh down
+bindsym XF86MonBrightnessUp exec $HOME/.config/bin/brightness.sh up
 
 # Start in configurations
 exec --no-startup-id picom --experimental-backends
-exec --no-startup-id clipcatd &
-exec --no-startup-id dunst &
 exec $HOME/scripts/run-notification.sh
 focus_follows_mouse no
 title_align center
@@ -39,7 +38,7 @@ title_align center
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec $HOME/.cargo/bin/alacritty
+bindsym $mod+Return exec xfce4-terminal
 
 # start a new web browser
 bindsym $mod+shift+f exec chromium
@@ -56,6 +55,7 @@ bindsym $mod+Shift+q exit
 bindsym $mod+space exec --no-startup-id rofi -show drun -show-icons
 bindsym $mod+Tab exec --no-startup-id rofi -show combi -show-icons
 bindsym $mod+d exec rofi -no-lazy-grab -show drun -theme ~/Source/dotfiles/rofi/global-menu/appsmenu.rasi -show-icons
+bindsym $mod+shift+z exec kill -s USR1 $(pidof deadd-notification-center)
 
 # change focus with arrow keys:
 bindsym $mod+Left focus left
@@ -171,14 +171,14 @@ bindsym $mod+Shift+o exec ~/studio3t/Studio-3T
 bindsym $mod+Shift+b exec /usr/bin/bluetooth-menu
 
 # start screenchot full screen
-bindsym $mod+z exec  xfce4-screenshooter -r -s $HOME/Images/
-bindsym Print exec  /home/juan-sierra/.config/bin/scrot.sh -m
+bindsym $mod+z exec  flameshot gui
+bindsym Print exec flameshot full
 
 # Start folder pcmanfm
 bindsym $mod+n exec pcmanfm
 
 # Lock Desktop
-bindsym $mod+x exec i3lock-fancy
+bindsym $mod+x exec i3lock -c 000000
 
 #clipboard history
 bindsym $mod+shift+v exec clipcat-menu
@@ -206,14 +206,14 @@ client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 for_window [class="^.*"] border pixel 1
 
 #i3 gaps configuration
-#smart_gaps on
-#smart_borders on
+smart_gaps on
+smart_borders on
 set $inner_gaps 3
 set $outer_gaps 3
 set $gaps_chage 3
 
-#gaps inner $inner_gaps
-#gaps outer $outer_gaps
+gaps inner $inner_gaps
+gaps outer $outer_gaps
 
 bindsym --whole-window $mod+Button4 exec i3 gaps inner all plus $gaps_chage && i3 gaps outer all plus $gaps_chage && $refresh_i3status
 bindsym --whole-window $mod+Button5 exec i3 gaps inner all minus $gaps_chage && i3 gaps outer all minus $gaps_chage && $refresh_i3status
