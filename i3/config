@@ -54,7 +54,7 @@ bindsym $mod+Shift+q exit
 
 bindsym $mod+space exec --no-startup-id rofi -show drun -show-icons
 bindsym $mod+Tab exec --no-startup-id rofi -show combi -show-icons
-bindsym $mod+d exec rofi -no-lazy-grab -show drun -theme ~/Source/dotfiles/rofi/global-menu/appsmenu.rasi -show-icons
+bindsym $mod+d exec rofi -disable-history -modi "drun" -show-icons -show drun -location 0 -theme ~/Source/dotfiles/rofi/global-menu/appsmenu.rasi 
 bindsym $mod+shift+z exec kill -s USR1 $(pidof deadd-notification-center)
 
 # change focus with arrow keys:
@@ -165,10 +165,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+i exec /opt/intellij-idea/bin/idea.sh
 
 #start roboto
-bindsym $mod+Shift+o exec ~/studio3t/Studio-3T
-
-#bluetooth-menu
-bindsym $mod+Shift+b exec /usr/bin/bluetooth-menu
+bindsym $mod+Shift+b exec /opt/studio3t/Studio-3T
 
 # start screenchot full screen
 bindsym $mod+z exec  flameshot gui
