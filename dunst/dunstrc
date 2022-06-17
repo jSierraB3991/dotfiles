@@ -1,7 +1,7 @@
 [global]
 
     # Position the notification in the top right corner
-    origin = top-left
+    origin = top-right
 
     ### Text ###
     font = Hack Nerd Font 10

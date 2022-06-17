@@ -127,6 +127,8 @@ bat() {
     battery="$(cat /sys/class/power_supply/$battery/capacity)"
     if [ $batstat = 'Unknown' ]; then
         batstat=""
+    elif [[ $battery -ge 1 ]] && [[ $battery -le 5 ]]; then
+        batstat=" "
     elif [[ $battery -ge 5 ]] && [[ $battery -le 19 ]]; then
         batstat=""
     elif [[ $battery -ge 20 ]] && [[ $battery -le 39 ]]; then
