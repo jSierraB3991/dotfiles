@@ -9,8 +9,8 @@ super + Return
 # program launcher
 super + d
 	rofi -no-lazy-grab -show drun -theme ~/Source/dotfiles/rofi/global-menu/appsmenu.rasi -show-icons
-#super + tab
-#	rofi -show drun -show-icons
+super + shift + d
+	rofi -show window -show-icons
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -140,16 +140,16 @@ super + x
 super + shift + i
     /opt/intellij-idea/bin/idea.sh
 
-#super + control +f
-#    chromium
+super + control +f
+    chromium
 
 XF86Audio{Mute,LowerVolume,RaiseVolume}
-    $HOME/.config/dunst/scripts/volume.sh {mute, down, up}
+    $HOME/Source/dotfiles/i3/scripts/volume-deadd.sh {mute, down, up}
 
 XF86MonBrightnessUp
-    $HOME/.config/dunst/scripts/brightness.sh up
+    $HOME/Source/scripts/bash/brigthness-notify.sh up
 XF86MonBrightnessDown
-    $HOME/.config/dunst/scripts/brightness.sh down
+    $HOME/Source/scripts/bash/brigthness-notify.sh down
 
 super + shift + z
     flameshot gui
