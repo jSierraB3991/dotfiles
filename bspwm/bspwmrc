@@ -1,6 +1,22 @@
 #! /bin/sh
 
+export BROWSER=chromium
+export EDITOR=vim
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 pgrep -x sxhkd > /dev/null || sxhkd -c ~/.config/bspwm/sxhkdrc &
+
+rule() { bspc rule -a "$@" & }
+config() { bspc config "$@" & }
+start() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
+
+# Hex Gang
+hsetroot -solid "#192022"
+
+# I hate mouse drift.
+xset m 0 0
+
+
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
@@ -11,10 +27,10 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
+bspc rule -a Pcmanfm desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^3'
+bspc rule -a Alacritty desktop='^1'
+bspc rule -a Firefox desktop='^2'
 bspc rule -a Screenkey manage=off
 
 bspc config focus_follows_pointer true
@@ -23,3 +39,17 @@ picom &
 ~/.config/polybar/launch.sh
 deadd-notification-center &
 /home/juan-sierra/scripts/run-notification.sh
+
+# ##############################################################################
+# #                            GENERAL CONFIGURATION                           #
+# ##############################################################################
+
+config pointer_modifier             Mod4
+#rule Code                           desktop=4
+
+config window_gap                   10
+config left_padding                 10
+
+config split_ratio                  0.5
+config borderless_monocle           true
+config gapless_monocle              true
