@@ -123,7 +123,7 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 alt + super + {Left, Down, Up, Right}
-    $HOME/.config/bspwm/scripts/bspwm_resize.sh {west, south, north. east}
+    $HOME/.config/bspwm/scripts/bspwm_resize.sh {west, south, north, east}
 
 super + shift + f
     firefox
