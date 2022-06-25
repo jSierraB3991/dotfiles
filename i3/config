@@ -2,7 +2,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -30,7 +30,9 @@ bindsym XF86MonBrightnessUp exec $HOME/.config/bin/brightness.sh up
 
 # Start in configurations
 exec --no-startup-id picom --experimental-backends
-exec $HOME/.config/i3/scripts/auto-start.sh
+exec ~/Source/scripts/bash/listeng_port_listeng.sh
+exec ~/Source/scripts/bash/verify_battery.sh
+exec feh --bg-fill ~/Images/gx09or98t4a71.webp
 focus_follows_mouse no
 title_align center
 
@@ -41,7 +43,7 @@ floating_modifier $mod
 bindsym $mod+Return exec xfce4-terminal
 
 # start a new web browser
-bindsym $mod+shift+f exec chromium
+bindsym $mod+shift+f exec /opt/brave-browser/brave
 #firefox developer
 bindsym $mod+f exec firefox
 
