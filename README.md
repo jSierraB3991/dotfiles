@@ -3,3 +3,7 @@
 
 <h2> Siduction With SpectrWm </h2>
 <img src="https://raw.githubusercontent.com/jSierraB3991/dotfiles/main/spectrwm/Siduction-spectrwm.png" />
+
+
+<h2> Siduction With Bspwm </h2>
+<img src="https://raw.githubusercontent.com/jSierraB3991/dotfiles/main/bspwm/1656603198.png" />
