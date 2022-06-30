@@ -35,7 +35,7 @@ do
         fi
 
     else
-        cowsay -f tux "$repo not is a repository"
+        cowsay "$repo not is a repository"
     fi
 done
 cd $FOLDER
