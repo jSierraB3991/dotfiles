@@ -8,9 +8,9 @@ super + Return
 
 # program launcher
 super + d
-	rofi -no-lazy-grab -show drun -theme ~/Source/dotfiles/rofi/global-menu/appsmenu.rasi -show-icons
+	rofi -theme dmenu -show drun 
 super + shift + d
-	rofi -show window -show-icons
+	rofi -show window  -theme ~/Source/dotfiles/rofi/global-menu/appsmenu.rasi -show-icons
 
 # make sxhkd reload its configuration files:
 super + Escape
