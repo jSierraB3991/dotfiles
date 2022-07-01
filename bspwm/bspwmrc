@@ -30,6 +30,7 @@ bspc config gapless_monocle      true
 bspc rule -a Pcmanfm desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^3'
 bspc rule -a Alacritty desktop='^1'
+bspc rule -a jetbrains-idea-ce desktop='^5'
 bspc rule -a Firefox desktop='^2'
 bspc rule -a Screenkey manage=off
 

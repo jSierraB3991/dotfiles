@@ -144,12 +144,12 @@ super + control +f
     chromium
 
 XF86Audio{Mute,LowerVolume,RaiseVolume}
-    $HOME/Source/dotfiles/i3/scripts/volume-deadd.sh {mute, down, up}
+    $HOME/.config/dunst/scripts/volume.sh {mute, down, up}
 
 XF86MonBrightnessUp
-    $HOME/Source/scripts/bash/brigthness-notify.sh up
+    $HOME/.config/dunst/scripts/brightness.sh up
 XF86MonBrightnessDown
-    $HOME/Source/scripts/bash/brigthness-notify.sh down
+    $HOME/.config/dunst/scripts/brightness.sh down
 
 super + shift + z
     flameshot gui

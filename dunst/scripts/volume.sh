@@ -6,7 +6,7 @@ sink_nr=1   # use `pacmd list-sinks` to find out sink_nr
 
 
 function get_volume {
-    $HOME/.config/i3/scripts/volume | head -n1 | cut -d '%' -f 1
+    $HOME/.config/i3/scripts/volume.sh
 }
 
 function get_volume_icon {
@@ -34,7 +34,7 @@ function volume_notification {
     volume=`get_volume`
     vol_icon=`get_volume_icon $volume`
     bar=$(seq -s "─" $(($volume / 5)) | sed 's/[0-9]//g')
-    dunstify -r $notify_id -u low -i $icon_path$vol_icon $bar
+    dunstify -r $notify_id -u low -i $icon_path$vol_icon $bar -a audio
 }
 
 function mute_notification {
@@ -42,9 +42,9 @@ function mute_notification {
 
     if [ "$muted" == "MUTE" ]
     then
-        dunstify -r $notify_id -u low -i ${icon_path}audio-volume-muted-symbolic.symbolic.png mute
+        dunstify -r $notify_id -u low -i ${icon_path}audio-volume-muted-symbolic.symbolic.png mute -a audio
     else
-        dunstify -r $notify_id -u low -i ${icon_path}`get_volume_icon $muted` unmute
+        dunstify -r $notify_id -u low -i ${icon_path}`get_volume_icon $muted` unmute -a audio
     fi
 }
 
