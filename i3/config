@@ -43,7 +43,7 @@ floating_modifier $mod
 bindsym $mod+Return exec xfce4-terminal
 
 # start a new web browser
-bindsym $mod+shift+f exec /opt/brave-browser/brave
+bindsym $mod+shift+f exec /opt/brave/brave
 #firefox developer
 bindsym $mod+f exec firefox
 
@@ -54,9 +54,9 @@ bindsym $mod+q kill
 #Kill session
 bindsym $mod+Shift+q exit
 
-bindsym $mod+space exec --no-startup-id rofi -show drun -show-icons
+#bindsym $mod+space exec --no-startup-id rofi -show drun -show-icons
 bindsym $mod+Tab exec --no-startup-id rofi -show combi -show-icons
-bindsym $mod+d exec rofi -disable-history -modi "drun" -show-icons -show drun -location 0 -theme ~/Source/dotfiles/rofi/global-menu/appsmenu.rasi 
+bindsym $mod+d exec rofi -disable-history -modi "drun" -show-icons -show drun -location 0 -theme dmenu
 bindsym $mod+shift+z exec kill -s USR1 $(pidof deadd-notification-center)
 
 # change focus with arrow keys:
