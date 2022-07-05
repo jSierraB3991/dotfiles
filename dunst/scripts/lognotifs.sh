@@ -25,16 +25,21 @@ else
     if [ ! -d $HOME/.local/data ]; then
         mkdir $HOME/.local/data
     fi
-
+    
+    imgBase64=""
+    if [ "$crunch_appname" == "Brave"  ]; then
+        imgBase64=""
+    fi
+    
     if [ "$crunch_appname" == "audio" ] || [ "$crunch_appname" == "sleep" ] || [ "$crunch_appname" == "brightness" ] ; then
         data=$(echo "SELECT * FROM Notifications WHERE program = '$crunch_appname'" | sqlite3 $HOME/.local/data/ejemplo.db)
         if [ "$data" != "" ]; then
             echo "UPDATE Notifications SET body = '$crunch_body', deleted = false WHERE program = '$crunch_appname'" | sqlite3 $HOME/.local/data/ejemplo.db
         else
-            echo "INSERT INTO Notifications(hora, title, body, urgency, icon, program, deleted) VALUES('$timestamp', '$crunch_summary', '$crunch_body', '$crunch_urgency', '$crunch_icon', '$crunch_appname', false)" | sqlite3 $HOME/.local/data/ejemplo.db
+            echo "INSERT INTO Notifications(hora, title, body, urgency, icon, program, deleted, imgBase64) VALUES('$timestamp', '$crunch_summary', '$crunch_body', '$crunch_urgency', '$crunch_icon', '$crunch_appname', false, '$(cat $crunch_icon | base64)')" | sqlite3 $HOME/.local/data/ejemplo.db
         fi
     else
-        echo "INSERT INTO Notifications(hora, title, body, urgency, icon, program, deleted) VALUES('$timestamp', '$crunch_summary', '$crunch_body', '$crunch_urgency', '$crunch_icon', '$crunch_appname', false)" | sqlite3 $HOME/.local/data/ejemplo.db
+        echo "INSERT INTO Notifications(hora, title, body, urgency, icon, program, deleted, imgBase64) VALUES('$timestamp', '$crunch_summary', '$crunch_body', '$crunch_urgency', '$crunch_icon', '$crunch_appname', false, '$(cat $crunch_icon | base64)')" | sqlite3 $HOME/.local/data/ejemplo.db
     fi
     echo "" | sqlite3 $HOME/.local/data/ejemplo.db
 fi
