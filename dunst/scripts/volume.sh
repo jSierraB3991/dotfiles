@@ -34,7 +34,7 @@ function volume_notification {
     volume=`get_volume`
     vol_icon=`get_volume_icon $volume`
     bar=$(seq -s "─" $(($volume / 5)) | sed 's/[0-9]//g')
-    dunstify -r $notify_id -u low -i $icon_path$vol_icon $bar -a audio
+    dunstify -r $notify_id -u low -i $icon_path$vol_icon $bar "$volume %" -a audio
 }
 
 function mute_notification {
@@ -42,9 +42,9 @@ function mute_notification {
 
     if [ "$muted" == "MUTE" ]
     then
-        dunstify -r $notify_id -u low -i ${icon_path}audio-volume-muted-symbolic.symbolic.png mute -a audio
+        dunstify -r $notify_id -u low -i ${icon_path}audio-volume-muted-symbolic.symbolic.png mute "0 %" -a audio
     else
-        dunstify -r $notify_id -u low -i ${icon_path}`get_volume_icon $muted` unmute -a audio
+        dunstify -r $notify_id -u low -i ${icon_path}`get_volume_icon $muted` unmute "$muted %" -a audio
     fi
 }
 
