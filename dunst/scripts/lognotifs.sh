@@ -18,5 +18,24 @@ elif [[ "$crunch_appname" == "Calendar" ]] || [[ "$crunch_appname" == "Volume" ]
     exit 0
 fi
 
-echo -en "$timestamp\n$crunch_urgency\n$crunch_icon\n$crunch_body\n$crunch_summary\n$crunch_appname\n" >>$HOME/.cache/dunst.log
+
+if [ "$(which sqlite3)" == "" ]; then
+    echo -en "$timestamp\n$crunch_urgency\n$crunch_icon\n$crunch_body\n$crunch_summary\n$crunch_appname\n" >>$HOME/.cache/dunst.log
+else
+    if [ ! -d $HOME/.local/data ]; then
+        mkdir $HOME/.local/data
+    fi
+
+    if [ "$crunch_appname" == "audio" ] || [ "$crunch_appname" == "sleep" ] || [ "$crunch_appname" == "brightness" ] ; then
+        data=$(echo "SELECT * FROM Notifications WHERE program = '$crunch_appname'" | sqlite3 $HOME/.local/data/ejemplo.db)
+        if [ "$data" != "" ]; then
+            echo "UPDATE Notifications SET body = '$crunch_body', deleted = false WHERE program = '$crunch_appname'" | sqlite3 $HOME/.local/data/ejemplo.db
+        else
+            echo "INSERT INTO Notifications(hora, title, body, urgency, icon, program, deleted) VALUES('$timestamp', '$crunch_summary', '$crunch_body', '$crunch_urgency', '$crunch_icon', '$crunch_appname', false)" | sqlite3 $HOME/.local/data/ejemplo.db
+        fi
+    else
+        echo "INSERT INTO Notifications(hora, title, body, urgency, icon, program, deleted) VALUES('$timestamp', '$crunch_summary', '$crunch_body', '$crunch_urgency', '$crunch_icon', '$crunch_appname', false)" | sqlite3 $HOME/.local/data/ejemplo.db
+    fi
+    echo "" | sqlite3 $HOME/.local/data/ejemplo.db
+fi
 
