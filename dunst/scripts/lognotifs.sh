@@ -26,9 +26,8 @@ else
         mkdir $HOME/.local/data
     fi
     
-    imgBase64=""
     if [ "$crunch_appname" == "Brave"  ]; then
-        imgBase64=""
+        crunch_body=$(echo $crunch_body | sed -e 's/<[^>]*>//g')
     fi
     
     if [ "$crunch_appname" == "audio" ] || [ "$crunch_appname" == "sleep" ] || [ "$crunch_appname" == "brightness" ] || [ "$crunch_appname" == "blueman" ] ; then
