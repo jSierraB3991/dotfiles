@@ -31,7 +31,7 @@ else
         imgBase64=""
     fi
     
-    if [ "$crunch_appname" == "audio" ] || [ "$crunch_appname" == "sleep" ] || [ "$crunch_appname" == "brightness" ] ; then
+    if [ "$crunch_appname" == "audio" ] || [ "$crunch_appname" == "sleep" ] || [ "$crunch_appname" == "brightness" ] || [ "$crunch_appname" == "blueman" ] ; then
         data=$(echo "SELECT * FROM Notifications WHERE program = '$crunch_appname'" | sqlite3 $HOME/.local/data/ejemplo.db)
         if [ "$data" != "" ]; then
             echo "UPDATE Notifications SET body = '$crunch_body', deleted = false WHERE program = '$crunch_appname'" | sqlite3 $HOME/.local/data/ejemplo.db
