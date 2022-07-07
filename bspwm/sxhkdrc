@@ -141,7 +141,7 @@ super + shift + i
     /opt/intellij-idea/bin/idea.sh
 
 super + control +f
-    chromium
+    /opt/brave.com/brave/brave
 
 XF86Audio{Mute,LowerVolume,RaiseVolume}
     $HOME/.config/dunst/scripts/volume.sh {mute, down, up}
@@ -153,6 +153,9 @@ XF86MonBrightnessDown
 
 super + shift + z
     flameshot gui
+
+super + z
+    /home/juan-sierra/Source/dotfiles/i3/scripts/run-notification-center.sh
 
 Print
     $HOME/.config/bin/scrot.sh -m
