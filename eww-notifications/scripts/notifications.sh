@@ -3,9 +3,9 @@
 DATA_LOCAL="$HOME/.local/data"
 
 function showNotification() {
-    
-    ids_noti=$(echo "SELECT id FROM Notifications WHERE deleted = false" | sqlite3 $DATA_LOCAL/ejemplo.db )
-    output=" (box :class \"notifications-box\" :orientation \"v\" :halign \"center\" :valign \"start\" :space-evenly \"false\" :spacing \"-5\""
+while sleep 0.1; do
+    ids_noti=$(echo "SELECT id FROM Notifications WHERE deleted = false ORDER  BY id  DESC " | sqlite3 $DATA_LOCAL/ejemplo.db )
+    output=" (box :class \"notifications-box\" :vexpand "true" :orientation \"v\" :halign \"center\" :valign \"start\" :space-evenly \"false\" :spacing \"-5\""
 
     for id_noti in $(echo $ids_noti); do
 
@@ -42,7 +42,10 @@ function showNotification() {
             " :class \"notification-summary\" :halign \"start\" :hexpand true))" \
             " (label :limit-width 30 :wrap true :text \"$body\" :halign \"start\" :class \"notification-body\"))")
     done
-    echo "$output)"
+    CONFIG_EWW="$HOME/.config/eww/notification"
+    clearAll="(button :onclick \"$CONFIG_EWW/scripts/notifications.sh clear\" :halign \"end\" :class \"notification-headers-clear\" \"Clear All\" )"
+    echo "$output $clearAll)"
+done
 }
 
 function clearAllNotification() {
@@ -51,8 +54,6 @@ function clearAllNotification() {
 
 function removeNotification() {
     echo "UPDATE Notifications SET deleted = true WHERE id = $1" | sqlite3 $DATA_LOCAL/ejemplo.db
-    ~/Source/dotfiles/i3/scripts/run-notification-center.sh
-    ~/Source/dotfiles/i3/scripts/run-notification-center.sh
 }
 
 if [ "$1" == "show" ]; then

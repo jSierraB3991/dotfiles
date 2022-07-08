@@ -7,6 +7,10 @@ crunch_icon=$(echo "$4" | sed '/^$/d')
 crunch_urgency=$(echo "$5" | sed '/^$/d')
 timestamp=$(date +"%I:%M %p")
 
+audacious -H /usr/share/sounds/freedesktop/stereo/message.oga &
+sleep 3
+killall audacious
+
 if [[ "$crunch_appname" == "Spotify" ]]; then
     random_name=$(mktemp --suffix ".png")
     artlink=$(playerctl metadata mpris:artUrl | sed -e 's/open.spotify.com/i.scdn.co/g')
