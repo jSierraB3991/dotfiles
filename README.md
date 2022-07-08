@@ -6,4 +6,4 @@
 
 
 <h2> Siduction With Bspwm </h2>
-<img src="https://raw.githubusercontent.com/jSierraB3991/dotfiles/main/bspwm/1656603198.png" />
+<img src="https://raw.githubusercontent.com/jSierraB3991/dotfiles/main/bspwm/1657230813.png" />
