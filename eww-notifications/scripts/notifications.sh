@@ -53,7 +53,7 @@ while sleep 0.1; do
        " (image :class \"notifications-empty-banner\" :valign \"end\" :vexpand true :path \"$CONFIG_EWW/images/no-notifications.svg\"" \
        ":image-width 300 :image-height 300) (label :vexpand true :valign \"start\" :wrap true :class \"notifications-empty-label\" :text \"No Notifications \"))"
     else
-      content=$(echo "$output $clearAll)")
+      content=$(echo "$output)")
       echo "(scroll :height 1000 :vscroll true  $content )"
     fi
     
