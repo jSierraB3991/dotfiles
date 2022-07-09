@@ -7,11 +7,6 @@ crunch_icon=$(echo "$4" | sed '/^$/d')
 crunch_urgency=$(echo "$5" | sed '/^$/d')
 timestamp=$(date +"%I:%M %p")
 
-if [ "$crunch_appname" != "audio" ]; then
-  audacious -H /usr/share/sounds/freedesktop/stereo/message.oga &
-  sleep 3
-  killall audacious
-fi
 
 if [[ "$crunch_appname" == "Spotify" ]]; then
     random_name=$(mktemp --suffix ".png")
@@ -26,6 +21,12 @@ elif [[ "$crunch_appname" == "Calendar" ]] || [[ "$crunch_appname" == "Volume" ]
     exit 0
 fi
 
+
+if [ "$crunch_appname" != "audio" ] || [ "$crunch_appname" != "notify-send" ]; then
+  audacious -H /usr/share/sounds/freedesktop/stereo/message.oga &
+  sleep 3
+  killall audacious
+fi
 
 if [ "$(which sqlite3)" == "" ]; then
     echo -en "$timestamp\n$crunch_urgency\n$crunch_icon\n$crunch_body\n$crunch_summary\n$crunch_appname\n" >>$HOME/.cache/dunst.log

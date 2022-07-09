@@ -21,6 +21,8 @@ while sleep 0.1; do
             image="/usr/share/icons/Papirus/64x64/apps/flameshot.svg"
         elif [ "$application" == "Slack" ];  then 
             image="/usr/share/icons/Papirus/64x64/apps/slack.svg"
+        elif [ "$application" == "Siduction" ] || [ "$application" == "Siduction" ]; then 
+            image="/usr/share/icons/Papirus/64x64/apps/debian-logo.svg"
         else
             image=$(echo "SELECT icon FROM Notifications WHERE id = $id_noti" | sqlite3 $DATA_LOCAL/ejemplo.db )
         fi
