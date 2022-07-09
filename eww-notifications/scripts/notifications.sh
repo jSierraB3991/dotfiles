@@ -25,6 +25,9 @@ while sleep 0.1; do
             image="/usr/share/icons/Papirus/64x64/apps/debian-logo.svg"
         else
             image=$(echo "SELECT icon FROM Notifications WHERE id = $id_noti" | sqlite3 $DATA_LOCAL/ejemplo.db )
+            if [ "$image" == "dialog-information" ]; then
+                image="/usr/share/icons/Papirus/48x48/status/dialog-information.svg"
+            fi
         fi
 
         classUrgency="notification-card-NORMAL"
