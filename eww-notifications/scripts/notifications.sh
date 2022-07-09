@@ -15,13 +15,14 @@ while sleep 0.1; do
         application=$(echo "SELECT program FROM Notifications WHERE id = $id_noti" | sqlite3 $DATA_LOCAL/ejemplo.db )
 
         image=""
-        if [ "$application" == "Brave" ]; then 
-            image="/opt/brave.com/brave/product_logo_32.png"
+        if [ "$application" == "Brave" ];  then 
+            image="/opt/brave.com/brave/product_logo_256.png"
+        elif [ "$application" == "flameshot" ];  then 
+            image="/usr/share/icons/Papirus/64x64/apps/flameshot.svg"
+        elif [ "$application" == "Slack" ];  then 
+            image="/usr/share/icons/Papirus/64x64/apps/slack.svg"
         else
             image=$(echo "SELECT icon FROM Notifications WHERE id = $id_noti" | sqlite3 $DATA_LOCAL/ejemplo.db )
-            if [ -f $image ]; then
-                image="/opt/brave.com/brave/product_logo_32.png"
-            fi
         fi
 
         classUrgency="notification-card-NORMAL"
@@ -32,19 +33,31 @@ while sleep 0.1; do
         fi
 
         CONFIG_EWW="$HOME/.config/eww/notification"
-        output=$(echo "$output (box :space-evenly \"true\" :orientation \"h\" :class" \
+        boxContainer="(box :space-evenly false :orientation \"vertical\""
+        imageNoti="(image :valign \"start\" :vexpand false :image-width 50 :image-height 50 :class \"notification-image\" :path \"$image\" )"
+        output=$(echo "$output $boxContainer (box :space-evenly \"true\" :orientation \"h\" :class" \
             "\"notification-card-header-box\" (label :class \"notification-app-name\" :text \"${application}\"" \
             " :halign \"start\") (button :onclick \"$CONFIG_EWW/scripts/notifications.sh rm_id $id_noti\" "\
             " :class \"notification-card-notify-close\" :halign \"end\" "\
-            " (label :text \" \" :tooltip \"Remove this notification.\"))) (box :orientation \"vertical\""\
+            " (label :text \" \" :tooltip \"Remove this notification.\"))) (box :class \"notification-card-eventbox\" :orientation \"horizontal\" $imageNoti (box :orientation \"vertical\""\
             " :class $classUrgency :space-evenly false :hexpand true :class \"notification-card-box\"" \
             " (box :space-evenly false (label :limit-width 25 :wrap true  :text \"$title\"" \
             " :class \"notification-summary\" :halign \"start\" :hexpand true))" \
-            " (label :limit-width 30 :wrap true :text \"$body\" :halign \"start\" :class \"notification-body\"))")
+            " (label :limit-width 30 :wrap true :text \"$body\" :halign \"start\" :class \"notification-body\"))))")
     done
     CONFIG_EWW="$HOME/.config/eww/notification"
     clearAll="(button :onclick \"$CONFIG_EWW/scripts/notifications.sh clear\" :halign \"end\" :class \"notification-headers-clear\" \"Clear All\" )"
-    echo "$output $clearAll)"
+    #echo "$output $clearAll)"
+    if [ "$ids_noti" == "" ]; then
+      echo "(box :class \"notifications-empty-box\" :height 660 :orientation \"vertical\" :space-evenly \"false\"" \
+       " (image :class \"notifications-empty-banner\" :valign \"end\" :vexpand true :path \"$CONFIG_EWW/images/no-notifications.svg\"" \
+       ":image-width 300 :image-height 300) (label :vexpand true :valign \"start\" :wrap true :class \"notifications-empty-label\" :text \"No Notifications \"))"
+    else
+      content=$(echo "$output $clearAll)")
+      echo "(scroll :height 1000 :vscroll true  $content )"
+    fi
+    
+
 done
 }
 

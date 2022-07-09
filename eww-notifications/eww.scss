@@ -51,57 +51,12 @@ $gray-alt: #292E42;
     padding: 1rem 0 1rem 0;
 }
 
-* {
-  all: unset;
-  transition: 200ms ease-out;
-}
-// Control Panel
-.volume-icon{
-  margin: .2rem 0 .2rem 0;
-  color: $green;
-}
-scale trough {
-  all: unset;
-  background-color: $background;
-  border-radius: 5px;
-  min-height: 80px;
-  min-width: 10px;
-  margin: .3rem 0 .3rem 0;
-}
-.volbar trough highlight {
-  background-color: $green;
-  border-radius: 5px;
-}
-
-// Powermenu
-.powermenu {
-  font-family: feather;
-  font-size: 1.4em;
-  font-weight: bold;
-}
-.button-bspres, .button-reb, .button-lock,
-.button-quit, .button-off{
-  padding: .5rem .2rem .3rem .2rem;
-}
-.button-off{
-  margin-bottom: .5rem;
-  color: $red;
-}
-.button-bspres{
-  color: $green;
-}
-.button-reb{
-  color: $yellow
-}
-.button-quit{
-  color: $magenta;
-}
-.button-lock{
-  color: $blue;
+.seperator-box {
+  background-color: $bg-alt;
 }
 
 .notification-headers {
-  padding: 20px 45px 20px 32px;
+  padding: 5rem;
   color: $blue;
 }
 
@@ -119,10 +74,10 @@ scale trough {
 }
 
 .notification-headers-clear {
-  margin: 10px 15px 15px 0px;
+  margin: 20px 25px 25px 0px;
   background-color: $gray-alt;
   border-radius: 15px;
-  padding: 10px;
+  padding: 15px 15px 13px 15px;
   font-size: 22px;
   font-weight: bold;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
@@ -151,7 +106,7 @@ scale trough {
 }
 
 .notification-card-box {
-  padding: 20px 20px 20px 20px;
+  padding: 15px;
 }
 
 .notification-card-LOW {
@@ -171,7 +126,7 @@ scale trough {
 }
 
 .notification-card-CRITICAL {
-  background-color: $red;
+  background-color: $gray-alt;
   color: $red;
   padding: 0px 10px 0px 8px;
   font-size: 30;
@@ -188,20 +143,23 @@ scale trough {
 
 .notification-summary {
   font-weight: bold;
-  font-size: 22px;
-  padding-bottom: 10px;
+  font-size: 1.2rem;
+  padding: 0rem;
+  margin: 0rem;
   color: $fg;
 }
 
 .notification-card-notify-close {
   color: $red;
-  padding: 2px 2px 2px 2px;
+  padding: 1px;
   font-size: 22px;
 }
 
 .notification-body {
   color: $fg;
-  font-size: 20px;
+  font-size: 1rem;
+  margin: 0rem;
+  padding: 0rem;
 }
 
 .notification-image {
@@ -210,8 +168,10 @@ scale trough {
   background-position: center;
   min-width: 60px;
   border-radius: 10px;
-  margin: 16px 0px 16px 20px;
+  margin: 16px 0rem;
+  padding: 0rem;
 }
+
 .notification-card-header-box {
   background-color: $bg-alt;
   border-radius: 15px 15px 0px 0px;

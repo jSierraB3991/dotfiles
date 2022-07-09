@@ -1,7 +1,3 @@
-;; Created   by https://github.com/rxyhn
-;; Designed  by https://github.com/rxyhn
-;; Maintaned by https://github.com/rxyhn
-
 ;; put path to aesthetic bar config files here ;;
 (defvar eww "$HOME/.local/bin/eww -c $HOME/.config/eww/bar")
 
@@ -45,14 +41,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Bar Windows ;;
 (defwindow bar
-	:geometry (geometry :x "0" 
+	:geometry (geometry :x "1479" 
 						:y "0" 
-						:height "100%" 
-						:width "20%")
+						:height "110%" 
+						:width "23%")
 	:monitor 0
-	:reserve (struts :distance "35px" 
-	:side "right")
-	:wm-ignore false
+	:reserve (struts :distance "0px" :side "right")
+	:wm-ignore true
 	:hexpand "false"
 	:vexpand "false"
 (bar))
