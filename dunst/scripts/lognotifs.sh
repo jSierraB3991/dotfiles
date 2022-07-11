@@ -8,6 +8,12 @@ crunch_urgency=$(echo "$5" | sed '/^$/d')
 timestamp=$(date +"%I:%M %p")
 
 
+if [ "$crunch_appname" == "Brave"  ]; then
+    cp $crunch_icon $HOME/.local/data/tmp
+    crunch_icon="$HOME/.local/data/$crunch_icon"
+fi
+
+
 if [[ "$crunch_appname" == "Spotify" ]]; then
     random_name=$(mktemp --suffix ".png")
     artlink=$(playerctl metadata mpris:artUrl | sed -e 's/open.spotify.com/i.scdn.co/g')
@@ -37,6 +43,8 @@ else
     
     if [ "$crunch_appname" == "Brave"  ]; then
         crunch_body=$(echo $crunch_body | sed -e 's/<[^>]*>//g' | sed 's/web.whatsapp.com//g' )
+    elif [ "$crunch_appname" == "Slack" ]; then
+        crunch_body=$(echo $crunch_body | sed -e 's/<[^>]*>//g' | sed 's/Nuevo\ mensaje\ de\ //g' )
     fi
     
     if [ "$crunch_appname" == "audio" ] || [ "$crunch_appname" == "sleep" ] || [ "$crunch_appname" == "brightness" ] || [ "$crunch_appname" == "blueman" ] ; then

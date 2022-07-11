@@ -16,7 +16,10 @@ while sleep 0.1; do
 
         image=""
         if [ "$application" == "Brave" ];  then 
-            image="/opt/brave.com/brave/product_logo_256.png"
+            image=$(echo "SELECT icon FROM Notifications WHERE id = $id_noti" | sqlite3 $DATA_LOCAL/ejemplo.db )
+            if [ ! -f $image ]; then
+                image="/opt/brave.com/brave/product_logo_256.png"
+            fi
         elif [ "$application" == "flameshot" ];  then 
             image="/usr/share/icons/Papirus/64x64/apps/flameshot.svg"
         elif [ "$application" == "Slack" ];  then 
@@ -39,7 +42,7 @@ while sleep 0.1; do
 
         CONFIG_EWW="$HOME/.config/eww/notification"
         boxContainer="(box :space-evenly false :orientation \"vertical\""
-        imageNoti="(image :valign \"start\" :vexpand false :image-width 50 :image-height 50 :class \"notification-image\" :path \"$image\" )"
+        imageNoti="(image :valign \"start\" :vexpand false :image-width 70 :image-height 70 :class \"notification-image\" :path \"$image\" )"
         output=$(echo "$output $boxContainer (box :space-evenly \"true\" :orientation \"h\" :class" \
             "\"notification-card-header-box\" (label :class \"notification-app-name\" :text \"${application}\"" \
             " :halign \"start\") (button :onclick \"$CONFIG_EWW/scripts/notifications.sh rm_id $id_noti\" "\
