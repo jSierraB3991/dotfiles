@@ -40,7 +40,7 @@ picom &
 ~/.config/polybar/launch.sh
 deadd-notification-center &
 /home/juan-sierra/scripts/run-notification.sh
-
+feh --bg-fill /home/juan-sierra/Source/Wallpapers/c2jg1wikjr391.png
 # ##############################################################################
 # #                            GENERAL CONFIGURATION                           #
 # ##############################################################################
