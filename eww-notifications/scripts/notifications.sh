@@ -42,7 +42,7 @@ while sleep 0.1; do
 
         CONFIG_EWW="$HOME/.config/eww/notification"
         boxContainer="(box :space-evenly false :orientation \"vertical\""
-        imageNoti="(image :valign \"start\" :vexpand false :image-width 70 :image-height 70 :class \"notification-image\" :path \"$image\" )"
+        imageNoti="(image :valign \"start\" :vexpand false :image-width 60 :image-height 60 :class \"notification-image\" :path \"$image\" )"
         output=$(echo "$output $boxContainer (box :space-evenly \"true\" :orientation \"h\" :class" \
             "\"notification-card-header-box\" (label :class \"notification-app-name\" :text \"${application}\"" \
             " :halign \"start\") (button :onclick \"$CONFIG_EWW/scripts/notifications.sh rm_id $id_noti\" "\

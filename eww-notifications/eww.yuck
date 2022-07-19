@@ -41,10 +41,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Bar Windows ;;
 (defwindow bar
-	:geometry (geometry :x "0" 
+	:geometry (geometry :x "-2%" 
 						:y "0" 
 						:height "100%" 
-						:width "23%")
+						:width "22%")
 	:monitor 0
 	:reserve (struts :distance "0px" :side "right")
 	:wm-ignore true
