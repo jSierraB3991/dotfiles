@@ -28,6 +28,10 @@ elif [[ "$crunch_appname" == "Calendar" ]] || [[ "$crunch_appname" == "Volume" ]
 fi
 
 
+if [[ "$crunch_icon" == "dialog-warning" ]]; then
+    crunch_icon="/usr/share/icons/ePapirus/symbolic/status/dialog-warning-symbolic.svg"
+fi
+
 if [ "$(which sqlite3)" == "" ]; then
     echo -en "$timestamp\n$crunch_urgency\n$crunch_icon\n$crunch_body\n$crunch_summary\n$crunch_appname\n" >>$HOME/.cache/dunst.log
 else
@@ -37,8 +41,9 @@ else
     
     if [ "$crunch_appname" == "Brave"  ]; then
         crunch_body=$(echo $crunch_body | sed -e 's/<[^>]*>//g' | sed 's/web.whatsapp.com//g' )
-    elif [ "$crunch_appname" == "Slack" ]; then
-        crunch_body=$(echo $crunch_body | sed -e 's/<[^>]*>//g' | sed 's/Nuevo\ mensaje\ de\ //g' )
+    elif [ "$crunch_appname" == "Slack" ] || [ "$crunch_appname" == "slack" ]; then
+        crunch_summary=$(echo $crunch_summary | sed -e 's/<[^>]*>//g' | sed 's/Nuevo\ mensaje\ de\ //g' )
+        crunch_summary=$(echo $crunch_summary | sed -e 's/<[^>]*>//g' | sed 's/Nuevo\ mensaje\ en\ //g' )
     fi
     
     if [ "$crunch_appname" == "audio" ] || [ "$crunch_appname" == "sleep" ] || [ "$crunch_appname" == "brightness" ] || [ "$crunch_appname" == "blueman" ] ; then
