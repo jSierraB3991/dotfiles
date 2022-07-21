@@ -17,9 +17,13 @@ hsetroot -solid "#192022"
 xset m 0 0
 
 
-
-bspc monitor -d I II III IV V VI VII VIII IX X
-
+my_laptop_external_monitor=$(xrandr --query | grep 'HDMI-A-0' | awk '{print $2}')
+if [ $my_laptop_external_monitor = "connected" ]; then
+    bspc monitor HDMI-A-0 -d 1 2 3 4 5 6
+    bspc monitor eDP -d 7 8 9 0
+else
+    bspc monitor -d I II III IV V VI VII VIII IX X
+fi
 bspc config border_width         2
 bspc config window_gap          12
 
@@ -37,10 +41,15 @@ bspc rule -a Screenkey manage=off
 bspc config focus_follows_pointer true
 xsetroot -cursor_name left_ptr &
 picom &
+dunst &
+clipcatd &
 ~/.config/polybar/launch.sh
 deadd-notification-center &
 /home/juan-sierra/scripts/run-notification.sh
 feh --bg-fill /home/juan-sierra/Source/Wallpapers/c2jg1wikjr391.png
+
+disown -a
+disown
 # ##############################################################################
 # #                            GENERAL CONFIGURATION                           #
 # ##############################################################################
