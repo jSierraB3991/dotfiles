@@ -20,7 +20,6 @@ echo $my_laptop_external_monitor
 if [ $my_laptop_external_monitor = "connected" ]
 then
     polybar primary -c ~/.config/polybar/workspace.ini &
-    polybar primary_external -c ~/.config/polybar/workspace.ini &
 else
     polybar primary_one -c ~/.config/polybar/workspace.ini &
 fi

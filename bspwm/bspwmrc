@@ -5,6 +5,7 @@ export EDITOR=vim
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 pgrep -x sxhkd > /dev/null || sxhkd -c ~/.config/bspwm/sxhkdrc &
+~/Source/scripts/bash/change_automatic_wallpaper_one.sh &
 
 rule() { bspc rule -a "$@" & }
 config() { bspc config "$@" & }
@@ -19,8 +20,8 @@ xset m 0 0
 
 my_laptop_external_monitor=$(xrandr --query | grep 'HDMI-A-0' | awk '{print $2}')
 if [ $my_laptop_external_monitor = "connected" ]; then
-    bspc monitor HDMI-A-0 -d 1 2 3 4 5 6
-    bspc monitor eDP -d 7 8 9 0
+    bspc monitor HDMI-A-0 -d 1 2 3 4 5 6 7 8 9
+    bspc monitor eDP -d 0
 else
     bspc monitor -d I II III IV V VI VII VIII IX X
 fi
@@ -45,8 +46,8 @@ dunst &
 clipcatd &
 ~/.config/polybar/launch.sh
 deadd-notification-center &
-/home/juan-sierra/scripts/run-notification.sh
-feh --bg-fill /home/juan-sierra/Source/Wallpapers/c2jg1wikjr391.png
+~/scripts/run-notification.sh
+
 
 disown -a
 disown
