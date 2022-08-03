@@ -50,7 +50,7 @@ clipcatd &
 ~/.config/polybar/launch.sh
 deadd-notification-center &
 ~/scripts/run-notification.sh
-
+xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork &
 
 disown -a
 disown
