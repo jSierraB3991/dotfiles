@@ -17,10 +17,6 @@ set colorcolumn=+1
 set incsearch
 set hlsearch
 
-
-" Start NERDTree and leave the cursor in it.
-autocmd VimEnter * NERDTree
-
 "Map keys
 map <F3> : NERDTreeToggle
 map <F4> : NERDTreeFocus
