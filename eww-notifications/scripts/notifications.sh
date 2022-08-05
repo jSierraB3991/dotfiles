@@ -3,7 +3,7 @@
 DATA_LOCAL="$HOME/.local/data"
 
 function showNotification() {
-while sleep 0.1; do
+while sleep 3; do
     ids_noti=$(echo "SELECT id FROM Notifications WHERE deleted = false ORDER  BY id  DESC " | sqlite3 $DATA_LOCAL/ejemplo.db )
     output=" (box :class \"notifications-box\" :vexpand "true" :orientation \"v\" :halign \"center\" :valign \"start\" :space-evenly \"false\" :spacing \"-5\""
 
