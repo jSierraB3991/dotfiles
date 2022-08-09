@@ -8,9 +8,13 @@ alias git-tree="git log --all --graph --decorate --oneline"
 alias neofetch="/usr/bin/neofetch --ascii ~/.config/neofetch/ascii.txt"
 alias podman-containers="sudo docker ps -a --format \"table {{.State}}\\t{{.Names}}\\t{{.ID}}\\t{{.Image}}\""
 
-alias batdiff="git diff --name-only --relative --diff-filter=d | xargs batcat --diff"
+alias batdiff="git diff --name-only --relative --diff-filter=d | xargs bat --diff"
 alias bathelp='bat --plain --language=help'
 
 help() {
     "$@" --help 2>&1 | bathelp
+}
+
+man() {
+    /usr/bin/man "$@"  | bat -l man -p
 }
