@@ -76,7 +76,7 @@ bindsym $mod+shift+f exec /opt/brave/brave
 #firefox developer
 bindsym $mod+f exec firefox
 
-#bindsym $mod+space exec --no-startup-id rofi -show drun -show-icons
+bindsym $mod+space exec rofi --no-startup-id rofi -show drun -show-icons
 bindsym $mod+Tab exec --no-startup-id rofi -show combi -show-icons
 bindsym $mod+d exec rofi -disable-history -modi "drun" -show-icons -show drun -location 0 -theme dmenu
 bindsym $mod+shift+z exec kill -s USR1 $(pidof deadd-notification-center)
@@ -88,6 +88,7 @@ bindsym Print exec flameshot full  -p $HOME/Images/screenshoot
 bindsym $mod+n exec pcmanfm
 bindsym $mod+x exec i3lock -c 000000
 bindsym $mod+shift+v exec clipcat-menu
+bindsym $mod+o exec clipcat-menu remove
 
 
 
@@ -222,9 +223,9 @@ for_window [class="^.*"] border pixel 1
 #i3 gaps configuration
 smart_gaps on
 smart_borders on
-set $inner_gaps 3
-set $outer_gaps 3
-set $gaps_chage 3
+set $inner_gaps 5
+set $outer_gaps 5
+set $gaps_chage 5
 
 gaps inner $inner_gaps
 gaps outer $outer_gaps
@@ -232,10 +233,11 @@ gaps outer $outer_gaps
 bindsym --whole-window $mod+Button4 exec i3 gaps inner all plus $gaps_chage && i3 gaps outer all plus $gaps_chage && $refresh_i3status
 bindsym --whole-window $mod+Button5 exec i3 gaps inner all minus $gaps_chage && i3 gaps outer all minus $gaps_chage && $refresh_i3status
 
+
 bar {
     font pango:Noto Sans Regular 12, FontAwesome 12
-    status_command i3blocks -c ~/.config/i3/i3blocks.conf
-    position bottom
+#    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    position top
     i3bar_command i3bar --transparency
     tray_output primary
     tray_padding 0 
@@ -243,14 +245,18 @@ bar {
     strip_workspace_numbers yes
     strip_workspace_name no
 
+    status_command /home/juan-sierra/Source/bumblebee-status/bumblebee-status \
+        -m cmus cpu memory battery \
+        pasink pasource time -p time.format="%H:%M" -t gruvbox-powerline
+
     colors {
 	separator          $purple
-	background         $darkgrey
+ 	background         #00000000
 	statusline         $white
 #                          		border 		        bg		txt		indicator
 	focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
 	active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
 	inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
 	urgent_workspace	$urgentred	    	$urgentred	$white		$purple
-    }
+    }   
 }
