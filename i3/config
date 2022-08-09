@@ -22,6 +22,8 @@ exec ~/Source/scripts/bash/listeng_port_listeng.sh
 exec ~/Source/scripts/bash/verify_battery.sh
 exec feh --bg-fill ~/Images/gx09or98t4a71.webp
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec nm-applet &
+exec blueman-applet &
 
 focus_follows_mouse no
 title_align center
