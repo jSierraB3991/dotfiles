@@ -20,6 +20,8 @@ exec --no-startup-id setxkbmap -layout es
 exec --no-startup-id picom --experimental-backends
 exec ~/Source/scripts/bash/listeng_port_listeng.sh
 exec ~/Source/scripts/bash/verify_battery.sh
+exec ~/Source/dotfiles/i3/scripts/auto-start.sh
+
 exec feh --bg-fill ~/Images/gx09or98t4a71.webp
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec nm-applet &
