@@ -72,7 +72,7 @@ function mute_notification {
 
     if [ "$muted" == "MUTE" ]
     then
-        new_id=$(notify-send "Muted" -u low -i audio-volume-mute --replace-id $notify_id -p)
+        new_id=$(notify-send "Muted" -u low -i audio-volume-muted --replace-id $notify_id -p)
         echo $new_id > $HOME/.local/data/volume_id.txt
     else
         new_id=$(notify-send "UMuted" -u low -i $(get_volume_icon $muted) --replace-id $notify_id -p)
