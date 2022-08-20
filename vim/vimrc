@@ -17,6 +17,9 @@ set colorcolumn=+1
 set incsearch
 set hlsearch
 
+autocmd vimenter * ++nested colorscheme gruvbox
+set background=dark
+
 "Map keys
 map <F3> : NERDTreeToggle
 map <F4> : NERDTreeFocus
@@ -55,5 +58,6 @@ Plug 'preservim/nerdtree'
 "cerrador de simbolos
 Plug 'dhruvasagar/vim-pairify'
 
+Plug 'morhetz/gruvbox'
 "===============================================================================
 call plug#end()
