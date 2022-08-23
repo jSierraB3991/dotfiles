@@ -20,8 +20,8 @@ exec --no-startup-id setxkbmap -layout es
 exec --no-startup-id picom --experimental-backends
 exec --no-startup-id clipcatd
 exec --no-startup-id deadd-notification-center &
+exec --no-startup-id lxqt-powermanagement &
 
-exec ~/Source/scripts/bash/verify_battery.sh
 exec ~/Source/scripts/bash/listeng_port_listeng_diff.sh
 exec ~/Source/scripts/bash/change_automatic_wallpaper_one.sh &
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
