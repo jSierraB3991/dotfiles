@@ -9,6 +9,6 @@ Icon=spring-tool-suite
 Terminal=false
 Type=Application
 StartupNotify=true
-StartupWMClass=string-tool-suite
+StartupWMClass=spring-tool-suite
 Categories=Development;
 
