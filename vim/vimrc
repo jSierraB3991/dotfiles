@@ -17,8 +17,9 @@ set colorcolumn=+1
 set incsearch
 set hlsearch
 
-autocmd vimenter * ++nested colorscheme gruvbox
-set background=dark
+packadd! doki-theme
+syntax enable
+colorscheme jabami_yumeko
 
 "Map keys
 map <F3> : NERDTreeToggle
