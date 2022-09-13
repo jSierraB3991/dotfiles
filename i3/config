@@ -16,7 +16,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock
 
 exec --no-startup-id nm-applet &
 exec --no-startup-id blueman-applet &
-exec --no-startup-id setxkbmap -layout es
 exec --no-startup-id picom &
 exec --no-startup-id clipcatd
 exec --no-startup-id deadd-notification-center &
@@ -70,7 +69,7 @@ floating_modifier $mod
 
 #Programs shorcuts
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec kitty
 
 # start a new web browser
 bindsym $mod+shift+f exec /opt/brave/brave
