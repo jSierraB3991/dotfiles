@@ -69,7 +69,7 @@ floating_modifier $mod
 
 #Programs shorcuts
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec xfce4-terminal
 
 # start a new web browser
 bindsym $mod+shift+f exec /opt/brave/brave
@@ -246,7 +246,7 @@ bar {
     strip_workspace_name no
 
     status_command /home/juan-sierra/Source/bumblebee-status/bumblebee-status \
-        -m cmus cpu memory \
+        -m cmus cpu\
         pasink pasource time -p time.format="%H:%M" -t gruvbox-powerline
 
     colors {
