@@ -247,7 +247,7 @@ bar {
 
     status_command /home/juan-sierra/Source/bumblebee-status/bumblebee-status \
         -m cmus cpu\
-        pasink pasource time -p time.format="%H:%M" -t gruvbox-powerline
+        pasink pasource datetime -t gruvbox-powerline
 
     colors {
 	separator          $purple
