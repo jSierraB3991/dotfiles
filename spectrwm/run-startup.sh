@@ -1,5 +1,6 @@
 #! /bin/bash
 
+/home/juan-sierra/Source/scripts/bash/change_automatic_wallpaper_one.sh &
 picom &
 clipcatd &
 blueman-applet &
@@ -8,5 +9,5 @@ deadd-notification-center &
 eval "$(dbus-launch --sh-syntax --exit-with-session)"
 
 /home/juan-sierra/Source/scripts/bash/listeng_port_listeng_diff.sh &
-/home/juan-sierra/Source/scripts/bash/change_automatic_wallpaper_one.sh &
+/home/juan-sierra/Source/scripts/bash/verify_battery.sh &
 
