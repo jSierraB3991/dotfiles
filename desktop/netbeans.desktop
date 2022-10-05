@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=15
+Name=Netbeans
+GenericName=Integrated Development Enviroment
+Comment=Develop your app with Java
+Keywords=Java
+Exec=/opt/netbeans/bin/netbeans --jdkhome /lib64/jvm/default
+Icon=netbeans
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=Netbeans
+Categories=Development;
