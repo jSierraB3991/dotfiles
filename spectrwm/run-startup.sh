@@ -10,4 +10,5 @@ eval "$(dbus-launch --sh-syntax --exit-with-session)"
 
 /home/juan-sierra/Source/scripts/bash/listeng_port_listeng_diff.sh &
 /home/juan-sierra/Source/scripts/bash/verify_battery.sh &
+yakuake &
 
