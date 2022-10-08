@@ -4,6 +4,6 @@ services:
     container_name: jenkins
     image: jenkins/jenkins:lts-jdk11
     ports:
-      - "8080:8080"
+      - "9094:8080"
     volumes:
       - /home/juan-sierra/Zabud/data/jenkins:/var/jenkins_home
