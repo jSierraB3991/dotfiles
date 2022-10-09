@@ -1,7 +1,7 @@
 alias ll="lsd -l"
 alias la="lsd -lA"
 alias ll-tree="lsd -l --tree"
-alias cat="bat --paging=never"
+alias cat="bat --paging=never -p"
 alias tree="lsd --tree"
 alias catt="/usr/bin/cat"
 alias git-tree="git log --all --graph --decorate --oneline"
