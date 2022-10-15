@@ -11,6 +11,12 @@ icon() {
     echo -n "+@fg=1;$1+@fg=0;"
 }
 
+kernel() {  
+    # Kernel version
+    kernelVersion=$(uname -r | cut -d "-" -f 1)
+    echo -ne "  ${kernelVersion} "
+}
+
 percentage() {
     current=`echo $1 | sed 's/%//'`
     if [ $current -le 25 ]; then 
@@ -27,6 +33,9 @@ percentage() {
 sleep_sec=2
 i=0
 while :; do
+    #Kernel
+    kernel
+    
     # Updates
     if (( $i % 60 == 0 )); then
         updates=`checkupdates | wc -l`
