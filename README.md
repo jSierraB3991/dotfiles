@@ -1,3 +1,6 @@
+<h2> GRUB </h2>
+<img src="https://raw.githubusercontent.com/jSierraB3991/dotfile/grub.jpg" />
+
 <h2> Artix Open RC With i3 wm</h2>
 <img src="https://raw.githubusercontent.com/jSierraB3991/dotfiles/main/i3/artix-i3-2.png" />
 
