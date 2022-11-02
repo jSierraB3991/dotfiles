@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=10.0.32
+Name=Postman
+GenericName=(Api Rest, GRPC) Test
+Comment=Testing you (Api Rest, GRPC) Or Other Api Rest
+Exec=/opt/postman/app/postman
+Icon=postman
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=postamn
+Categories=Development;Test;GRPC;API;WEBSOCKET
