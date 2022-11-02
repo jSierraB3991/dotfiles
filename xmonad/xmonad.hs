@@ -17,6 +17,7 @@ import qualified Data.Map        as M
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
+myTerminal :: String
 myTerminal      = "st"
 
 -- Whether focus follows the mouse pointer.
@@ -36,7 +37,8 @@ myBorderWidth   = 1
 -- ("right alt"), which does not conflict with emacs keybindings. The
 -- "windows key" is usually mod4Mask.
 --
-myModMask       = mod4Mask
+myModMask :: KeyMask
+myModMask  = mod4Mask
 
 -- The default number of workspaces (virtual screens) and their names.
 -- By default we use numeric strings, but any string may be used as a
@@ -63,10 +65,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
     -- launch dmenu
-    , ((modm,               xK_p     ), spawn "dmenu_run")
+    , ((modm,               xK_p     ), spawn "rofi -disable-history -modi \"drun\" -show-icons -show drun -location 0 -theme dmenu")
 
     -- launch gmrun
-    , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
+    , ((modm .|. shiftMask, xK_p     ), spawn "rofi -show combi -show-icons")
 
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
