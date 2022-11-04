@@ -15,21 +15,17 @@ font pango: Hack Nerd Font 8
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock
 
 exec --no-startup-id nm-applet &
-exec --no-startup-id blueman-applet &
-exec --no-startup-id picom &
-exec --no-startup-id clipcatd
-exec --no-startup-id deadd-notification-center &
-exec --no-startup-id lxqt-powermanagement &
-exec eval "$(dbus-launch --sh-syntax --exit-with-session)"
+#exec --no-startup-id blueman-applet &
+exec --no-startup-id ~/.config/spectrwm/run-startup.sh
+exec --no-startup-id flameshot &
 exec ~/Source/xborder/xborders &
-
-exec ~/Source/scripts/bash/listeng_port_listeng_diff.sh &
-exec ~/Source/scripts/bash/change_automatic_wallpaper_one.sh &
+exec pulseaudio &
+exec export $(dbus-launch)
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
+exec --no-startup-id lxqt-powermanagement &
 focus_follows_mouse no
 title_align center
-
 
 
 
@@ -69,7 +65,7 @@ floating_modifier $mod
 
 #Programs shorcuts
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec st
 
 # start a new web browser
 bindsym $mod+shift+f exec /opt/brave/brave
@@ -87,7 +83,7 @@ bindsym $mod+z exec  flameshot gui
 bindsym Print exec flameshot full  -p $HOME/Images/screenshoot
 bindsym $mod+n exec pcmanfm
 bindsym $mod+x exec i3lock -c 000000
-bindsym $mod+shift+v exec clipcat-menu
+bindsym $mod+shift+v exec copyq menu
 bindsym $mod+o exec clipcat-menu remove
 
 
@@ -218,7 +214,7 @@ client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
 client.focused_inactive	    $darkblue	$darkblue	$grey		$purple		$black
 client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 
-for_window [class="^.*"] border pixel 1
+#for_window [class="^.*"] border pixel 10
 
 #i3 gaps configuration
 smart_gaps on
@@ -246,8 +242,8 @@ bar {
     strip_workspace_name no
 
     status_command /home/juan-sierra/Source/bumblebee-status/bumblebee-status \
-        -m cmus cpu\
-        pasink pasource datetime battery -t gruvbox-powerline
+        -m cpu kernel docker_ps arch-update brightness pasink pasource dunst battery \
+        -t gruvbox-powerline
 
     colors {
 	separator          $purple
