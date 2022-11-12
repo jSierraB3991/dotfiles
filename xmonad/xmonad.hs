@@ -65,10 +65,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
     -- launch dmenu
-    , ((modm,               xK_p     ), spawn "rofi -disable-history -modi \"drun\" -show-icons -show drun -location 0 -theme dmenu")
+    , ((modm,               xK_d     ), spawn "rofi -disable-history -modi \"drun\" -show-icons -show drun -location 0 -theme dmenu")
 
     -- launch gmrun
-    , ((modm .|. shiftMask, xK_p     ), spawn "rofi -show combi -show-icons")
+    , ((modm .|. shiftMask, xK_d     ), spawn "rofi -show combi -show-icons")
 
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
@@ -288,9 +288,9 @@ help :: String
 help = unlines ["The default modifier key is 'alt'. Default keybindings:",
     "",
     "-- launching and killing programs",
-    "mod-Shift-Enter  Launch xterminal",
-    "mod-p            Launch dmenu",
-    "mod-Shift-p      Launch gmrun",
+    "mod-Shift-Enter  Launch st",
+    "mod-p            Launch rofi with launcher with style of dmenu",
+    "mod-Shift-p      Launch rofi with programs open",
     "mod-Shift-c      Close/kill the focused window",
     "mod-Space        Rotate through the available layout algorithms",
     "mod-Shift-Space  Reset the layouts on the current workSpace to default",
