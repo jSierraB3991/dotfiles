@@ -68,7 +68,7 @@ floating_modifier $mod
 bindsym $mod+Return exec st
 
 # start a new web browser
-bindsym $mod+shift+f exec /opt/brave/brave
+bindsym $mod+shift+f exec /sbin/brave
 #firefox developer
 bindsym $mod+f exec firefox
 
