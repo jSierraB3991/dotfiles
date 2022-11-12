@@ -11,6 +11,9 @@ alias podman-containers="sudo docker ps -a --format \"table {{.State}}\\t{{.Name
 alias batdiff="git diff --name-only --relative --diff-filter=d | xargs bat --diff"
 alias bathelp='bat --plain --language=help'
 
+alias xmd="vim $HOME/.xmonad/xmonad.hs"
+alias xmr="cd $HOME/.xmonad/xmobar && lsd -l"
+
 help() {
     "$@" --help 2>&1 | bathelp
 }
