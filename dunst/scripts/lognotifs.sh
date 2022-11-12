@@ -23,7 +23,7 @@ elif [[ "$crunch_appname" == "VLC media player" ]]; then
     crunch_icon="vlc"
 elif [[ "$crunch_appname" == "Calendar" ]] || [[ "$crunch_appname" == "Volume" ]] || 
     [[ "$crunch_appname" == "Brightness" ]] || [[ "$crunch_appname" == "notify-send" ]] || 
-    [[ "$crunch_appname" == "scrot" ]]; then
+    [[ "$crunch_appname" == "scrot" ]] || [[ "$crunch_appname" == "PORT_SCAN" ]] ; then
     exit 0
 fi
 
