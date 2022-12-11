@@ -12,16 +12,14 @@ font pango: Hack Nerd Font 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock-fancy to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy
 
 exec --no-startup-id nm-applet &
-#exec --no-startup-id blueman-applet &
-exec --no-startup-id ~/.config/spectrwm/run-startup.sh
+exec --no-startup-id blueman-applet &
+exec --no-startup-id ~/.config/spectrwm/run-startup.sh &
 exec --no-startup-id flameshot &
-exec ~/Source/xborder/xborders &
-exec pulseaudio &
-exec export $(dbus-launch)
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec export EDITOR=vim
+exec export _JAVA_AWT_WM_NONREPARENTING=1
 
 exec --no-startup-id lxqt-powermanagement &
 focus_follows_mouse no
@@ -56,7 +54,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Start in configurations
 # Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+#floating_modifier $mod
 
 
 
@@ -65,26 +63,25 @@ floating_modifier $mod
 
 #Programs shorcuts
 # start a terminal
-bindsym $mod+Return exec st
+bindsym $mod+Return exec kitty
 
 # start a new web browser
-bindsym $mod+shift+f exec /sbin/brave
+bindsym $mod+shift+f exec /opt/brave/brave
 #firefox developer
 bindsym $mod+f exec firefox
 
 bindsym $mod+space exec rofi --no-startup-id rofi -show drun -show-icons
 bindsym $mod+Tab exec --no-startup-id rofi -show combi -show-icons
 bindsym $mod+d exec rofi -disable-history -modi "drun" -show-icons -show drun -location 0 -theme dmenu
-bindsym $mod+shift+z exec kill -s USR1 $(pidof deadd-notification-center)
 
 bindsym $mod+Shift+i exec /opt/intellij-idea/bin/idea.sh
 bindsym $mod+Shift+b exec /opt/studio3t/Studio-3T
 bindsym $mod+z exec  flameshot gui
 bindsym Print exec flameshot full  -p $HOME/Images/screenshoot
 bindsym $mod+n exec pcmanfm
-bindsym $mod+x exec i3lock -c 000000
+bindsym $mod+x exec i3lock-fancy
 bindsym $mod+shift+v exec copyq menu
-bindsym $mod+o exec clipcat-menu remove
+bindsym $mod+shift+d exec rofi -modi emoji -show emoji
 
 
 
@@ -214,17 +211,19 @@ client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
 client.focused_inactive	    $darkblue	$darkblue	$grey		$purple		$black
 client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 
-#for_window [class="^.*"] border pixel 10
+for_window [class="^.*"] border pixel 0
 
 #i3 gaps configuration
 smart_gaps on
 smart_borders on
-set $inner_gaps 5
-set $outer_gaps 5
-set $gaps_chage 5
 
-gaps inner $inner_gaps
-gaps outer $outer_gaps
+### GAPS configuration
+gaps inner 5
+gaps outer 5
+gaps top 5
+gaps bottom 5
+# 
+set $opacity 0.5
 
 bindsym --whole-window $mod+Button4 exec i3 gaps inner all plus $gaps_chage && i3 gaps outer all plus $gaps_chage && $refresh_i3status
 bindsym --whole-window $mod+Button5 exec i3 gaps inner all minus $gaps_chage && i3 gaps outer all minus $gaps_chage && $refresh_i3status
@@ -242,7 +241,7 @@ bar {
     strip_workspace_name no
 
     status_command /home/juan-sierra/Source/bumblebee-status/bumblebee-status \
-        -m cpu kernel docker_ps arch-update brightness pasink pasource dunst battery \
+        -m cpu kernel docker_ps arch-update brightness pasink pasource datetime dunst \
         -t gruvbox-powerline
 
     colors {

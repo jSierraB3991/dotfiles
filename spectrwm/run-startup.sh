@@ -1,6 +1,6 @@
 #! /bin/bash
 
-killall picom
+#killall picom
 killall copyq
 killall dunst
 killall blueman-applet
@@ -9,12 +9,11 @@ killall listeng_port_listeng_diff.sh
 killall verify_battery.sh
 
 /home/juan-sierra/Source/scripts/bash/change_automatic_wallpaper_one.sh &
-picom &
+#picom &
 copyq &
 dunst &
 blueman-applet &
-xscreensaver -no-splash &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+/usr/lib/polkit-kde-authentication-agent-1 &
 eval "$(dbus-launch)"
 export $(dbus-launch)
 
@@ -25,4 +24,3 @@ export $(dbus-launch)
 
 disown
 disown -a
-
