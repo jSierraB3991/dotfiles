@@ -17,6 +17,25 @@ ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
 #  compton &> /dev/null &
 #fi
 
+killall copyq
+killall flameshot
+killall lxqt-powermanagement
+killall dunst
+killall listeng_port_listeng_diff.sh
+killall verify_battery.sh
+killall kdeconnect-indicator
+
+copyq &
+flameshot &
+lxqt-powermanagement &
+dunst &
+/usr/lib/polkit-kde-authentication-agent-1 &
+/home/juan-sierra/Source/scripts/bash/listeng_port_listeng_diff.sh &
+/home/juan-sierra/Source/scripts/bash/verify_battery.sh &
+kdeconnect-indicator &
+
+disown -a
+
 #set the theme.ron config
 leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
 
