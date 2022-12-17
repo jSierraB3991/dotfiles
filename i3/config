@@ -12,13 +12,14 @@ font pango: Hack Nerd Font 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock-fancy to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock
 
 exec --no-startup-id nm-applet &
 exec --no-startup-id blueman-applet &
 exec --no-startup-id ~/.config/spectrwm/run-startup.sh &
 exec --no-startup-id flameshot &
 exec export EDITOR=vim
+exec picom &
 exec export _JAVA_AWT_WM_NONREPARENTING=1
 
 exec --no-startup-id lxqt-powermanagement &
@@ -79,9 +80,11 @@ bindsym $mod+Shift+b exec /opt/studio3t/Studio-3T
 bindsym $mod+z exec  flameshot gui
 bindsym Print exec flameshot full  -p $HOME/Images/screenshoot
 bindsym $mod+n exec pcmanfm
-bindsym $mod+x exec i3lock-fancy
+bindsym $mod+x exec betterlockscreen -l dimblur --display 1 --span
 bindsym $mod+shift+v exec copyq menu
 bindsym $mod+shift+d exec rofi -modi emoji -show emoji
+bindsym $mod+s exec screenkey -s small &
+bindsym $mod+shift+s exec killall screenkey
 
 
 
@@ -241,7 +244,7 @@ bar {
     strip_workspace_name no
 
     status_command /home/juan-sierra/Source/bumblebee-status/bumblebee-status \
-        -m cpu kernel docker_ps arch-update brightness pasink pasource datetime dunst \
+        -m cpu kernel arch-update brightness pasink pasource datetime docker_ps dunst \
         -t gruvbox-powerline
 
     colors {

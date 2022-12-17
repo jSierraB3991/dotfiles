@@ -8,9 +8,8 @@ crunch_urgency=$(echo "$5" | sed '/^$/d')
 timestamp=$(date +"%I:%M %p")
 
 
-if [ "$crunch_appname" == "Brave"  ]; then
-    cp $crunch_icon $HOME/.local/data/tmp
-    crunch_icon="$HOME/.local/data/$crunch_icon"
+if [[ "$crunch_appname" == "Slack" ]] || [[ "$crunch_appname" == "whatsapp-desktop-linux" ]]; then
+    crunch_icon="$crunch_appname"
 fi
 
 

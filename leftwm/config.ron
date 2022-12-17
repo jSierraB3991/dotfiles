@@ -55,8 +55,9 @@
     keybind: [
         (command: Execute, value: "rofi -modi 'drun' -show-icons -show drun -theme dmenu", modifier: ["modkey"], key: "d"),
         (command: Execute, value: "rofi -modi emoji -show emoji", modifier: ["modkey", "Shift"], key: "d"),
+        (command: Execute, value: "rofi -show combi -show-icons", modifier: ["modkey"], key: "t"),
         (command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "x"),
-        (command: Execute, value: "i3lock-fancy", modifier: ["modkey" ], key: "x"),
+        (command: Execute, value: "i3lock -c 000000", modifier: ["modkey" ], key: "x"),
         (command: Execute, value: "/opt/intellij-idea/bin/idea.sh", modifier: ["modkey" ], key: "i"),
         (command: Execute, value: "kitty", modifier: ["modkey", "Shift"], key: "Return"),
         (command: Execute, value: "copyq menu", modifier: ["modkey" ], key: "v"),
@@ -64,6 +65,7 @@
         (command: Execute, value: "firefox-developer-edition", modifier: ["modkey", "Shift" ], key: "f"),
         (command: Execute, value: "/opt/brave/brave", modifier: ["modkey" ], key: "b"),
         (command: Execute, value: "flameshot gui", modifier: ["modkey" ], key: "z"),
+        (command: Execute, value: "sh $HOME/.local/bin/notificationcenter", modifier: ["modkey" ], key: "o"),
         
         (command: CloseWindow, value: "", modifier: ["modkey" ], key: "q"),
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),

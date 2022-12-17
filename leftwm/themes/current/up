@@ -9,6 +9,8 @@ if [ -f "/tmp/leftwm-theme-down" ]; then
 fi
 ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
 
+#run i3lock config
+xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 #boot picom or compton if it exists
 #if [ -x "$(command -v picom)" ]; then
@@ -41,7 +43,7 @@ leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
 
 #set background
 if [ -x "$(command -v feh)" ]; then
-  feh --bg-scale $SCRIPTPATH/background.jpg
+    sh /home/juan-sierra/Source/scripts/bash/change_automatic_wallpaper_one.sh &
 fi
 
 
@@ -56,3 +58,4 @@ do
   let index=indextemp
 done
 
+killall picom
