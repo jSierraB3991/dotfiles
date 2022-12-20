@@ -57,7 +57,7 @@
         (command: Execute, value: "rofi -modi emoji -show emoji", modifier: ["modkey", "Shift"], key: "d"),
         (command: Execute, value: "rofi -show combi -show-icons", modifier: ["modkey"], key: "t"),
         (command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "x"),
-        (command: Execute, value: "i3lock -c 000000", modifier: ["modkey" ], key: "x"),
+        (command: Execute, value: "betterlockscreen -l", modifier: ["modkey" ], key: "x"),
         (command: Execute, value: "/opt/intellij-idea/bin/idea.sh", modifier: ["modkey" ], key: "i"),
         (command: Execute, value: "kitty", modifier: ["modkey", "Shift"], key: "Return"),
         (command: Execute, value: "copyq menu", modifier: ["modkey" ], key: "v"),
