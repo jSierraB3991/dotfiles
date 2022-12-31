@@ -12,14 +12,14 @@ font pango: Hack Nerd Font 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock-fancy to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000
 
 exec --no-startup-id nm-applet &
 exec --no-startup-id blueman-applet &
 exec --no-startup-id ~/.config/spectrwm/run-startup.sh &
 exec --no-startup-id flameshot &
 exec export EDITOR=vim
-exec picom &
+#exec --no-startup-id picom -b
 exec export _JAVA_AWT_WM_NONREPARENTING=1
 
 exec --no-startup-id lxqt-powermanagement &
@@ -84,6 +84,7 @@ bindsym $mod+x exec betterlockscreen -l dimblur --display 1 --span
 bindsym $mod+shift+v exec copyq menu
 bindsym $mod+shift+d exec rofi -modi emoji -show emoji
 bindsym $mod+s exec screenkey -s small &
+bindsym $mod+w exec flatpak run io.github.mimbrero.WhatsAppDesktop
 bindsym $mod+shift+s exec killall screenkey
 
 
@@ -227,6 +228,7 @@ gaps top 5
 gaps bottom 5
 # 
 set $opacity 0.5
+set $gaps_chage 2
 
 bindsym --whole-window $mod+Button4 exec i3 gaps inner all plus $gaps_chage && i3 gaps outer all plus $gaps_chage && $refresh_i3status
 bindsym --whole-window $mod+Button5 exec i3 gaps inner all minus $gaps_chage && i3 gaps outer all minus $gaps_chage && $refresh_i3status
@@ -235,7 +237,7 @@ bindsym --whole-window $mod+Button5 exec i3 gaps inner all minus $gaps_chage && 
 bar {
     font pango:Noto Sans Regular 12, FontAwesome 12
 #    status_command i3blocks -c ~/.config/i3/i3blocks.conf
-    position top
+    position bottom
     i3bar_command i3bar --transparency
     tray_output primary
     tray_padding 0 
@@ -244,7 +246,7 @@ bar {
     strip_workspace_name no
 
     status_command /home/juan-sierra/Source/bumblebee-status/bumblebee-status \
-        -m cpu kernel arch-update brightness pasink pasource datetime docker_ps dunst \
+        -m cpu pasink pasource kernel datetime dunst \
         -t gruvbox-powerline
 
     colors {
