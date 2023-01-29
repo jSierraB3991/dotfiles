@@ -22,7 +22,7 @@ eval "$(dbus-launch)"
 export $(dbus-launch)
 betterlockscreen -u ~/Source/dotfiles/betterlocker/ --display 1 --span &
 
-
+xss-lock --transfer-sleep-lock -- $HOME/.config/i3/betterlok.sh --nofork &
 /home/juan-sierra/Source/scripts/bash/listeng_port_listeng_diff.sh &
 /home/juan-sierra/Source/scripts/bash/verify_battery.sh &
 #yakuake &

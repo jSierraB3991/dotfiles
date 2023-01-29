@@ -62,6 +62,7 @@
         (command: Execute, value: "kitty", modifier: ["modkey", "Shift"], key: "Return"),
         (command: Execute, value: "copyq menu", modifier: ["modkey" ], key: "v"),
         (command: Execute, value: "firefox", modifier: ["modkey" ], key: "f"),
+        (command: Execute, value: "pcmanfm", modifier: ["modkey" ], key: "n"),
         (command: Execute, value: "firefox-developer-edition", modifier: ["modkey", "Shift" ], key: "f"),
         (command: Execute, value: "/opt/brave/brave", modifier: ["modkey" ], key: "b"),
         (command: Execute, value: "flameshot gui", modifier: ["modkey" ], key: "z"),

@@ -3,6 +3,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $mod2 Mod1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -12,8 +13,6 @@ font pango: Hack Nerd Font 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock-fancy to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000
-
 exec --no-startup-id nm-applet &
 exec --no-startup-id blueman-applet &
 exec --no-startup-id ~/.config/spectrwm/run-startup.sh &
@@ -67,15 +66,17 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+Return exec kitty
 
 # start a new web browser
-bindsym $mod+shift+f exec /opt/brave/brave
+bindsym $mod+b exec /opt/brave/brave
 #firefox developer
 bindsym $mod+f exec firefox
+bindsym $mod+shift+f exec firefox-developer-edition
 
-bindsym $mod+space exec rofi --no-startup-id rofi -show drun -show-icons
 bindsym $mod+Tab exec --no-startup-id rofi -show combi -show-icons
 bindsym $mod+d exec rofi -disable-history -modi "drun" -show-icons -show drun -location 0 -theme dmenu
+bindsym $mod2+d exec sgtk-grid
 
 bindsym $mod+Shift+i exec /opt/intellij-idea/bin/idea.sh
+bindsym $mod+o exec $HOME/.local/bin/notificationcenter
 bindsym $mod+Shift+b exec /opt/studio3t/Studio-3T
 bindsym $mod+z exec  flameshot gui
 bindsym Print exec flameshot full  -p $HOME/Images/screenshoot
@@ -222,10 +223,10 @@ smart_gaps on
 smart_borders on
 
 ### GAPS configuration
-gaps inner 5
-gaps outer 5
-gaps top 5
-gaps bottom 5
+gaps inner 6
+gaps outer 6
+gaps top 3
+gaps bottom 3
 # 
 set $opacity 0.5
 set $gaps_chage 2
@@ -246,7 +247,7 @@ bar {
     strip_workspace_name no
 
     status_command /home/juan-sierra/Source/bumblebee-status/bumblebee-status \
-        -m cpu pasink pasource kernel datetime dunst \
+        -m cpu memory pasource kernel datetime dunst \
         -t gruvbox-powerline
 
     colors {

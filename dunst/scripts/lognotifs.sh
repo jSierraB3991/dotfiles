@@ -7,28 +7,42 @@ crunch_icon=$(echo "$4" | sed '/^$/d')
 crunch_urgency=$(echo "$5" | sed '/^$/d')
 timestamp=$(date +"%I:%M %p")
 
-
-if [[ "$crunch_appname" == "Slack" ]] || [[ "$crunch_appname" == "whatsapp-desktop-linux" ]]; then
-    crunch_icon="$crunch_appname"
+if [[ "$crunch_appname" == "KDE Connect" ]]; then
+    crunch_icon="kdeconnect"
+elif [[ "$crunch_appname" == "whatsapp-desktop-linux" ]]; then
+    crunch_icon="whatsapp.svg"
+elif [[ "$crunch_appname" == "Slack" ]]; then
+    crunch_icon="slack"
+elif [[ "$crunch_appname" == "Miniaplicación Gestor de la red" ]]; then
+    crunch_icon="tdenetworkmanager.svg"
 fi
 
 
-if [[ "$crunch_appname" == "Spotify" ]]; then
-    random_name=$(mktemp --suffix ".png")
-    artlink=$(playerctl metadata mpris:artUrl | sed -e 's/open.spotify.com/i.scdn.co/g')
-    curl -s "$artlink" -o "$random_name"
-    crunch_icon=$random_name
-elif [[ "$crunch_appname" == "VLC media player" ]]; then
-    crunch_icon="vlc"
-elif [[ "$crunch_appname" == "Calendar" ]] || [[ "$crunch_appname" == "Volume" ]] || 
+
+
+#if [[ "$crunch_appname" == "Spotify" ]]; then
+#    random_name=$(mktemp --suffix ".png")
+#    artlink=$(playerctl metadata mpris:artUrl | sed -e 's/open.spotify.com/i.scdn.co/g')
+#    curl -s "$artlink" -o "$random_name"
+#    crunch_icon=$random_name
+#elif [[ "$crunch_appname" == "VLC media player" ]]; then
+#    crunch_icon="vlc"
+#elif [[ "$crunch_appname" == "whatsapp-desktop-linux" ]]; then
+#    crunch_icon="/usr/share/icons/Papirus/48x48/apps/whatsapp-nativefier.svg"
+
+if [[ "$crunch_appname" == "Calendar" ]] || [[ "$crunch_appname" == "Volume" ]] || 
     [[ "$crunch_appname" == "Brightness" ]] || [[ "$crunch_appname" == "notify-send" ]] || 
-    [[ "$crunch_appname" == "scrot" ]] || [[ "$crunch_appname" == "PORT_SCAN" ]] ; then
+    [[ "$crunch_appname" == "scrot" ]] || [[ "$crunch_appname" == "PORT_SCAN" ]] ||
+    [[ "$crunch_appname" == "pasystray" ]]; then
     exit 0
 fi
 
 
 if [[ "$crunch_icon" == "dialog-warning" ]]; then
     crunch_icon="/usr/share/icons/ePapirus/symbolic/status/dialog-warning-symbolic.svg"
+fi
+if [[ "$crunch_urgency" == "NORMAL" ]]; then
+    crunch_urgency="MEDIUM"
 fi
 
 if [ "$(which sqlite3)" == "" ]; then
@@ -50,10 +64,10 @@ else
         if [ "$data" != "" ]; then
             echo "UPDATE Notifications SET body = '$crunch_body', deleted = false WHERE program = '$crunch_appname'" | sqlite3 $HOME/.local/data/ejemplo.db
         else
-            echo "INSERT INTO Notifications(hora, title, body, urgency, icon, program, deleted, imgBase64) VALUES('$timestamp', '$crunch_summary', '$crunch_body', '$crunch_urgency', '$crunch_icon', '$crunch_appname', false, '$(cat $crunch_icon | base64)')" | sqlite3 $HOME/.local/data/ejemplo.db
+            echo "INSERT INTO Notifications(hora, title, body, urgency, icon, program, deleted) VALUES('$timestamp', '$crunch_summary', '$crunch_body', '$crunch_urgency', '$crunch_icon', '$crunch_appname', false)" | sqlite3 $HOME/.local/data/ejemplo.db
         fi
     else
-        echo "INSERT INTO Notifications(hora, title, body, urgency, icon, program, deleted, imgBase64) VALUES('$timestamp', '$crunch_summary', '$crunch_body', '$crunch_urgency', '$crunch_icon', '$crunch_appname', false, '$(cat $crunch_icon | base64)')" | sqlite3 $HOME/.local/data/ejemplo.db
+        echo "INSERT INTO Notifications(hora, title, body, urgency, icon, program, deleted) VALUES('$timestamp', '$crunch_summary', '$crunch_body', '$crunch_urgency', '$crunch_icon', '$crunch_appname', false)" | sqlite3 $HOME/.local/data/ejemplo.db
     fi
     echo "" | sqlite3 $HOME/.local/data/ejemplo.db
 fi

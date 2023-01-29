@@ -9,15 +9,13 @@ fi
 ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
 
 #run i3lock config
-xss-lock --transfer-sleep-lock -- i3lock --nofork &
+xss-lock --transfer-sleep-lock -- $HOME/.config/i3/betterlok.sh --nofork &
 
-killall copyq
 killall flameshot
 killall lxqt-powermanagement
 killall dunst
 killall listeng_port_listeng_diff.sh
 killall verify_battery.sh
-killall kdeconnect-indicator
 
 flameshot &
 lxqt-powermanagement &
