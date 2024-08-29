@@ -1,0 +1,4 @@
+FROM amazon/aws-cli
+RUN yum update -y && yum install -y zip
+RUN yum update -y && yum install -y go
+ENTRYPOINT [""]

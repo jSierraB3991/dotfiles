@@ -235,6 +235,12 @@ bindsym --whole-window $mod+Button4 exec i3 gaps inner all plus $gaps_chage && i
 bindsym --whole-window $mod+Button5 exec i3 gaps inner all minus $gaps_chage && i3 gaps outer all minus $gaps_chage && $refresh_i3status
 
 
+# Configuración para establecer un tamaño mínimo de ventana
+#for_window [class=".*"] floating enable
+#for_window [class=".*"] resize set 800 800
+
+
+
 bar {
     font pango:Noto Sans Regular 12, FontAwesome 12
 #    status_command i3blocks -c ~/.config/i3/i3blocks.conf
