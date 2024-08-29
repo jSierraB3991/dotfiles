@@ -1,0 +1,17 @@
+services:
+  database-sql-server:
+    container_name: mssql_database
+    image: mcr.microsoft.com/mssql/server:2022-CU12-ubuntu-22.04
+    user: "0:0"
+    ports:
+      - 1433:1433
+    volumes:
+      - ~/.local/data/sql_server_ubuntu_2022:/var/opt/mssql
+      - ./init-sqlserver.sh:/init-sqlserver.sh
+    command: ["/bin/bash", "/init-sqlserver.sh"]
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=FEVRIPS1*
+      - MSSQL_MEMORY_LIMIT_MB=9000
+      - MSSQL_COLLATION=SQL_Latin1_General_CP1_CI_AS
+      - MSSQL_PID=Express
