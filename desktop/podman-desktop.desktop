@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.17.1
+Name=Podman Desktop
+GenericName=Manage Containers
+Comment=Managerment Containers and Compose by Podman
+Exec=/opt/podman-desktop/podman-desktop
+Icon=podman-desktop
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=podman-desktop
+Categories=Development;Linux;VM;Container;Docker;K8s
