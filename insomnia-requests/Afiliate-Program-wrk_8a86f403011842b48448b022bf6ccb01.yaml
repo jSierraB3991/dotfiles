@@ -1,0 +1,745 @@
+type: collection.insomnia.rest/5.0
+name: Afiliate Program
+meta:
+  id: wrk_8a86f403011842b48448b022bf6ccb01
+  created: 1743620255406
+  modified: 1743620255406
+collection:
+  - name: public
+    meta:
+      id: fld_0fa31e074d284837a353b6d3e7cbd7e9
+      created: 1744240225622
+      modified: 1744240225622
+      sortKey: -1744240225622
+    children:
+      - url: "{{ _.back_url }}/public/login"
+        name: login
+        meta:
+          id: req_d41c0fd752634215b26e9c6294d51cf2
+          created: 1744240227925
+          modified: 1744662261157
+          isPrivate: false
+          sortKey: -1744240227925
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "judas3991@gmail.com",
+            	"password": "1234567"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.back_url }}/public/login"
+        name: login admin
+        meta:
+          id: req_94b0a155d43b4323a860d9cf60ad6c2f
+          created: 1744250138742
+          modified: 1744664713460
+          isPrivate: false
+          sortKey: -1743284696171
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "tibig85668@inveitro.com",
+            	"password": "qwerty123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.back_url }}/public/login"
+        name: login jd
+        meta:
+          id: req_d333a9e640b54c49a7024037ff242b1a
+          created: 1744488356176
+          modified: 1744663237329
+          isPrivate: false
+          sortKey: -1743762462048
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "juanddeveloper057@gmail.com",
+            	"password": "1234567"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.back_url }}/public/sing-up"
+        name: sign up eliot
+        meta:
+          id: req_30cbc8bad1ac42f69614291328132388
+          created: 1744662241723
+          modified: 1744663254287
+          isPrivate: false
+          sortKey: -1744662241723
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "cellphone": "3005123534",
+              "challenge_type": "CHALLENGE_FREE",
+              "country_id": 62,
+              "email": "eliotandelon@gmail.com",
+              "first_name": "Eliot",
+              "indicative": "+57",
+              "last_name": "Anderson",
+              "parent_user_code": "",
+              "password": "mr robot 2004"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: user
+    meta:
+      id: fld_d611e7f219ad429c90b8270b59f7d6d1
+      created: 1744240443306
+      modified: 1744240443306
+      sortKey: -1744240443306
+    children:
+      - name: gets
+        meta:
+          id: fld_526cfde964f3421fbbc65b5f409ed6b7
+          created: 1744240453164
+          modified: 1744240607691
+          sortKey: -1744240453164
+        children:
+          - url: "{{ _.back_url }}/user/afiliates"
+            name: afiliados
+            meta:
+              id: req_030edc86e59f4585996ca17d2b18ac82
+              created: 1744240457029
+              modified: 1744488378188
+              isPrivate: false
+              sortKey: -1744240457029
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.0
+                id: pair_f7c4d5908a854778a9d7afdba50176e3
+              - id: pair_7337c5fdadd54ea1947f25870acd1547
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1YW5kZGV2ZWxvcGVyMDU3QGdtYWlsLmNvbSIsImV4cCI6MTc0NDU3NDc2MywiaWF0IjoxNzQ0NDg4MzYzLCJwYXRoc19hbGxvdyI6WyIvdXNlci9hZmlsaWF0ZXMiLCIvdXNlci9pbWFnZXMiLCIvdXNlci9jaGFsbGVuZ2UiLCIvdXNlci9kcnl3YWxsIiwiL3VzZXIvZHJ5d2FsbCIsIi91c2VyL2ltYWdlcyIsIi91c2VyL2t5YyIsIi91c2VyL2t5Yy8iXSwicm9sZV9pZCI6MSwicm9sZV9uYW1lIjoiUk9MRV9VU0VSIiwidXNlcl9pZCI6MTF9.FgepxeED2u49zG6YEY1i43nBNlSOAnBLfKziAeU9hT0
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.back_url }}/user/challenge"
+            name: challenges
+            meta:
+              id: req_ec4949699e2e49f086813fcb8f5abff3
+              created: 1744240598453
+              modified: 1744656565965
+              isPrivate: false
+              sortKey: -1744240342477
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.0
+                id: pair_f7c4d5908a854778a9d7afdba50176e3
+              - id: pair_7337c5fdadd54ea1947f25870acd1547
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1ZGFzMzk5MUBnbWFpbC5jb20iLCJleHAiOjE3NDQ3NDI5NDEsImlhdCI6MTc0NDY1NjU0MSwicGF0aHNfYWxsb3ciOlsiL3VzZXIvYWZpbGlhdGVzIiwiL3VzZXIvaW1hZ2VzIiwiL3VzZXIvY2hhbGxlbmdlIiwiL3VzZXIvZHJ5d2FsbCIsIi91c2VyL2RyeXdhbGwiLCIvdXNlci9pbWFnZXMiLCIvdXNlci9reWMiLCIvdXNlci9reWMvIiwiL2FkbWluL3VzZXJzIl0sInJvbGVfaWQiOjEsInJvbGVfbmFtZSI6IlJPTEVfVVNFUiIsInVzZXJfaWQiOjV9.VQ9xgbEZGesfA2kAZX_oknZWWAieK9bex2gz-aL-vlE
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: images
+        meta:
+          id: fld_82475a2646a64fd093556741ef84f562
+          created: 1744240548328
+          modified: 1744240548328
+          sortKey: -1744240548328
+        children:
+          - url: "{{ _.back_url }}/user/images"
+            name: get
+            meta:
+              id: req_c381d5503d204bf28c1b4af41673b70b
+              created: 1744240558466
+              modified: 1744656555318
+              isPrivate: false
+              sortKey: -1744240558466
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.0
+                id: pair_1a65394ef06e40e695c5bd5cabe0f86e
+              - id: pair_e84946b05ebf483cb1080c9375c5c02f
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1ZGFzMzk5MUBnbWFpbC5jb20iLCJleHAiOjE3NDQ3NDI5NDEsImlhdCI6MTc0NDY1NjU0MSwicGF0aHNfYWxsb3ciOlsiL3VzZXIvYWZpbGlhdGVzIiwiL3VzZXIvaW1hZ2VzIiwiL3VzZXIvY2hhbGxlbmdlIiwiL3VzZXIvZHJ5d2FsbCIsIi91c2VyL2RyeXdhbGwiLCIvdXNlci9pbWFnZXMiLCIvdXNlci9reWMiLCIvdXNlci9reWMvIiwiL2FkbWluL3VzZXJzIl0sInJvbGVfaWQiOjEsInJvbGVfbmFtZSI6IlJPTEVfVVNFUiIsInVzZXJfaWQiOjV9.VQ9xgbEZGesfA2kAZX_oknZWWAieK9bex2gz-aL-vlE
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.back_url }}/user/images"
+            name: put image of front
+            meta:
+              id: req_0a1ade8ee95143e7bb96feb9099acbee
+              created: 1744241202087
+              modified: 1744241430503
+              isPrivate: false
+              sortKey: -1744241202087
+            method: PUT
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_984815e052574808b4f27444cade87c7
+                  name: actualState
+                  value: front_of_view
+                  disabled: false
+                - id: pair_78c192de03d74b2eafa020e2558994b4
+                  name: actualStatePhoto
+                  disabled: false
+                  type: file
+                  fileName: /home/lelouch/Descargas/muscle front.jpg
+            headers:
+              - name: Content-Type
+                value: multipart/form-data
+                id: pair_e9c55165828d44689a916892378ddf1a
+              - name: User-Agent
+                value: insomnia/11.0.0
+                id: pair_a5d4e07e0c724f26ba28275ca5c809aa
+              - id: pair_add2a4a1f67e439fa369c8ba96f01499
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1ZGFzMzk5MUBnbWFpbC5jb20iLCJleHAiOjE3NDQzMjY4MDcsImlhdCI6MTc0NDI0MDQwNywicGF0aHNfYWxsb3ciOlsiL2FkbWluL3VzZXJzIl0sInJvbGVfaWQiOjEsInJvbGVfbmFtZSI6IlJPTEVfVVNFUiIsInVzZXJfaWQiOjV9.TSSOk8OZzJwH6k0kZu8ZR72rqMRU0ZDo7O5CWl1X948
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.back_url }}/user/images"
+            name: put image of back
+            meta:
+              id: req_717bca4414fe4b308f29895863c7c8f6
+              created: 1744241294342
+              modified: 1744241556472
+              isPrivate: false
+              sortKey: -1744240941303.5
+            method: PUT
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_984815e052574808b4f27444cade87c7
+                  name: actualState
+                  value: back_of_view
+                  disabled: false
+                - id: pair_78c192de03d74b2eafa020e2558994b4
+                  name: actualStatePhoto
+                  disabled: false
+                  type: file
+                  fileName: /home/lelouch/Descargas/muscle back.jpg
+            headers:
+              - name: Content-Type
+                value: multipart/form-data
+                id: pair_0961d15b6e714dd58e57a493f2d3c740
+              - name: User-Agent
+                value: insomnia/11.0.0
+                id: pair_db4ad6aa9cf0483888351bbeae120faf
+              - id: pair_640b036ee33741a3bc596fd20ad6caf4
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1ZGFzMzk5MUBnbWFpbC5jb20iLCJleHAiOjE3NDQzMjY4MDcsImlhdCI6MTc0NDI0MDQwNywicGF0aHNfYWxsb3ciOlsiL2FkbWluL3VzZXJzIl0sInJvbGVfaWQiOjEsInJvbGVfbmFtZSI6IlJPTEVfVVNFUiIsInVzZXJfaWQiOjV9.TSSOk8OZzJwH6k0kZu8ZR72rqMRU0ZDo7O5CWl1X948
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.back_url }}/user/images"
+            name: put image of lateral
+            meta:
+              id: req_f631a299e2ca48d5b8b306d427788a69
+              created: 1744241308104
+              modified: 1744241619952
+              isPrivate: false
+              sortKey: -1744240810911.75
+            method: PUT
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_984815e052574808b4f27444cade87c7
+                  name: actualState
+                  value: lateral_of_view
+                  disabled: false
+                - id: pair_78c192de03d74b2eafa020e2558994b4
+                  name: actualStatePhoto
+                  disabled: false
+                  type: file
+                  fileName: /home/lelouch/Descargas/muscle lateral.jpg
+            headers:
+              - name: Content-Type
+                value: multipart/form-data
+                id: pair_bec054b35337416b87fc0273ce4ea962
+              - name: User-Agent
+                value: insomnia/11.0.0
+                id: pair_21a33a84b255427984c977599980f10d
+              - id: pair_6fc0630b512e44a1865ebe010cc90835
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1ZGFzMzk5MUBnbWFpbC5jb20iLCJleHAiOjE3NDQzMjY4MDcsImlhdCI6MTc0NDI0MDQwNywicGF0aHNfYWxsb3ciOlsiL2FkbWluL3VzZXJzIl0sInJvbGVfaWQiOjEsInJvbGVfbmFtZSI6IlJPTEVfVVNFUiIsInVzZXJfaWQiOjV9.TSSOk8OZzJwH6k0kZu8ZR72rqMRU0ZDo7O5CWl1X948
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: kyc
+        meta:
+          id: fld_59f5f7b7fe504bdbb2f47169cdb53df1
+          created: 1744240677724
+          modified: 1744240909964
+          sortKey: -1744240677724
+        children:
+          - url: "{{ _.back_url }}/user/kyc"
+            name: get
+            meta:
+              id: req_211a11c657ea40efbed92a1f6ea37d94
+              created: 1744240680520
+              modified: 1744488451939
+              isPrivate: false
+              sortKey: -1744240680520
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.0
+                id: pair_cb2722bdb83348fa9459350f9fc47ec2
+              - id: pair_c79f204dfdf542d2be22ba2d7c8c4c68
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1YW5kZGV2ZWxvcGVyMDU3QGdtYWlsLmNvbSIsImV4cCI6MTc0NDU3NDc2MywiaWF0IjoxNzQ0NDg4MzYzLCJwYXRoc19hbGxvdyI6WyIvdXNlci9hZmlsaWF0ZXMiLCIvdXNlci9pbWFnZXMiLCIvdXNlci9jaGFsbGVuZ2UiLCIvdXNlci9kcnl3YWxsIiwiL3VzZXIvZHJ5d2FsbCIsIi91c2VyL2ltYWdlcyIsIi91c2VyL2t5YyIsIi91c2VyL2t5Yy8iXSwicm9sZV9pZCI6MSwicm9sZV9uYW1lIjoiUk9MRV9VU0VSIiwidXNlcl9pZCI6MTF9.FgepxeED2u49zG6YEY1i43nBNlSOAnBLfKziAeU9hT0
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.back_url }}/user/kyc"
+            name: post profile
+            meta:
+              id: req_d8e5f6accfcb498db0273339b2892171
+              created: 1744240748131
+              modified: 1744243028743
+              isPrivate: false
+              sortKey: -1744240619493
+            method: POST
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_627aa1b40514461d8f501b5d307632b2
+                  name: kyc_info
+                  value: PROFILE_KYC_ENUM
+                  disabled: false
+                - id: pair_30ab5716a1ee4a00919746e85974dbd1
+                  name: document_kyc
+                  disabled: false
+                  type: file
+                  fileName: /home/lelouch/Descargas/betty_la_fea_6_0.jpg
+            headers:
+              - name: Content-Type
+                value: multipart/form-data
+              - name: User-Agent
+                value: insomnia/11.0.0
+                id: pair_cb2722bdb83348fa9459350f9fc47ec2
+              - id: pair_c79f204dfdf542d2be22ba2d7c8c4c68
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1ZGFzMzk5MUBnbWFpbC5jb20iLCJleHAiOjE3NDQzMjY4MDcsImlhdCI6MTc0NDI0MDQwNywicGF0aHNfYWxsb3ciOlsiL2FkbWluL3VzZXJzIl0sInJvbGVfaWQiOjEsInJvbGVfbmFtZSI6IlJPTEVfVVNFUiIsInVzZXJfaWQiOjV9.TSSOk8OZzJwH6k0kZu8ZR72rqMRU0ZDo7O5CWl1X948
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.back_url }}/user/kyc"
+            name: post id
+            meta:
+              id: req_0fb86ec4fc1b4fc1b1d94eed2660da90
+              created: 1744240987619
+              modified: 1744243032839
+              isPrivate: false
+              sortKey: -1744240588979.5
+            method: POST
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_627aa1b40514461d8f501b5d307632b2
+                  name: kyc_info
+                  value: IDENTIFICATION_KYC_ENUM
+                  disabled: false
+                - id: pair_30ab5716a1ee4a00919746e85974dbd1
+                  name: document_kyc
+                  disabled: false
+                  type: file
+                  fileName: /home/lelouch/Descargas/betty-la-fea-1.png
+            headers:
+              - name: Content-Type
+                value: multipart/form-data
+              - name: User-Agent
+                value: insomnia/11.0.0
+                id: pair_cb2722bdb83348fa9459350f9fc47ec2
+              - id: pair_c79f204dfdf542d2be22ba2d7c8c4c68
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1ZGFzMzk5MUBnbWFpbC5jb20iLCJleHAiOjE3NDQzMjY4MDcsImlhdCI6MTc0NDI0MDQwNywicGF0aHNfYWxsb3ciOlsiL2FkbWluL3VzZXJzIl0sInJvbGVfaWQiOjEsInJvbGVfbmFtZSI6IlJPTEVfVVNFUiIsInVzZXJfaWQiOjV9.TSSOk8OZzJwH6k0kZu8ZR72rqMRU0ZDo7O5CWl1X948
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.back_url }}/user/kyc"
+            name: post recipient
+            meta:
+              id: req_3899f34687504db8b8c139e680a80b08
+              created: 1744241032553
+              modified: 1744243037747
+              isPrivate: false
+              sortKey: -1744240573722.75
+            method: POST
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_627aa1b40514461d8f501b5d307632b2
+                  name: kyc_info
+                  value: RECIPIENT_KYC_ENUM
+                  disabled: false
+                - id: pair_30ab5716a1ee4a00919746e85974dbd1
+                  name: document_kyc
+                  disabled: false
+                  type: file
+                  fileName: /home/lelouch/Descargas/14546416506.pdf
+            headers:
+              - name: Content-Type
+                value: multipart/form-data
+              - name: User-Agent
+                value: insomnia/11.0.0
+                id: pair_cb2722bdb83348fa9459350f9fc47ec2
+              - id: pair_c79f204dfdf542d2be22ba2d7c8c4c68
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1ZGFzMzk5MUBnbWFpbC5jb20iLCJleHAiOjE3NDQzMjY4MDcsImlhdCI6MTc0NDI0MDQwNywicGF0aHNfYWxsb3ciOlsiL2FkbWluL3VzZXJzIl0sInJvbGVfaWQiOjEsInJvbGVfbmFtZSI6IlJPTEVfVVNFUiIsInVzZXJfaWQiOjV9.TSSOk8OZzJwH6k0kZu8ZR72rqMRU0ZDo7O5CWl1X948
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: service data
+        meta:
+          id: fld_2338abd761fa4d8a820d2c9f949744b3
+          created: 1744663407324
+          modified: 1744663420663
+          sortKey: -1744663407324
+        children:
+          - url: "{{ _.back_url }}/user/pay"
+            name: buy plan
+            meta:
+              id: req_35197242b20e44a8862d7d9837e28868
+              created: 1744663423470
+              modified: 1744664243938
+              isPrivate: false
+              sortKey: -1744663423470
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "address": "Turbaco, Bolivar",
+                  "country_code": "co",
+                  "document_number": "1024542300",
+                  "document_type": "CC",
+                  "first_name": "Juan",
+                  "is_save_data": true,
+                  "last_name": "Sierra",
+                  "type_pay": "epayco"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.2
+                id: pair_45eb7a1f3f7247949bc584f9bd88c47c
+              - id: pair_a9f770fdb13a415c9b23212e2161f884
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1YW5kZGV2ZWxvcGVyMDU3QGdtYWlsLmNvbSIsImV4cCI6MTc0NDc0OTYzOCwiaWF0IjoxNzQ0NjYzMjM4LCJwYXRoc19hbGxvdyI6WyIvdXNlci9hZmlsaWF0ZXMiLCIvdXNlci9pbWFnZXMiLCIvdXNlci9jaGFsbGVuZ2UiLCIvdXNlci9kcnl3YWxsIiwiL3VzZXIvZHJ5d2FsbCIsIi91c2VyL2ltYWdlcyIsIi91c2VyL2t5YyIsIi91c2VyL2t5Yy8iLCIvYWRtaW4vdXNlcnMiLCIvdXNlci91cGRhdGUvcGFzc3dvcmQiXSwicm9sZV9pZCI6MSwicm9sZV9uYW1lIjoiUk9MRV9VU0VSIiwidXNlcl9pZCI6MTF9.4s9ao3EprZYx9TymnEQc9d2Mqz5NmuuwVg1A02gPve0
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - url: "{{ _.back_url }}/user/update/password"
+        name: update password
+        meta:
+          id: req_af472d95da7a4fb1995b289f17ea1a09
+          created: 1744656643263
+          modified: 1744663426232
+          isPrivate: false
+          sortKey: -1744656643263
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"old_password": "Maye9095",
+            	"new_password": "1234567"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_4be44c9c367e42df80a5c2a38ba6a905
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_3bbba58a56cc4e24af6aecee44b984b2
+          - id: pair_8360c29af652427e873e8bfdc40b0bed
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1YW5kZGV2ZWxvcGVyMDU3QGdtYWlsLmNvbSIsImV4cCI6MTc0NDc0OTYwNSwiaWF0IjoxNzQ0NjYzMjA1LCJwYXRoc19hbGxvdyI6WyIvdXNlci9hZmlsaWF0ZXMiLCIvdXNlci9pbWFnZXMiLCIvdXNlci9jaGFsbGVuZ2UiLCIvdXNlci9kcnl3YWxsIiwiL3VzZXIvZHJ5d2FsbCIsIi91c2VyL2ltYWdlcyIsIi91c2VyL2t5YyIsIi91c2VyL2t5Yy8iLCIvYWRtaW4vdXNlcnMiLCIvdXNlci91cGRhdGUvcGFzc3dvcmQiXSwicm9sZV9pZCI6MSwicm9sZV9uYW1lIjoiUk9MRV9VU0VSIiwidXNlcl9pZCI6MTF9.M0KxRVxI8x7d67dwZvs7ITfKgI2xWFppxzp2d5VW6Lk
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: admin
+    meta:
+      id: fld_c498dce117de4ab48cdf9687e7cd525f
+      created: 1744245015739
+      modified: 1744245015739
+      sortKey: -1744245015739
+    children:
+      - name: kyc
+        meta:
+          id: fld_f21f2fa6932c409cac76a2394816395f
+          created: 1744250426417
+          modified: 1744250426417
+          sortKey: -1744250426417
+        children:
+          - url: "{{ _.back_url }}/admin/kyc/users"
+            name: users
+            meta:
+              id: req_27dbae79ca564afe9826820228887d18
+              created: 1744250277949
+              modified: 1744489198994
+              isPrivate: false
+              sortKey: -1744250436384
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.0
+                id: pair_6e0f0e39cb1a46229fae0b39ec66bb63
+              - id: pair_6a15005af6124941898a864014d8d16d
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRpYmlnODU2NjhAaW52ZWl0cm8uY29tIiwiZXhwIjoxNzQ0NTY0MzE0LCJpYXQiOjE3NDQ0Nzc5MTQsInBhdGhzX2FsbG93IjpbIi9hZG1pbi8iLCIvYWRtaW4vdXNlciIsIi9hZG1pbi91c2VycyIsIi9hZG1pbi91c2VycyJdLCJyb2xlX2lkIjoyLCJyb2xlX25hbWUiOiJST0xFX0FETUlOIiwidXNlcl9pZCI6MTJ9.xXxTFKIQZT-6hht29vb0SzMx8wraE7VRNd3UKFLwQy8
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.back_url }}/admin/users"
+            name: approve kyc profile
+            meta:
+              id: req_8353730c5bef4725b3de663b665b4722
+              created: 1744250436284
+              modified: 1744489134925
+              isPrivate: false
+              sortKey: -1744250436284
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email": "judas3991@gmail.com",
+                	"data_info": "PROFILE_KYC_ENUM"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_5d4499f125c74ae695d17456c4f02e00
+              - name: User-Agent
+                value: insomnia/11.0.0
+                id: pair_9e0321816a754f569e622539385742c8
+              - id: pair_3d1721bd586e4a69aef51592abed0398
+                name: Authorization
+                value: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRvdmFrZTM2NTNAeGNtZXhpY28uY29tIiwiZXhwIjoxNzQzOTgzMzkwLCJpYXQiOjE3NDM4OTY5OTAsInBhdGhzX2FsbG93IjpbIi9hZG1pbi9ob21lIiwiL3VzZXIvZGF0YSIsIi9hZG1pbi9reWMiLCIvYWRtaW4vdXNlcnMiLCIvdXNlci9reWMvZGF0YSIsIi9hZG1pbi93aXRoX2RyYXdhbGwiLCIvdXNlci9pbnZlc3Qvd2l0aF9kcmF3YWxsIiwiL2FkbWluL3dpdGhfZHJhd2FsbC9hcHByb3ZlLzIxIiwiL2FkbWluL3dpdGhfZHJhd2FsbC9hcHByb3ZlLzIwIiwiL2FkbWluL3dpdGhfZHJhd2FsbC9hcHByb3ZlLzE5IiwiL2FkbWluL3dpdGhfZHJhd2FsbC9hcHByb3ZlLzE2IiwiL3VzZXIvd2l0aF9kcmF3YWxsIiwiL2FkbWluL3VzZXIvdHJhbnNhY3Rpb25zIiwiL2FkbWluL3VzZXIvdHJhbnNhY3Rpb25zIiwiL2FkbWluL3VzZXIvYnV5IiwiL2FkbWluL3VzZXIvbmV0d29yayIsIi9hZG1pbi91c2VyL2RhdGEiLCIvYWRtaW4vdXNlci93aXRoLWRyYXdhbGwiLCIvYWRtaW4vdXNlci9uZXR3b3JrIiwiL2FkbWluL3dpdGhfZHJhd2FsbC9hcHByb3ZlLy4qWzAtOV0rIl0sInJvbGVfaWQiOjIsInJvbGVfbmFtZSI6IlJPTEVfQURNSU4iLCJ1c2VyX2lkIjoxfQ.ftliQkEihqzhUDJe4zfg9evVeIkUg8l6_l8Oh1yqe6U
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: logs
+        meta:
+          id: fld_e05858d55070401fa5a9924719f25e92
+          created: 1744477954740
+          modified: 1744477954740
+          sortKey: -1744477954740
+        children:
+          - url: "{{ _.back_url }}/admin/mail-logs"
+            name: mail logs
+            meta:
+              id: req_02075577bd9e4bdaa01794025b9af296
+              created: 1744477959297
+              modified: 1744662196782
+              isPrivate: false
+              sortKey: -1744477959298
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.2
+                id: pair_9a4ce28633204804972f7ddfa16d00cc
+              - id: pair_c325cbd334c94d3ea6b7faf58c60b0bc
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRpYmlnODU2NjhAaW52ZWl0cm8uY29tIiwiZXhwIjoxNzQ0NzQ4NTgzLCJpYXQiOjE3NDQ2NjIxODMsInBhdGhzX2FsbG93IjpbIi9hZG1pbi8iLCIvYWRtaW4vdXNlciIsIi9hZG1pbi91c2VycyIsIi9hZG1pbi91c2VycyIsIi9hZG1pbi9reWMvdXNlcnMiLCIvYWRtaW4va3ljIiwiL2FkbWluL21haWwtbG9ncyJdLCJyb2xlX2lkIjoyLCJyb2xlX25hbWUiOiJST0xFX0FETUlOIiwidXNlcl9pZCI6MTJ9.tIvugB1aJO_vBt8FFftdYkYNimQFw3lz4yglt65mSrM
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - url: "{{ _.back_url }}/admin/kyc"
+        name: /
+        meta:
+          id: req_c54a89c92d5c4403987b582bef736b81
+          created: 1744250129831
+          modified: 1744663139269
+          isPrivate: false
+          sortKey: -1744250129831
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.0
+            id: pair_6e0f0e39cb1a46229fae0b39ec66bb63
+          - id: pair_6a15005af6124941898a864014d8d16d
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRpYmlnODU2NjhAaW52ZWl0cm8uY29tIiwiZXhwIjoxNzQ0NzQ4NTgzLCJpYXQiOjE3NDQ2NjIxODMsInBhdGhzX2FsbG93IjpbIi9hZG1pbi8iLCIvYWRtaW4vdXNlciIsIi9hZG1pbi91c2VycyIsIi9hZG1pbi91c2VycyIsIi9hZG1pbi9reWMvdXNlcnMiLCIvYWRtaW4va3ljIiwiL2FkbWluL21haWwtbG9ncyJdLCJyb2xlX2lkIjoyLCJyb2xlX25hbWUiOiJST0xFX0FETUlOIiwidXNlcl9pZCI6MTJ9.tIvugB1aJO_vBt8FFftdYkYNimQFw3lz4yglt65mSrM
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_5c6837d512aeb156e8e6508cb5944c07a4f8054d
+    created: 1743620255415
+    modified: 1743620255415
+environments:
+  name: Base Environment
+  meta:
+    id: env_5c6837d512aeb156e8e6508cb5944c07a4f8054d
+    created: 1743620255412
+    modified: 1744240404256
+    isPrivate: false
+  data:
+    back_url: http://localhost:5000

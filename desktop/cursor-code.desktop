@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=0.48.8
+Name=Cursor
+GenericName=Code Editor
+Comment=Programming software development with IA
+Keywords=Go;Python;Js
+Exec=/opt/cursor/Cursor.AppImage
+#Icon=cursor
+Icon=/opt/cursor/logo.webp
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=cursor-code-editor
+Categories=Development;Debbug;
+

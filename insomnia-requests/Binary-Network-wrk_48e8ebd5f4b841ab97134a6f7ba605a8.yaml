@@ -24,7 +24,7 @@ collection:
             meta:
               id: req_70159b0ae5f3402ebbed716960a6f5f8
               created: 1740247941301
-              modified: 1740619332049
+              modified: 1744664723351
               isPrivate: false
               sortKey: -1740619328558
             method: POST
@@ -33,7 +33,7 @@ collection:
               text: |-
                 {
                 	"email": "tovake3653@xcmexico.com",
-                	"password": "admin"
+                	"password": "1234567"
                 }
             headers:
               - name: Content-Type
@@ -53,7 +53,7 @@ collection:
             meta:
               id: req_1061bb305fd346bc877799c66522dc8f
               created: 1740619343457
-              modified: 1742501284241
+              modified: 1744664728975
               isPrivate: false
               sortKey: -1740619282300
             method: POST
@@ -61,8 +61,8 @@ collection:
               mimeType: application/json
               text: |-
                 {
-                	"email": "rafaelgomezp31+2@gmail.com",
-                	"password": "admin"
+                	"email": "judas3991@gmail.com",
+                	"password": "1234567"
                 }
             headers:
               - name: Content-Type
@@ -82,7 +82,7 @@ collection:
             meta:
               id: req_78f1f3f649a34df2915d16ae9ce258c1
               created: 1741722878860
-              modified: 1741723366422
+              modified: 1744664738320
               isPrivate: false
               sortKey: -1740619259171
             method: POST
@@ -91,7 +91,7 @@ collection:
               text: |-
                 {
                 	"email": "judas3991@gmail.com",
-                	"code": "445897"
+                	"code": "123445456"
                 }
             headers:
               - name: Content-Type
@@ -111,7 +111,7 @@ collection:
             meta:
               id: req_537eef96e83a461cb9b995907937afcd
               created: 1742265852300
-              modified: 1742265859152
+              modified: 1744664733545
               isPrivate: false
               sortKey: -1740619270735.5
             method: POST
@@ -120,7 +120,7 @@ collection:
               text: |-
                 {
                 	"email": "rafaelgomezp31+2@gmail.com",
-                	"password": "admin"
+                	"password": "124354656778"
                 }
             headers:
               - name: Content-Type
@@ -277,13 +277,14 @@ collection:
             meta:
               id: req_8081b14ed3ca4a489ba634e86338f3b3
               created: 1741221510344
-              modified: 1742250036165
+              modified: 1744322814326
               isPrivate: false
               sortKey: -1741886551302
             method: GET
             headers:
               - name: Authorization
-                value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRvdmFrZTM2NTNAeGNtZXhpY28uY29tIiwiZXhwIjoxNzQyMzM2MzEzLCJpYXQiOjE3NDIyNDk5MTQsInBhdGhzX2FsbG93IjpudWxsLCJ1c2VyX2lkIjoxfQ.wVm73mqQ7ZPFF0LN3YAa6Q1at122dHT-1wbXRxvNi5s
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRvdmFrZTM2NTNAeGNtZXhpY28uY29tIiwiZXhwIjoxNzQ0NDA5MTkxLCJpYXQiOjE3NDQzMjI3OTEsInBhdGhzX2FsbG93IjpbIi9hZG1pbi9ob21lIiwiL3VzZXIvZGF0YSIsIi9hZG1pbi9reWMiLCIvYWRtaW4vdXNlcnMiLCIvdXNlci9reWMvZGF0YSIsIi9hZG1pbi93aXRoX2RyYXdhbGwiLCIvdXNlci9pbnZlc3Qvd2l0aF9kcmF3YWxsIiwiL3VzZXIvd2l0aF9kcmF3YWxsIiwiL2FkbWluL3VzZXIvdHJhbnNhY3Rpb25zIiwiL2FkbWluL3VzZXIvdHJhbnNhY3Rpb25zIiwiL2FkbWluL3VzZXIvYnV5IiwiL2FkbWluL3VzZXIvbmV0d29yayIsIi9hZG1pbi91c2VyL2RhdGEiLCIvYWRtaW4vdXNlci93aXRoLWRyYXdhbGwiLCIvYWRtaW4vdXNlci9uZXR3b3JrIiwiL2FkbWluL3dpdGhfZHJhd2FsbC9hcHByb3ZlLy4qWzAtOV0rIiwiL2FkbWluL2RlcG9zaXRzIiwiL2FkbWluL3VzZXIvYWNjb3VudC8uKlswLTldKyIsIi9hZG1pbi91c2VyIl0sInJvbGVfaWQiOjIsInJvbGVfbmFtZSI6IlJPTEVfQURNSU4iLCJ1c2VyX2lkIjoxfQ.prjWPKFV2p66MKfsfp3xbrMAAs8K13qWfE0T7MzwcVo
                 id: pair_0c190e9b0f344b92ab2b8c37d9f8dd8e
               - name: User-Agent
                 value: insomnia/10.3.1
@@ -301,7 +302,7 @@ collection:
             meta:
               id: req_1352ad2668434b76bb6300e82bdf27b8
               created: 1741886551202
-              modified: 1742265523491
+              modified: 1744322868533
               isPrivate: false
               sortKey: -1741886551202
             method: PATCH
@@ -321,7 +322,7 @@ collection:
               - id: pair_90f594794f614c4284af24072d392b98
                 name: Authorization
                 value: Bearer
-                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRvdmFrZTM2NTNAeGNtZXhpY28uY29tIiwiZXhwIjoxNzQyMzM2MzEzLCJpYXQiOjE3NDIyNDk5MTQsInBhdGhzX2FsbG93IjpudWxsLCJ1c2VyX2lkIjoxfQ.wVm73mqQ7ZPFF0LN3YAa6Q1at122dHT-1wbXRxvNi5s
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRvdmFrZTM2NTNAeGNtZXhpY28uY29tIiwiZXhwIjoxNzQ0NDA5MTkxLCJpYXQiOjE3NDQzMjI3OTEsInBhdGhzX2FsbG93IjpbIi9hZG1pbi9ob21lIiwiL3VzZXIvZGF0YSIsIi9hZG1pbi9reWMiLCIvYWRtaW4vdXNlcnMiLCIvdXNlci9reWMvZGF0YSIsIi9hZG1pbi93aXRoX2RyYXdhbGwiLCIvdXNlci9pbnZlc3Qvd2l0aF9kcmF3YWxsIiwiL3VzZXIvd2l0aF9kcmF3YWxsIiwiL2FkbWluL3VzZXIvdHJhbnNhY3Rpb25zIiwiL2FkbWluL3VzZXIvdHJhbnNhY3Rpb25zIiwiL2FkbWluL3VzZXIvYnV5IiwiL2FkbWluL3VzZXIvbmV0d29yayIsIi9hZG1pbi91c2VyL2RhdGEiLCIvYWRtaW4vdXNlci93aXRoLWRyYXdhbGwiLCIvYWRtaW4vdXNlci9uZXR3b3JrIiwiL2FkbWluL3dpdGhfZHJhd2FsbC9hcHByb3ZlLy4qWzAtOV0rIiwiL2FkbWluL2RlcG9zaXRzIiwiL2FkbWluL3VzZXIvYWNjb3VudC8uKlswLTldKyIsIi9hZG1pbi91c2VyIl0sInJvbGVfaWQiOjIsInJvbGVfbmFtZSI6IlJPTEVfQURNSU4iLCJ1c2VyX2lkIjoxfQ.prjWPKFV2p66MKfsfp3xbrMAAs8K13qWfE0T7MzwcVo
                 disabled: false
             settings:
               renderRequestBody: true
@@ -336,7 +337,7 @@ collection:
             meta:
               id: req_327524aaf0484d03a64cc606bc385477
               created: 1741887946814
-              modified: 1742250058310
+              modified: 1743720688416
               isPrivate: false
               sortKey: -1741804368381.5
             method: PATCH
@@ -355,7 +356,8 @@ collection:
                 id: pair_349615b857444d55a13f0431c793e081
               - id: pair_90f594794f614c4284af24072d392b98
                 name: Authorization
-                value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRvdmFrZTM2NTNAeGNtZXhpY28uY29tIiwiZXhwIjoxNzQyMzM2MzEzLCJpYXQiOjE3NDIyNDk5MTQsInBhdGhzX2FsbG93IjpudWxsLCJ1c2VyX2lkIjoxfQ.wVm73mqQ7ZPFF0LN3YAa6Q1at122dHT-1wbXRxvNi5s
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRvdmFrZTM2NTNAeGNtZXhpY28uY29tIiwiZXhwIjoxNzQzODA2ODQ4LCJpYXQiOjE3NDM3MjA0NDgsInBhdGhzX2FsbG93IjpbIi9hZG1pbi9ob21lIiwiL3VzZXIvZGF0YSIsIi9hZG1pbi9reWMiLCIvYWRtaW4vdXNlcnMiLCIvdXNlci9reWMvZGF0YSIsIi9hZG1pbi93aXRoX2RyYXdhbGwiLCIvdXNlci9pbnZlc3Qvd2l0aF9kcmF3YWxsIiwiL3VzZXIvd2l0aF9kcmF3YWxsIiwiL2FkbWluL3VzZXIvdHJhbnNhY3Rpb25zIiwiL2FkbWluL3VzZXIvdHJhbnNhY3Rpb25zIiwiL2FkbWluL3VzZXIvYnV5IiwiL2FkbWluL3VzZXIvbmV0d29yayIsIi9hZG1pbi91c2VyL2RhdGEiLCIvYWRtaW4vdXNlci93aXRoLWRyYXdhbGwiXSwicm9sZV9pZCI6Miwicm9sZV9uYW1lIjoiUk9MRV9BRE1JTiIsInVzZXJfaWQiOjF9.NDvuHtQkV9Hc9WkXqh6h9TKbWoc76Om7qCg-InnNwCU
                 disabled: false
             settings:
               renderRequestBody: true
@@ -370,7 +372,7 @@ collection:
             meta:
               id: req_765b4099384b443b984c6700aa3c0732
               created: 1741888425686
-              modified: 1742250093832
+              modified: 1744322833531
               isPrivate: false
               sortKey: -1741763276971.25
             method: PATCH
@@ -389,7 +391,8 @@ collection:
                 id: pair_349615b857444d55a13f0431c793e081
               - id: pair_90f594794f614c4284af24072d392b98
                 name: Authorization
-                value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRvdmFrZTM2NTNAeGNtZXhpY28uY29tIiwiZXhwIjoxNzQyMzM2MzEzLCJpYXQiOjE3NDIyNDk5MTQsInBhdGhzX2FsbG93IjpudWxsLCJ1c2VyX2lkIjoxfQ.wVm73mqQ7ZPFF0LN3YAa6Q1at122dHT-1wbXRxvNi5s
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRvdmFrZTM2NTNAeGNtZXhpY28uY29tIiwiZXhwIjoxNzQ0NDA5MTkxLCJpYXQiOjE3NDQzMjI3OTEsInBhdGhzX2FsbG93IjpbIi9hZG1pbi9ob21lIiwiL3VzZXIvZGF0YSIsIi9hZG1pbi9reWMiLCIvYWRtaW4vdXNlcnMiLCIvdXNlci9reWMvZGF0YSIsIi9hZG1pbi93aXRoX2RyYXdhbGwiLCIvdXNlci9pbnZlc3Qvd2l0aF9kcmF3YWxsIiwiL3VzZXIvd2l0aF9kcmF3YWxsIiwiL2FkbWluL3VzZXIvdHJhbnNhY3Rpb25zIiwiL2FkbWluL3VzZXIvdHJhbnNhY3Rpb25zIiwiL2FkbWluL3VzZXIvYnV5IiwiL2FkbWluL3VzZXIvbmV0d29yayIsIi9hZG1pbi91c2VyL2RhdGEiLCIvYWRtaW4vdXNlci93aXRoLWRyYXdhbGwiLCIvYWRtaW4vdXNlci9uZXR3b3JrIiwiL2FkbWluL3dpdGhfZHJhd2FsbC9hcHByb3ZlLy4qWzAtOV0rIiwiL2FkbWluL2RlcG9zaXRzIiwiL2FkbWluL3VzZXIvYWNjb3VudC8uKlswLTldKyIsIi9hZG1pbi91c2VyIl0sInJvbGVfaWQiOjIsInJvbGVfbmFtZSI6IlJPTEVfQURNSU4iLCJ1c2VyX2lkIjoxfQ.prjWPKFV2p66MKfsfp3xbrMAAs8K13qWfE0T7MzwcVo
                 disabled: false
             settings:
               renderRequestBody: true
@@ -501,12 +504,12 @@ collection:
                 send: true
                 store: true
               rebuildPath: true
-          - url: http://localhost:1323/admin/user/account/116
+          - url: http://localhost:1323/admin/user/account/116?limit=10
             name: "user account "
             meta:
               id: req_cc517a916d1043a7b738279ef7c0e7a6
               created: 1742250158310
-              modified: 1742250613951
+              modified: 1743899660397
               isPrivate: false
               sortKey: -1741845459791.75
             method: PATCH
@@ -525,7 +528,43 @@ collection:
                 id: pair_349615b857444d55a13f0431c793e081
               - id: pair_90f594794f614c4284af24072d392b98
                 name: Authorization
-                value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRvdmFrZTM2NTNAeGNtZXhpY28uY29tIiwiZXhwIjoxNzQyMzM2MzEzLCJpYXQiOjE3NDIyNDk5MTQsInBhdGhzX2FsbG93IjpudWxsLCJ1c2VyX2lkIjoxfQ.wVm73mqQ7ZPFF0LN3YAa6Q1at122dHT-1wbXRxvNi5s
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRvdmFrZTM2NTNAeGNtZXhpY28uY29tIiwiZXhwIjoxNzQzOTgzMzkwLCJpYXQiOjE3NDM4OTY5OTAsInBhdGhzX2FsbG93IjpbIi9hZG1pbi9ob21lIiwiL3VzZXIvZGF0YSIsIi9hZG1pbi9reWMiLCIvYWRtaW4vdXNlcnMiLCIvdXNlci9reWMvZGF0YSIsIi9hZG1pbi93aXRoX2RyYXdhbGwiLCIvdXNlci9pbnZlc3Qvd2l0aF9kcmF3YWxsIiwiL2FkbWluL3dpdGhfZHJhd2FsbC9hcHByb3ZlLzIxIiwiL2FkbWluL3dpdGhfZHJhd2FsbC9hcHByb3ZlLzIwIiwiL2FkbWluL3dpdGhfZHJhd2FsbC9hcHByb3ZlLzE5IiwiL2FkbWluL3dpdGhfZHJhd2FsbC9hcHByb3ZlLzE2IiwiL3VzZXIvd2l0aF9kcmF3YWxsIiwiL2FkbWluL3VzZXIvdHJhbnNhY3Rpb25zIiwiL2FkbWluL3VzZXIvdHJhbnNhY3Rpb25zIiwiL2FkbWluL3VzZXIvYnV5IiwiL2FkbWluL3VzZXIvbmV0d29yayIsIi9hZG1pbi91c2VyL2RhdGEiLCIvYWRtaW4vdXNlci93aXRoLWRyYXdhbGwiLCIvYWRtaW4vdXNlci9uZXR3b3JrIiwiL2FkbWluL3dpdGhfZHJhd2FsbC9hcHByb3ZlLy4qWzAtOV0rIl0sInJvbGVfaWQiOjIsInJvbGVfbmFtZSI6IlJPTEVfQURNSU4iLCJ1c2VyX2lkIjoxfQ.ftliQkEihqzhUDJe4zfg9evVeIkUg8l6_l8Oh1yqe6U
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:1323/admin/user/kyc
+            name: "kyc "
+            meta:
+              id: req_b8d31a6145f145ad833f4c07f818be0c
+              created: 1744322877794
+              modified: 1744323108945
+              isPrivate: false
+              sortKey: -1741866005496.875
+            method: PATCH
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email": "judas3991@gmail.com"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_c5bcb68ab494444ca9a74e05bbb91f0d
+              - name: User-Agent
+                value: insomnia/10.3.1
+                id: pair_349615b857444d55a13f0431c793e081
+              - id: pair_90f594794f614c4284af24072d392b98
+                name: Authorization
+                value: Bearer
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRvdmFrZTM2NTNAeGNtZXhpY28uY29tIiwiZXhwIjoxNzQ0NDA5MTkxLCJpYXQiOjE3NDQzMjI3OTEsInBhdGhzX2FsbG93IjpbIi9hZG1pbi9ob21lIiwiL3VzZXIvZGF0YSIsIi9hZG1pbi9reWMiLCIvYWRtaW4vdXNlcnMiLCIvdXNlci9reWMvZGF0YSIsIi9hZG1pbi93aXRoX2RyYXdhbGwiLCIvdXNlci9pbnZlc3Qvd2l0aF9kcmF3YWxsIiwiL3VzZXIvd2l0aF9kcmF3YWxsIiwiL2FkbWluL3VzZXIvdHJhbnNhY3Rpb25zIiwiL2FkbWluL3VzZXIvdHJhbnNhY3Rpb25zIiwiL2FkbWluL3VzZXIvYnV5IiwiL2FkbWluL3VzZXIvbmV0d29yayIsIi9hZG1pbi91c2VyL2RhdGEiLCIvYWRtaW4vdXNlci93aXRoLWRyYXdhbGwiLCIvYWRtaW4vdXNlci9uZXR3b3JrIiwiL2FkbWluL3dpdGhfZHJhd2FsbC9hcHByb3ZlLy4qWzAtOV0rIiwiL2FkbWluL2RlcG9zaXRzIiwiL2FkbWluL3VzZXIvYWNjb3VudC8uKlswLTldKyIsIi9hZG1pbi91c2VyIl0sInJvbGVfaWQiOjIsInJvbGVfbmFtZSI6IlJPTEVfQURNSU4iLCJ1c2VyX2lkIjoxfQ.prjWPKFV2p66MKfsfp3xbrMAAs8K13qWfE0T7MzwcVo
                 disabled: false
             settings:
               renderRequestBody: true
@@ -559,12 +598,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:1323/admin/deposits?page=1&status=finished
+      - url: http://localhost:1323/admin/deposits?page=1&status=finished&limit=20
         name: deposits
         meta:
           id: req_168fb01bf7704051845c173fbcb2582a
           created: 1741905207611
-          modified: 1742250014895
+          modified: 1743897036299
           isPrivate: false
           sortKey: -1741905207611
         method: GET
@@ -574,7 +613,8 @@ collection:
             id: pair_1ff14101d063424f86760ed5f4c7f6be
           - id: pair_8d061770dad246cebf894a3e8d225ebd
             name: Authorization
-            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRvdmFrZTM2NTNAeGNtZXhpY28uY29tIiwiZXhwIjoxNzQyMzM2MzEzLCJpYXQiOjE3NDIyNDk5MTQsInBhdGhzX2FsbG93IjpudWxsLCJ1c2VyX2lkIjoxfQ.wVm73mqQ7ZPFF0LN3YAa6Q1at122dHT-1wbXRxvNi5s
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRvdmFrZTM2NTNAeGNtZXhpY28uY29tIiwiZXhwIjoxNzQzOTgzMzkwLCJpYXQiOjE3NDM4OTY5OTAsInBhdGhzX2FsbG93IjpbIi9hZG1pbi9ob21lIiwiL3VzZXIvZGF0YSIsIi9hZG1pbi9reWMiLCIvYWRtaW4vdXNlcnMiLCIvdXNlci9reWMvZGF0YSIsIi9hZG1pbi93aXRoX2RyYXdhbGwiLCIvdXNlci9pbnZlc3Qvd2l0aF9kcmF3YWxsIiwiL2FkbWluL3dpdGhfZHJhd2FsbC9hcHByb3ZlLzIxIiwiL2FkbWluL3dpdGhfZHJhd2FsbC9hcHByb3ZlLzIwIiwiL2FkbWluL3dpdGhfZHJhd2FsbC9hcHByb3ZlLzE5IiwiL2FkbWluL3dpdGhfZHJhd2FsbC9hcHByb3ZlLzE2IiwiL3VzZXIvd2l0aF9kcmF3YWxsIiwiL2FkbWluL3VzZXIvdHJhbnNhY3Rpb25zIiwiL2FkbWluL3VzZXIvdHJhbnNhY3Rpb25zIiwiL2FkbWluL3VzZXIvYnV5IiwiL2FkbWluL3VzZXIvbmV0d29yayIsIi9hZG1pbi91c2VyL2RhdGEiLCIvYWRtaW4vdXNlci93aXRoLWRyYXdhbGwiLCIvYWRtaW4vdXNlci9uZXR3b3JrIiwiL2FkbWluL3dpdGhfZHJhd2FsbC9hcHByb3ZlLy4qWzAtOV0rIl0sInJvbGVfaWQiOjIsInJvbGVfbmFtZSI6IlJPTEVfQURNSU4iLCJ1c2VyX2lkIjoxfQ.ftliQkEihqzhUDJe4zfg9evVeIkUg8l6_l8Oh1yqe6U
             disabled: false
         settings:
           renderRequestBody: true
@@ -790,12 +830,72 @@ collection:
                 send: true
                 store: true
               rebuildPath: true
+      - url: http://localhost:1323/user/network
+        name: network data
+        meta:
+          id: req_fd4f6e32bb9e462a900372c6a46c1c77
+          created: 1740411766190
+          modified: 1744325509498
+          isPrivate: false
+          sortKey: -1742329164417
+        method: GET
+        headers:
+          - name: User-Agent
+            value: Mozilla/5.0 (Linux; Android 11; SAMSUNG SM-G973U) AppleWebKit/537.36
+              (KHTML, like Gecko) SamsungBrowser/14.2 Chrome/87.0.4280.141
+              Mobile Safari/537.36
+            id: pair_be62c4ba5eaf471ab7eb0ff31dd6ec4c
+          - name: Accept
+            value: application/json, text/plain, */*
+            id: pair_25b2187fbc01425daf29da31ae7cb0a3
+          - name: Accept-Language
+            value: es-AR,es;q=0.8,en-US;q=0.5,en;q=0.3
+            id: pair_367afaa83d4a4a91b6b9c7f0d3133fee
+          - name: Accept-Encoding
+            value: gzip, deflate, br, zstd
+            id: pair_b9c4736c68b24849b61e9265b7fb7d2c
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1ZGFzMzk5MUBnbWFpbC5jb20iLCJleHAiOjE3NDQ0MTE4OTEsImlhdCI6MTc0NDMyNTQ5MSwicGF0aHNfYWxsb3ciOlsiL3VzZXIvZGF0YSIsIi91c2VyL2t5Yy9kYXRhIiwiL2FkbWluL2hvbWUiLCIvdXNlci9pbnZlc3QiLCIvdXNlci9uZXR3b3JrIiwiL3VzZXIvd2l0aF9kcmF3YWxsIiwiL3VzZXIvaW52ZXN0L3RyYW5zYWN0aW9ucyIsIi91c2VyL2ludmVzdC93aXRoX2RyYXdhbGwiLCIvdXNlci9pbnZlc3QvaW52b2ljZSIsIi91c2VyL2ludmVzdC9pbnZlcnQvdmlwIiwiL3VzZXIvbG9naW5zIiwiL3VzZXIvd2l0aF9kcmF3YWxsLyIsIi91c2VyL2ludmVzdCIsIi91c2VyL2ludmVzdC9pbnZlcnQiLCIvdXNlci91cGRhdGUiLCIvdXNlci9wYXNzd29yZCIsIi91c2VyL2t5YyIsIi91c2VyL2ludmVzdC92aXAiLCIvdXNlci9pbnZlc3QvdmlwIl0sInJvbGVfaWQiOjEsInJvbGVfbmFtZSI6IlJPTEVfVVNFUiIsInVzZXJfaWQiOjR9.XVqYpqBhrg-kLTMaeg3GjeYimRzyqGw-cqKC3p-XW-U
+            id: pair_84e9942d835143f781bb5de10f105a48
+          - name: Origin
+            value: http://localhost:8100
+            id: pair_686a077fbbe24341a59f652c2ef61f2b
+          - name: Connection
+            value: keep-alive
+            id: pair_7355d3a01cdc4750a8334e9df34d753b
+          - name: Referer
+            value: http://localhost:8100/
+            id: pair_dac7c1b5b4a54e13af9d02f29a91132f
+          - name: Sec-Fetch-Dest
+            value: empty
+            id: pair_b7943d826fdf4948b5c60910bec70fa5
+          - name: Sec-Fetch-Mode
+            value: cors
+            id: pair_21493744b2aa41bfa938fb5aaebd71bb
+          - name: Sec-Fetch-Site
+            value: same-site
+            id: pair_07be0ba1f68e46dabcf4df7962e6a2ca
+          - name: DNT
+            value: "1"
+            id: pair_73259d17122d41368401121b3f47beff
+          - name: Sec-GPC
+            value: "1"
+            id: pair_9d00c81f37db4b5fade2b602e2882aa4
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
       - url: http://localhost:1323/user/invest
         name: home
         meta:
           id: req_7c6bc732c9eb4ebe86d813ff29229f42
           created: 1742265670308
-          modified: 1742501518851
+          modified: 1744325543891
           isPrivate: false
           sortKey: -1742265670308
         method: GET
@@ -806,7 +906,7 @@ collection:
           - id: pair_a0d4b95116cf4fa4bcb51390515f07c6
             name: Authorization
             value: Bearer
-              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhZmFlbGdvbWV6cDMxKzJAZ21haWwuY29tIiwiZXhwIjoxNzQyNTg3Njg1LCJpYXQiOjE3NDI1MDEyODUsInBhdGhzX2FsbG93IjpbIi91c2VyL2RhdGEiLCIvdXNlci9reWMvZGF0YSIsIi9hZG1pbi9ob21lIiwiL3VzZXIvaW52ZXN0IiwiL3VzZXIvbmV0d29yayIsIi91c2VyL3dpdGhfZHJhd2FsbCIsIi91c2VyL2ludmVzdC90cmFuc2FjdGlvbnMiLCIvdXNlci9pbnZlc3Qvd2l0aF9kcmF3YWxsIiwiL3VzZXIvaW52ZXN0L2ludm9pY2UiLCIvdXNlci9pbnZlc3QvaW52ZXJ0L3ZpcCIsIi91c2VyL2xvZ2lucyIsIi91c2VyL3dpdGhfZHJhd2FsbC8iXSwicm9sZV9uYW1lIjoiUk9MRV9VU0VSIiwidXNlcl9pZCI6MTh9.nqQ3UQbGQTX02KytH5kN_bzlrDvrp4afimMaPUFwAoY
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1ZGFzMzk5MUBnbWFpbC5jb20iLCJleHAiOjE3NDQ0MTE4OTEsImlhdCI6MTc0NDMyNTQ5MSwicGF0aHNfYWxsb3ciOlsiL3VzZXIvZGF0YSIsIi91c2VyL2t5Yy9kYXRhIiwiL2FkbWluL2hvbWUiLCIvdXNlci9pbnZlc3QiLCIvdXNlci9uZXR3b3JrIiwiL3VzZXIvd2l0aF9kcmF3YWxsIiwiL3VzZXIvaW52ZXN0L3RyYW5zYWN0aW9ucyIsIi91c2VyL2ludmVzdC93aXRoX2RyYXdhbGwiLCIvdXNlci9pbnZlc3QvaW52b2ljZSIsIi91c2VyL2ludmVzdC9pbnZlcnQvdmlwIiwiL3VzZXIvbG9naW5zIiwiL3VzZXIvd2l0aF9kcmF3YWxsLyIsIi91c2VyL2ludmVzdCIsIi91c2VyL2ludmVzdC9pbnZlcnQiLCIvdXNlci91cGRhdGUiLCIvdXNlci9wYXNzd29yZCIsIi91c2VyL2t5YyIsIi91c2VyL2ludmVzdC92aXAiLCIvdXNlci9pbnZlc3QvdmlwIl0sInJvbGVfaWQiOjEsInJvbGVfbmFtZSI6IlJPTEVfVVNFUiIsInVzZXJfaWQiOjR9.XVqYpqBhrg-kLTMaeg3GjeYimRzyqGw-cqKC3p-XW-U
             disabled: false
         settings:
           renderRequestBody: true
@@ -842,66 +942,6 @@ collection:
             send: true
             store: true
           rebuildPath: true
-  - url: http://localhost:1323/user/network
-    name: New Request
-    meta:
-      id: req_fd4f6e32bb9e462a900372c6a46c1c77
-      created: 1740411766190
-      modified: 1742250815120
-      isPrivate: false
-      sortKey: -1740411766190
-    method: GET
-    headers:
-      - name: User-Agent
-        value: Mozilla/5.0 (Linux; Android 11; SAMSUNG SM-G973U) AppleWebKit/537.36
-          (KHTML, like Gecko) SamsungBrowser/14.2 Chrome/87.0.4280.141 Mobile
-          Safari/537.36
-        id: pair_be62c4ba5eaf471ab7eb0ff31dd6ec4c
-      - name: Accept
-        value: application/json, text/plain, */*
-        id: pair_25b2187fbc01425daf29da31ae7cb0a3
-      - name: Accept-Language
-        value: es-AR,es;q=0.8,en-US;q=0.5,en;q=0.3
-        id: pair_367afaa83d4a4a91b6b9c7f0d3133fee
-      - name: Accept-Encoding
-        value: gzip, deflate, br, zstd
-        id: pair_b9c4736c68b24849b61e9265b7fb7d2c
-      - name: Authorization
-        value: Bearer
-          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhZmFlbGdvbWV6cDMxQGdtaWwuY29tIiwiZXhwIjoxNzQwNDk3NzQyLCJpYXQiOjE3NDA0MTEzNDIsInBhdGhzX2FsbG93IjpudWxsLCJ1c2VyX2lkIjoxMn0.UxG3SDknQcnAysGAawicTCbR5ndkK5HWZ3wwdQxhA5I
-        id: pair_84e9942d835143f781bb5de10f105a48
-      - name: Origin
-        value: http://localhost:8100
-        id: pair_686a077fbbe24341a59f652c2ef61f2b
-      - name: Connection
-        value: keep-alive
-        id: pair_7355d3a01cdc4750a8334e9df34d753b
-      - name: Referer
-        value: http://localhost:8100/
-        id: pair_dac7c1b5b4a54e13af9d02f29a91132f
-      - name: Sec-Fetch-Dest
-        value: empty
-        id: pair_b7943d826fdf4948b5c60910bec70fa5
-      - name: Sec-Fetch-Mode
-        value: cors
-        id: pair_21493744b2aa41bfa938fb5aaebd71bb
-      - name: Sec-Fetch-Site
-        value: same-site
-        id: pair_07be0ba1f68e46dabcf4df7962e6a2ca
-      - name: DNT
-        value: "1"
-        id: pair_73259d17122d41368401121b3f47beff
-      - name: Sec-GPC
-        value: "1"
-        id: pair_9d00c81f37db4b5fade2b602e2882aa4
-    settings:
-      renderRequestBody: true
-      encodeUrl: true
-      followRedirects: global
-      cookies:
-        send: true
-        store: true
-      rebuildPath: true
 cookieJar:
   name: Default Jar
   meta:
