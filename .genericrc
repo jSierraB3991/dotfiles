@@ -13,6 +13,7 @@ alias bathelp='bat --plain --language=help'
 
 alias xmd="vim $HOME/.xmonad/xmonad.hs"
 alias xmr="cd $HOME/.xmonad/xmobar && lsd -l"
+alias icat="kitty +kitten icat "
 
 help() {
     "$@" --help 2>&1 | bathelp
