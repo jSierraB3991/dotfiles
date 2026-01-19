@@ -1,0 +1,26 @@
+{
+  "style": "~/.config/waybar/style.css",
+  
+  "layer": "top",
+  "position": "top",
+  "height": 10,
+  
+  "modules-center": [
+    "sway/window",
+  ],
+  
+  "modules-left": [
+    "memory",
+    "cpu",
+    "temperature"
+  ],
+  
+  "modules-right": [
+    "pulseaudio",
+    "network",
+    "clock",
+    "custom/notification",
+  ],
+
+  "include": "~/.config/waybar/modules.jsonc"
+}
