@@ -4,11 +4,11 @@ Name=Insomnia
 GenericName=Api Rest Test
 Comment=Testing you Api Rest Or Other Api Rest
 Keywords=Rest;
-Exec=/opt/insomnia/insomnia
+Exec=/opt/insomnia/insomnia %u
 Icon=insomnia
 Terminal=false
 Type=Application
 StartupNotify=true
-StartupWMClass=insonmina
+StartupWMClass=insomnia
 Categories=Development;Test;
-
+MimeType=x-scheme-handler/insomnia;

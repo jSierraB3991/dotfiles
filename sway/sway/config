@@ -15,6 +15,7 @@ font pango:monospace 8
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
+set $mod2 Mod1
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -37,7 +38,11 @@ set $sway_lock $screen_blur && swaylock -i /tmp/captura.png -e -f && rm /tmp/cap
 exec wl-paste -t text --watch clipman store &
 exec nm-applet &
 exec flameshot &
+exec lxpolkit &
 exec waybar &
+exec copyq &
+
+exec_always eval $(ssh-agent -s)
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -52,8 +57,8 @@ output  HDMI-A-1 mode 1920x1080@50hz bg /home/lelouch/Imágenes/wuwa/augusta.web
 ### Idle configuration
 #
 exec swayidle -w \
-	timeout 300 'swaylock -f' \
-	timeout 305 'swaymsg "output * dpms off"' \
+	timeout 100 $sway_lock \
+	timeout 105 'swaymsg "output * dpms off"' \
 	resume 'swaymsg "output * dpms on"'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -85,7 +90,8 @@ exec swayidle -w \
     bindsym $mod+n exec $folder &
 
     # Start a clipboard history
-    bindsym $mod+v exec clipman pick -t wofi
+    bindsym $mod+shift+v exec clipman pick -t wofi
+    bindsym $mod2+v exec copyq show
     
     #Lock Screeen Linux 
     bindsym $mod+x exec $sway_lock
@@ -168,7 +174,7 @@ exec swayidle -w \
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
     bindsym $mod+b splith
-    #bindsym $mod+Shift+v splitv
+    bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
@@ -253,18 +259,21 @@ bar {
                                                                              date -t moonlight-powerline
 
     colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-    
+        #statusline #ffffff
+        #background #323232
+        background #32323200
+        #inactive_workspace #32323200 #32323200 #5c5c5c
 
+        statusline #ffffff
+        inactive_workspace #1e1e1e99 #1e1e1e00 #5c5c5c
+    }
 }
 
+include /etc/sway/config.d/*
 
+default_border pixel 0
+default_floating_border pixel 0
 
-
-#include /etc/sway/config.d/*
 
 smart_gaps off
 gaps inner 3

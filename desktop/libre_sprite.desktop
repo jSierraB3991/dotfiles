@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=0.1.1-dev
+Name=LibreSprite
+GenericName=BuildSprite
+Comment=Build sprite on open source
+Keywords=VideoGames;Sprites;OPenSource
+Exec=/opt/libre_sprite/libre_sprite.AppImage
+Icon=draw-pixel
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=LibreSprite
+Categories=VideoGames;Sprite

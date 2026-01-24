@@ -19,7 +19,6 @@
     "pulseaudio",
     "network",
     "clock",
-    "custom/notification",
   ],
 
   "include": "~/.config/waybar/modules.jsonc"
