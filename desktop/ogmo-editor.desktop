@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=3
+Name=Ogmo Editor
+GenericName=TileMap Editor
+Comment=Create TileMap
+Keywords=TileMap
+Exec=/opt/ogmo-editor/ogmoeditor
+Icon=/opt/ogmo-editor/ogmo.png
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=ogmo-editor-3
+Categories=Development;Debbug;TileMap
+
