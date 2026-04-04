@@ -3,6 +3,19 @@ input * {
     xkb_variant altgr-intl
 }
 
+output HDMI-A-1 {
+    mode 1920x1080@50Hz
+    bg /home/lelouch/Imágenes/wuwa/aemeth\ febrary.jpeg fill
+}
+#output HDMI-A-2 {
+#    mode 1920x1080@50Hz
+#    bg /home/lelouch/Imágenes/wuwa/aemeth\ febrary.jpeg fill
+#}
+
+exec_always setenv GTK_THEME Qogir-Dark
+exec_always setenv GTK_APPLICATION_PREFER_DARK_THEME 1
+exec_always swaymsg "workspace 1; workspace 2; workspace 3; workspace 4; workspace 5; workspace 6; workspace 7; workspace 8; workspace 9; workspace 10; workspace 1"
+
 exec_always --no-startup-id dbus-update-activation-environment --systemd --all
 
 # Default config for sway
@@ -10,7 +23,7 @@ exec_always --no-startup-id dbus-update-activation-environment --systemd --all
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
-font pango:monospace 8
+font JetBrains Mono 10
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -36,17 +49,18 @@ set $sway_lock $screen_blur && swaylock -i /tmp/captura.png -e -f && rm /tmp/cap
 #exec copyq &
 
 exec wl-paste -t text --watch clipman store &
-exec nm-applet &
+#exec nm-applet &
 exec flameshot &
 exec lxpolkit &
 exec waybar &
 exec copyq &
+exec kdeconnect-indicator &
 
 exec_always eval $(ssh-agent -s)
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output  HDMI-A-1 mode 1920x1080@50hz bg /home/lelouch/Imágenes/wuwa/augusta.webp fill
+#output  HDMI-A-1 mode 1920x1080@50hz bg /home/lelouch/Imágenes/wuwa/aemeth\ febrary.jpeg fill
 #
 # Example configuration:
 #
@@ -95,6 +109,7 @@ exec swayidle -w \
     
     #Lock Screeen Linux 
     bindsym $mod+x exec $sway_lock
+    bindsym $mod2+x exec wshowkeys -a bottom -m 30 -F "JetBrains Mono 20" &
 
     # Kill focused window
     bindsym $mod+q kill
@@ -249,14 +264,15 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position bottom
+    tray_output none
 
-
+    workspace_buttons no
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     #status_command while date +'%Y-%m-%d %X'; do sleep 1; done
     status_command /home/lelouch/Source/bumblebee-status/bumblebee-status -m progress uptime kernel \
-                                                                             dnf disk dunst \
-                                                                             date -t moonlight-powerline
+                                                                             dnf disk date \
+                                                                             -t moonlight-powerline
 
     colors {
         #statusline #ffffff
@@ -274,6 +290,7 @@ include /etc/sway/config.d/*
 default_border pixel 0
 default_floating_border pixel 0
 
+for_window [app_id="showmethekey-gtk"] floating enable, border none, sticky enable, resize set width 500 px height 100 px, move position 10 10
 
 smart_gaps off
 gaps inner 3

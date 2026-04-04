@@ -6,19 +6,21 @@
   "height": 10,
   
   "modules-center": [
-    "sway/window",
+    "sway/window"
   ],
   
   "modules-left": [
-    "memory",
-    "cpu",
-    "temperature"
+    "sway/workspaces"
   ],
   
   "modules-right": [
     "pulseaudio",
+    "temperature",
+    "cpu",
     "network",
+    "memory",
     "clock",
+    "tray"
   ],
 
   "include": "~/.config/waybar/modules.jsonc"

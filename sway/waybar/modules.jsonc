@@ -1,49 +1,62 @@
 {
-  // Launcher
   "custom/launcher": {
     "format": "",
     "on-click": "rofi -show drun",
     "tooltip": false
   },
   "sway/window": {
-        "format": "{}",
-        "max-length": 50,
-        "rewrite": {
-            "(.*) — Mozilla Firefox": "󰈹 $1",
-            "(.*) - Visual Studio Code": "󰨞 $1",
-            "(.*) - Kitty": "🐚 $1",
-            "(.+) - Discord": "󰙯 $1"
-        },
-        "separate-outputs": true
-    },
-
-  // Workspaces (Hyprland)
-  "hyprland/workspaces": {
-    "on-scroll-up": "hyprctl dispatch workspace r-1",
-    "on-scroll-down": "hyprctl dispatch workspace r+1",
-    "on-click": "activate",
-    "active-only": false,
-    "all-outputs": true,
     "format": "{}",
+    "max-length": 50,
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "󰈹 $1",
+      "(.*) - Visual Studio Code": "󰨞 $1",
+      "(.*) - Kitty": "🐚 $1",
+      "(.+) - Discord": "󰙯 $1"
+    },
+    "separate-outputs": true
+  },
+  "sway/workspaces": {
+    "disable-scroll": false,
+    "format": "{icon}",
     "format-icons": {
-      "urgent": "",
-      "active": "",
-      "default": ""
+      "1": "󰣛",
+      "2": "",
+      "3": "",
+      "6": "",
+      "7": "",
+      "9": "",
+      "focused": "",
+      "default": "",
+      "high-priority-named": [
+        "1",
+        "2",
+        "3",
+        "6",
+        "7",
+        "9",
+      ]
     },
     "persistent-workspaces": {
-      "*": 5
+      "*": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
     }
   },
-
-  // Weather
   "custom/weather": {
     "exec": "~/.config/waybar/scripts/openweathermap.sh",
     "interval": 1800,
     "format": "{}",
     "tooltip": false
   },
-
-  // Check updates pacman or aur
   "custom/updates": {
     "format": "{}",
     "return-type": "json",
@@ -55,8 +68,6 @@
     "hide-empty-text": true,
     "on-click": "~/.config/waybar/scripts/update_system.sh"
   },
-
-  // CAVA Audio Visualizer
   "custom/cava": {
     "exec": "~/.config/waybar/scripts/cava.sh",
     "format": "♪ {}",
@@ -64,24 +75,20 @@
     "on-click-right": "playerctl next",
     "on-click-left": "playerctl previous"
   },
-
-  // Memory / CPU / Temp
   "memory": {
     "format": " {: >3}%",
-    "on-click": "neohtop"
+    "on-click": "NeoHtop"
   },
   "cpu": {
     "format": "󰻟 {usage: >3}%",
-    "on-click": "neohtop"
+    "on-click": "NeoHtop"
   },
   "temperature": {
     "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
     "critical-threshold": 80,
     "format": "  {temperatureC}°C",
-    "on-click": "neohtop"
+    "on-click": "NeoHtop"
   },
-
-  // Idle inhibitor
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
@@ -91,26 +98,25 @@
     "tooltip-format-activated": "Idle inhibitor: ON",
     "tooltip-format-deactivated": "Idle inhibitor: OFF"
   },
-
-  // Battery
   "battery": {
     "states": {
       "warning": 30,
       "critical": 15
     },
     "format": "{icon} {capacity: >3}%",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   },
-
-  // Language (Hyprland)
   "hyprland/language": {
     "format": "󰌌 {short}",
     "tooltip-format": "Language: {long}"
   },
-
-  // Keyboard state
   "keyboard-state": {
-    //"numlock": true,
     "capslock": true,
     "format": "{name} {icon} ",
     "format-icons": {
@@ -118,16 +124,15 @@
       "unlocked": ""
     }
   },
-
-  // Backlight
   "backlight": {
     "format": "{icon} {percent: >3}%",
-    "format-icons": ["", ""],
+    "format-icons": [
+      "",
+      ""
+    ],
     "on-scroll-down": "brightnessctl set 5%-",
     "on-scroll-up": "brightnessctl set +5%"
   },
-
-  // Audio
   "pulseaudio": {
     "scroll-step": 1,
     "format": "{icon} {volume: >3}%",
@@ -140,14 +145,15 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", ""]
+      "default": [
+        "",
+        ""
+      ]
     },
     "on-click": "pavucontrol",
     "on-scroll-up": "pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob",
     "on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob"
   },
-
-  // Network
   "network": {
     "format": "{ifname}",
     "format-wifi": " {essid} ({signalStrength}%)",
@@ -161,8 +167,6 @@
     "on-click": "nm-connection-editor",
     "on-click-right": "nm-connection-editor"
   },
-
-  // VPN (nmcli, JSON)
   "custom/vpn": {
     "format": "{}",
     "exec": "~/.config/waybar/scripts/vpn_status.sh",
@@ -171,8 +175,6 @@
     "return-type": "text",
     "tooltip": true
   },
-
-  // Clock
   "clock": {
     "format": "  {:%H:%M %a}",
     "format-alt": "  {:%d/%m/%Y  %H:%M:%S}",
@@ -193,8 +195,6 @@
     },
     "interval": 1
   },
-
-  // Notifications (SwayNC)
   "custom/notification": {
     "tooltip-format": "Left: Notifications\nRight: Do not disturb",
     "format": "{icon}",
@@ -215,13 +215,11 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
-
-  // Tray
   "tray": {
     "icon-size": 20,
     "spacing": 10,
     "show-passive-items": true,
     "reverse-direction": false,
-    "smooth-scrolling-threshold": 1.0
+    "smooth-scrolling-threshold": 1
   }
 }
