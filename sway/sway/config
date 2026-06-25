@@ -44,6 +44,7 @@ set $menu rofi -show-icons -show
 set $menu_dmenu $menu drun -disable-history -modi "drun" -location 0 -theme dmenu
 set $menu_tab $menu drun 
 set $menu_emojis rofi -show emoji -modi emoji
+set $main_menu rofi -disable-history -modi "drun" -show-icons -show drun
 set $screen_blur grim /tmp/captura.png && magick /tmp/captura.png -blur 0x8 /tmp/captura.png
 set $sway_lock $screen_blur && swaylock -i /tmp/captura.png -e -f && rm /tmp/captura.png
 #exec copyq &
@@ -116,7 +117,8 @@ exec swayidle -w \
 
     # Start your launcher
     bindsym $mod+d exec $menu_dmenu
-    bindsym $mod+Tab exec $menu_tab
+    bindsym $mod+Tab exec rofi -show window -show-icons
+    bindsym $mod+t exec $main_menu
     bindsym $mod+e exec $menu_emojis
 
     # Drag floating windows by holding down $mod and left mouse button.
@@ -192,9 +194,9 @@ exec swayidle -w \
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
+    #bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
-    #bindsym $mod+e layout toggle split
+    bindsym $mod+s layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
