@@ -5,7 +5,7 @@ input * {
 
 output HDMI-A-1 {
     mode 1920x1080@50Hz
-    bg /home/lelouch/Imágenes/wuwa/denia_june.jpeg fill
+    bg /home/lelouch/Imágenes/wuwa/lucilla_july.jpeg fill
 }
 
 exec_always setenv GTK_THEME Qogir-Dark
