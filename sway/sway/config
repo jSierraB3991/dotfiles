@@ -52,6 +52,8 @@ exec lxpolkit &
 exec waybar &
 exec copyq &
 exec kdeconnect-indicator &
+exec killall mako
+exec swaync &
 
 exec_always eval $(ssh-agent -s)
 ### Idle configuration
@@ -92,6 +94,7 @@ exec swayidle -w \
     # Start a clipboard history
     bindsym $mod+shift+v exec clipman pick -t wofi
     bindsym $mod2+v exec copyq show
+    bindsym $mod+o exec swaync-client -t -sw
     
     #Lock Screeen Linux 
     bindsym $mod+x exec $sway_lock
