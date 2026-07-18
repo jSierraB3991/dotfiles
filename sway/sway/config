@@ -52,8 +52,7 @@ exec lxpolkit &
 exec waybar &
 exec copyq &
 exec kdeconnect-indicator &
-exec killall mako
-exec swaync &
+exec swaync 
 
 exec_always eval $(ssh-agent -s)
 ### Idle configuration
@@ -120,7 +119,7 @@ exec swayidle -w \
     bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec killall swaynag || swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -182,9 +181,9 @@ exec swayidle -w \
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    #bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+s layout toggle split
+    bindsym $mod+shift+t layout stacking
+    bindsym $mod+shift+w layout tabbed
+    bindsym $mod+shift+s layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
