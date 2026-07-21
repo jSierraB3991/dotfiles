@@ -25,7 +25,9 @@ man() {
 
 rgf() {
     local file
-    file=$(rg --files --hidden --noignore --no-messages --follow --glob "!.git" 2>/dev/null | \
+    file=$(rg --files --hidden --no-ignore --no-messages --follow \
+            --glob "!.git" --glob "!build" --glob "!node_modules" --glob "!plugged" --glob "!modules" \
+            --glob "!obj" --glob "!__pycache__" --glob "!_sass" --glob "!tracks" | \
             fzf +m -q "$1" --preview "bat --style=numbers --color=always {} 2>/dev/null | head -500")
     if [[ -n "$file" ]]; then
         bat --style=numbers --color=always "$file"
