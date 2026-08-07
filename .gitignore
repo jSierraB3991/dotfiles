@@ -1,2 +1,4 @@
 vim/autoload/
 vim/plugged/
+qtile/__pycache__
+qtile/settings/__pycache__
