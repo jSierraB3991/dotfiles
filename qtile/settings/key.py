@@ -36,10 +36,11 @@ keys = [Key( key[0], key[1], *key[2:]) for key in [
    ([mod, shift], 'Left', lazy.layout.grow_left()),
    ([mod, shift], 'k', lazy.layout.grow_up()),
    ([mod, shift], 'Up', lazy.layout.grow_up()),
-
    ([mod, shift], 'f', lazy.window.toogle_floating()),
-   ([mod, shift], 'j', lazy.layout.shuffle_down()),
-   ([mod, shift], 'k', lazy.layout.shuffle_up()),
+   ([mod, control], 'j', lazy.layout.shuffle_down()),
+   ([mod, control], 'Down', lazy.layout.shuffle_down()),
+   ([mod, control], 'k', lazy.layout.shuffle_up()),
+   ([mod, control], 'Up', lazy.layout.shuffle_up()),
    ([mod], tab, lazy.next_layout()),
    ([mod, shift], tab, lazy.pre_layout()),
 
