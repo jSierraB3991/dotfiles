@@ -1,21 +1,27 @@
 import os
 from collections.abc import Callable
 
-from settings.key import mod, keys
-from settings.groups import groups
-from settings.libs import qtile_path
 
+from settings.groups import groups, keys
+from settings.libs import qtile_path, mod
+from settings.layout import layouts, floating_layout
 
-import libqtile.resources
-from libqtile import bar, layout, qtile, widget, hook
-from libqtile.config import Click, Drag, Group, Key, Match, Output, Screen
+from libqtile import  layout, qtile, hook
+from libqtile.config import Click, Drag, Key, Match, Output, Screen
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
 from os import path
+
+from settings.input import wl_input_rules
 
 
 from libqtile import hook
 import subprocess
+from collections import Counter
+
+keys = keys
+groups = groups
+layouts = layouts
+floating_layout = floating_layout
 
 @hook.subscribe.startup_once
 def autostart():
@@ -37,65 +43,12 @@ for vt in range(1, 8):
 
 
 
-layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
-    layout.Max(),
-    # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
-    # layout.Matrix(),
-    # layout.MonadTall(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.Tile(),
-    # layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
-]
-
 widget_defaults = dict(
     font="JetBrains Mono",
     fontsize=14,
     padding=4,
 )
 extension_defaults = widget_defaults.copy()
-
-logo = os.path.join(os.path.dirname(libqtile.resources.__file__), "logo.png")
-screens = [
-    Screen(
-        bottom=bar.Bar(
-            [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                # widget.StatusNotifier(),
-                widget.Systray(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
-            ],
-            24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-        ),
-        background="#000000",
-        wallpaper=logo,
-        wallpaper_mode="center",
-        # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
-        # By default we handle these events delayed to already improve performance, however your system might still be struggling
-        # This variable is set to None (no cap) by default, but you can set it to 60 to indicate that you limit it to 60 events per second
-        # x11_drag_polling_rate = 60,
-    ),
-]
 
 # Instead of screens, you can define a function here to specify which Screen
 # should correspond to which Output.
@@ -142,7 +95,7 @@ reconfigure_screens = True
 auto_minimize = True
 
 # When using the Wayland backend, this can be used to configure input devices.
-wl_input_rules = None
+# wl_input_rules = None  # eliminado: pisaba el import de settings.input
 
 # xcursor theme (string or None) and size (integer) for Wayland backend
 wl_xcursor_theme = None

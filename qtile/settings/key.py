@@ -40,8 +40,8 @@ keys = [Key( key[0], key[1], *key[2:]) for key in [
    ([mod, control], 'Down', lazy.layout.shuffle_down()),
    ([mod, control], 'k', lazy.layout.shuffle_up()),
    ([mod, control], 'Up', lazy.layout.shuffle_up()),
-   #([mod], tab, lazy.next_layout()),
-   #([mod, shift], tab, lazy.pre_layout()),
+   ([mod, control], tab, lazy.next_layout()),
+   ([mod, control, shift], tab, lazy.prev_layout()),
 
    #windows cycle life
    ([mod], 'q', lazy.window.kill()),
@@ -54,7 +54,7 @@ keys = [Key( key[0], key[1], *key[2:]) for key in [
    ([mod], 'o', lazy.spawn("swaync-client -t -sw")),
    ([mod], 'v', lazy.spawn("clipman pick -t wofi")),
    ([mod], "x", lazy.spawn("sh -c " + sway_lock)),
-   #([mod, control], 'd', lazy.spawn(rofi_tab)),
+   ###([mod, control], 'd', lazy.spawn(rofi_tab)),
    ([mod], tab, lazy.spawn(rofi_tab)),
 
    ([mod, shift], "x", lazy.spawn("wshowkeys -a bottom -m 30 -F 'JetBrains Mono 20'")),
