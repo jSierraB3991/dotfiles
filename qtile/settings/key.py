@@ -40,35 +40,35 @@ keys = [Key( key[0], key[1], *key[2:]) for key in [
    ([mod, control], 'Down', lazy.layout.shuffle_down()),
    ([mod, control], 'k', lazy.layout.shuffle_up()),
    ([mod, control], 'Up', lazy.layout.shuffle_up()),
-   ([mod], tab, lazy.next_layout()),
-   ([mod, shift], tab, lazy.pre_layout()),
+   #([mod], tab, lazy.next_layout()),
+   #([mod, shift], tab, lazy.pre_layout()),
 
    #windows cycle life
    ([mod], 'q', lazy.window.kill()),
    ([mod, shift], 'r', lazy.reload_config()),
 
    #mys key configs
+   ([mod], "return", lazy.spawn(terminal)),
    ([mod], 'd', lazy.spawn(rofi_dmenu)),
    ([mod], 'e', lazy.spawn(rofi_emoji)),
    ([mod], 'o', lazy.spawn("swaync-client -t -sw")),
    ([mod], 'v', lazy.spawn("clipman pick -t wofi")),
    ([mod], "x", lazy.spawn("sh -c " + sway_lock)),
+   #([mod, control], 'd', lazy.spawn(rofi_tab)),
+   ([mod], tab, lazy.spawn(rofi_tab)),
+
    ([mod, shift], "x", lazy.spawn("wshowkeys -a bottom -m 30 -F 'JetBrains Mono 20'")),
    ([mod, shift], 'v', lazy.spawn("copyq show")),
-   ([mod, control], 'd', lazy.spawn(rofi_tab)),
-
-   ([mod], "return", lazy.spawn(terminal)),
-   ([mod], 'n', lazy.spawn('thunar')),
    ([mod, shift], "s", lazy.spawn("sh -c 'grim -g \"$(slurp)\" - | wl-copy'")),
 
+   ([], 'XF86Explorer', lazy.spawn('thunar')),
+   ([], "XF86Search", lazy.spawn("firefox")),
+   ([], "XF86Tools", lazy.spawn("kitty /opt/tui/lazydb")),
+   ([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
+   ([], "XF86AudioNext", lazy.spawn("playerctl next")),
+   ([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
+   ([], "XF86AudioLowerVolume", lazy.spawn( "pactl set-sink-volume @DEFAULT_SINK@ -5%" )),
+   ([], "XF86AudioRaiseVolume", lazy.spawn( "pactl set-sink-volume @DEFAULT_SINK@ +5%" )),
+   ([], "XF86AudioMute", lazy.spawn( "pactl set-sink-mute @DEFAULT_SINK@ toggle" )),
    ([], 'print', lazy.spawn('grim')),
-   ([], "XF86AudioLowerVolume", lazy.spawn(
-       "pactl set-sink-volume @DEFAULT_SINK@ -5%"
-    )),
-    ([], "XF86AudioRaiseVolume", lazy.spawn(
-        "pactl set-sink-volume @DEFAULT_SINK@ +5%"
-    )),
-    ([], "XF86AudioMute", lazy.spawn(
-        "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-    )),
 ]]
