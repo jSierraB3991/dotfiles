@@ -1,8 +1,7 @@
 from libqtile.config import Key
 from libqtile.lazy import lazy
+from .libs import mod, shift
 
-mod = 'mod4'
-shift = 'shift'
 tab = 'Tab'
 control = 'control'
 

@@ -1,6 +1,7 @@
 from libqtile.config import Key, Group
 from libqtile.lazy import lazy
-from .key import mod, keys, shift
+from .key import mod, keys
+from .libs import shift, mod
 
 groups = [Group(i) for i in [
     "  ", " 󰊯 ", "  ", "  ", " 5 ", "  ", "  ", "  ", "  ",

@@ -3,6 +3,7 @@ from collections.abc import Callable
 
 from settings.key import mod, keys
 from settings.groups import groups
+from settings.libs import qtile_path
 
 
 import libqtile.resources
@@ -15,8 +16,6 @@ from os import path
 
 from libqtile import hook
 import subprocess
-
-qtile_path = path.join(path.expanduser("~"), ".config", "qtile")
 
 @hook.subscribe.startup_once
 def autostart():
