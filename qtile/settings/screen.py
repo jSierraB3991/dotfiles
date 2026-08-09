@@ -7,7 +7,7 @@ from libqtile.config import Screen
 logo = os.path.join(os.path.dirname(libqtile.resources.__file__), "logo.png")
 screens = [
     Screen(
-        top=bar.Bar(
+        bottom=bar.Bar(
             [
                 widget.CurrentLayout(),
                 widget.GroupBox(),
@@ -29,7 +29,7 @@ screens = [
             ],
             24,
             border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            border_color=["ff00ff", "000000", "ff00ff", "000000"],  # Borders are magenta
+            #border_color=["ff00ff", "000000", "ff00ff", "000000"],  # Borders are magenta
             background="#00000000",
             reserve=True,
             margin= 3,
