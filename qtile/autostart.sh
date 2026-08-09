@@ -6,5 +6,6 @@ copyq &
 wl-paste -t text --watch clipman store &
 lxpolkit &
 swaync &
+waybar &
 
 exec_always eval $(ssh-agent -s)
