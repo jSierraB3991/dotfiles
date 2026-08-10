@@ -4,6 +4,8 @@ from collections.abc import Callable
 from settings.groups import groups, keys
 from settings.libs import qtile_path, mod
 from settings.layout import layouts, floating_layout
+from settings.screen import screens
+from settings.widgets import widget_defaults, extension_defaults
 
 from libqtile import  layout, qtile, hook
 from libqtile.config import Click, Drag, Key, Match, Output, Screen
@@ -40,13 +42,6 @@ for vt in range(1, 8):
     )
 
 
-
-widget_defaults = dict(
-    font="JetBrains Mono",
-    fontsize=14,
-    padding=4,
-)
-extension_defaults = widget_defaults.copy()
 
 # Instead of screens, you can define a function here to specify which Screen
 # should correspond to which Output.
