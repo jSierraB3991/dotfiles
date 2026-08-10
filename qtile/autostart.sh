@@ -6,6 +6,8 @@ copyq &
 wl-paste -t text --watch clipman store &
 lxpolkit &
 swaync &
-waybar &
+#waybar &
+blueman-applet &
+#swaybg -i "$HOME/Imágenes/GentooBackground.png" -m fill &
 
 exec_always eval $(ssh-agent -s)
