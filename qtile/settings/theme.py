@@ -7,7 +7,7 @@ from .libs import qtile_path
 def load_theme():
     theme = "dark-grey"
 
-    config = path.join(qtile_path, "config.json")
+    config = path.join(qtile_path, "theme.json")
     if path.isfile(config):
         with open(config) as f:
             theme = json.load(f)['theme']
