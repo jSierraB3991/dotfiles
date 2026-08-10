@@ -27,19 +27,22 @@ keys = [Key( key[0], key[1], *key[2:]) for key in [
     ([mod], "space", lazy.layout.next()),
 
    #change window config
-   ([mod, shift], 'l', lazy.layout.grow_right()),
-   ([mod, shift], 'Right', lazy.layout.grow_right()),
-   ([mod, shift], 'j', lazy.layout.grow_down()),
-   ([mod, shift], 'Down', lazy.layout.grow_down()),
-   ([mod, shift], 'h', lazy.layout.grow_left()),
-   ([mod, shift], 'Left', lazy.layout.grow_left()),
-   ([mod, shift], 'k', lazy.layout.grow_up()),
-   ([mod, shift], 'Up', lazy.layout.grow_up()),
+   ([mod, shift], 'i', lazy.layout.grow()),
+   ([mod, shift], 'Up', lazy.layout.grow()),
+   ([mod, shift], 'm', lazy.layout.shrink()),
+   ([mod, shift], 'Down', lazy.layout.shrink()),
+   ([mod, shift], 'n', lazy.layout.reset()),
    ([mod, shift], 'f', lazy.window.toggle_floating()),
-   ([mod, control], 'j', lazy.layout.shuffle_down()),
+
    ([mod, control], 'Down', lazy.layout.shuffle_down()),
-   ([mod, control], 'k', lazy.layout.shuffle_up()),
+   ([mod, control], 'Right', lazy.layout.shuffle_right()),
    ([mod, control], 'Up', lazy.layout.shuffle_up()),
+   ([mod, control], 'Left', lazy.layout.shuffle_left()),
+   ([mod, control], 'j', lazy.layout.shuffle_left()),
+   ([mod, control], 'l', lazy.layout.shuffle_right()),
+   ([mod, control], 'k', lazy.layout.shuffle_up()),
+   ([mod, control], 'h', lazy.layout.shuffle_down()),
+
    ([mod, control], tab, lazy.next_layout()),
    ([mod, control, shift], tab, lazy.prev_layout()),
 

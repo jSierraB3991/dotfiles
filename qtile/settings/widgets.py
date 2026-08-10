@@ -40,7 +40,7 @@ def workspaces():
 def power_line(fg='light', bg='dark'):
     return widget.TextBox(
         **base(fg, bg),
-        text = "",
+        text = "",
         fontsize = 37,
         padding = 2
     )
@@ -56,6 +56,7 @@ def icon_w(fg='text', bg='dark', fontsize=16, text='?'):
 primary_widgets = [
     *workspaces(),
     separator(),
+    widget.CPUGraph(**base(bg='dark')),
     power_line('color4', 'dark'),
     icon_w(bg='color4', text=''),
     widget.CheckUpdates(
@@ -65,7 +66,8 @@ primary_widgets = [
         no_update_string = "0",
         display_format = '{updates}',
         update_interval = 1800,
-        custom_command = 'dnf check-update'
+        distro='Fedora',
+        #custom_command = 'dnf check-update'
     ),
     power_line('color3', 'color4'),
     icon_w(bg='color3', text=''),
@@ -83,23 +85,42 @@ primary_widgets = [
         format='%d/%m/%Y - %H:%M',
     ),
     power_line('dark', 'color1'),
-    #widget.Systray(background=colors['dark'], padding=5),
+    icon_w(bg='dark', text=''),
+    widget.Bluetooth(**base(bg = 'dark')),
+    icon_w(bg='dark', text=''),
+    widget.DF(**base(bg = 'dark'), visible_on_warn = False, warn_space = 80, measure = 'G'),
+    #icon_w(bg = 'dark', text=''),
+    #widget.Volume(**base(bg = 'dark'), volume_app = 'pactl')
 ]
 secondary_widgets = [
     *workspaces(),
     separator(),
-    power_line('color1', 'dark'),
+    power_line('color4', 'dark'),
+    icon_w(bg='color4', text=''),
+    widget.CheckUpdates(
+        background = colors['color4'],
+        color_have_updates = colors['text'],
+        color_no_updates = colors['text'],
+        no_update_string = "0",
+        display_format = '{updates}',
+        update_interval = 1800,
+        distro='Fedora',
+    ),
+    power_line('color3', 'color4'),
+    icon_w(bg='color3', text=''),
+    widget.Net(**base(bg = 'color3'), interface = 'enp4s0'),
+    power_line('color2', 'color4'),
     widget.CurrentLayout(
         **base(bg = 'color2'),
         padding = 5,
         mode='both',
     ),
-    power_line('color2', 'color1'),
+    power_line('color1', 'color4'),
+    icon_w(bg='color1', fontsize=17, text=''),
     widget.Clock(
         **base(bg='color1'),
         format='%d/%m/%Y - %H:%M',
     ),
-    power_line('dark', 'color2'),
 ]
 
 
