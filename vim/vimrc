@@ -61,5 +61,7 @@ Plug 'morhetz/gruvbox'
 
 "Go vim
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'dense-analysis/ale'
 "===============================================================================
 call plug#end()
+
