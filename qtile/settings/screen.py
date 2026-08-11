@@ -7,15 +7,15 @@ from .widgets import primary_widgets, secondary_widgets
 def status_bar(widgets):
     return bar.Bar(
         widgets, 
-        24,
+        20,
         opacity=0.92,
         background="#00000000",
         reserve=True,
         margin= 3,
     )
 
-#logo = "/home/lelouch/Imágenes/wuwa/phroloca.jpg"
-logo = "/home/lelouch/Imágenes/gentoo.png"
+logo = "/home/lelouch/Imágenes/wuwa/phroloca.jpg"
+#logo = "/home/lelouch/Imágenes/gentoo.png"
 #os.path.join(os.path.dirname(libqtile.resources.__file__), "logo.png")
 screens = [
     Screen(

@@ -1,4 +1,3 @@
-import os
 from collections.abc import Callable
 
 from settings.groups import groups, keys
@@ -7,40 +6,19 @@ from settings.layout import layouts, floating_layout
 from settings.screen import screens
 from settings.widgets import widget_defaults, extension_defaults
 
-from libqtile import  layout, qtile, hook
-from libqtile.config import Click, Drag, Key, Match, Output, Screen
-from libqtile.lazy import lazy
+from libqtile.config import  Output, Screen
 from os import path
 
 from settings.input import wl_input_rules
+from settings.mouse import mouse
 
 from libqtile import hook
 import subprocess
 from collections import Counter
 
-keys = keys
-groups = groups
-layouts = layouts
-floating_layout = floating_layout
-
 @hook.subscribe.startup_once
 def autostart():
     subprocess.call([path.join(qtile_path, 'autostart.sh')])
-
-
-# Add key bindings to switch VTs in Wayland.
-# We can't check qtile.core.name in default config as it is loaded before qtile is started
-# We therefore defer the check until the key binding is run by using .when(func=...)
-for vt in range(1, 8):
-    keys.append(
-        Key(
-            ["control", "mod1"],
-            f"f{vt}",
-            lazy.core.change_vt(vt).when(func=lambda: qtile.core.name == "wayland"),
-            desc=f"Switch to VT{vt}",
-        )
-    )
-
 
 
 # Instead of screens, you can define a function here to specify which Screen
@@ -52,13 +30,6 @@ fake_screens: list[Screen] | None = None
 # can decide based on e.g. the number of screens, or which ports are plugged
 # in exactly what do render in each bar for each screen.
 generate_screens: Callable[[list[Output]], list[Screen]] | None = None
-
-# Drag floating layouts.
-mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front()),
-]
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list

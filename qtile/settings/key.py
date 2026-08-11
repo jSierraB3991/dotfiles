@@ -75,3 +75,16 @@ keys = [Key( key[0], key[1], *key[2:]) for key in [
    ([], "XF86AudioMute", lazy.spawn( "pactl set-sink-mute @DEFAULT_SINK@ toggle" )),
    ([], 'print', lazy.spawn('grim')),
 ]]
+
+
+for vt in range(1, 8):
+    keys.append(
+        Key(
+            ["control", "mod1"],
+            f"f{vt}",
+            lazy.core.change_vt(vt).when(func=lambda: qtile.core.name == "wayland"),
+            desc=f"Switch to VT{vt}",
+        )
+    )
+
+

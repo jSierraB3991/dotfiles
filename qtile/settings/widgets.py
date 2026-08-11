@@ -40,7 +40,7 @@ def workspaces():
 def power_line(fg='light', bg='dark'):
     return widget.TextBox(
         **base(fg, bg),
-        text = "",
+        text = "",
         fontsize = 37,
         padding = 2
     )
@@ -67,17 +67,12 @@ primary_widgets = [
         display_format = '{updates}',
         update_interval = 1800,
         distro='Fedora',
-        #custom_command = 'dnf check-update'
     ),
     power_line('color3', 'color4'),
     icon_w(bg='color3', text=''),
     widget.Net(**base(bg = 'color3'), interface = 'enp4s0'),
     power_line('color2', 'color4'),
-    widget.CurrentLayout(
-        **base(bg = 'color2'),
-        padding = 5,
-        mode='both',
-    ),
+    widget.CurrentLayout( **base(bg = 'color2'), padding = 5, mode='both' ),
     power_line('color1', 'color4'),
     icon_w(bg='color1', fontsize=17, text=''),
     widget.Clock(
@@ -89,9 +84,10 @@ primary_widgets = [
     widget.Bluetooth(**base(bg = 'dark')),
     icon_w(bg='dark', text=''),
     widget.DF(**base(bg = 'dark'), visible_on_warn = False, warn_space = 80, measure = 'G'),
-    #icon_w(bg = 'dark', text=''),
-    #widget.Volume(**base(bg = 'dark'), volume_app = 'pactl')
+    icon_w(bg = 'dark', text=''),
+    widget.PulseVolume( **base(bg = 'dark'), update_interval = 1),
 ]
+
 secondary_widgets = [
     *workspaces(),
     separator(),
@@ -125,9 +121,9 @@ secondary_widgets = [
 
 
 widget_defaults = dict(
-    font="JetBrains Mono",
+    font="UbuntuMono Nerd Font Bold",
     fontsize=14,
-    padding=4,
+    padding=1,
 )
 extension_defaults = widget_defaults.copy()
 
