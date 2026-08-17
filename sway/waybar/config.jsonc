@@ -1,27 +1,90 @@
 {
-  "style": "~/.config/waybar/style.css",
-  
-  "layer": "top",
-  "position": "top",
-  "height": 10,
-  
-  "modules-center": [
-    "sway/window"
-  ],
-  
-  "modules-left": [
-    "sway/workspaces"
-  ],
-  
-  "modules-right": [
-    "pulseaudio",
-    "temperature",
-    "cpu",
-    "network",
-    "memory",
-    "clock",
-    "tray"
-  ],
+    "layer": "top",
+    "position": "top",
+    "height": 38,
 
-  "include": "~/.config/waybar/modules.jsonc"
+    "modules-left": [
+        "sway/workspaces",
+        "custom/media"
+    ],
+    "modules-center": [
+
+        "sway/window"
+    ],
+    "modules-right": [
+        "temperature#cpu",
+        "temperature#gpu",
+        "temperature#nvme",
+        "pulseaudio",
+        "bluetooth",
+        "custom/power",
+        "clock"
+    ],
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip": false
+    },
+    "sway/window": {
+        "format": "🐧 {}",
+        "max-length": 110
+    },
+    "custom/media": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/media.sh",
+        "return-type": "json",
+        "interval": 1,
+        "max-length": 30
+    },
+
+    "sway/workspaces": {
+        "format": "{name}",
+        "disable-scroll": true,
+        "all-outputs": false
+    },
+
+    "pulseaudio": {
+        //"format": "{icon}",
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 0%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {device_alias}",
+        "format-disabled": "",
+        "tooltip": true,
+        "on-click": "blueman-manager"
+    },
+    "temperature#cpu": {
+        "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+        "format": " 󰻠 {temperatureC}°C ",
+        "critical-threshold": 80
+    },
+
+    "temperature#gpu": {
+        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+        "format": " 󰢮 {temperatureC}°C ",
+        "critical-threshold": 85
+    },
+
+    "temperature#nvme": {
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "format": " 󰋊 {temperatureC}°C ",
+        "critical-threshold": 70
+    },
+    "custom/power": {
+        "format": "⏻ ",
+        "tooltip": false,
+        "on-click": "wlogout"
+    }
 }

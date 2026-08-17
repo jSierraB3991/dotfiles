@@ -5,7 +5,7 @@ input * {
 
 output HDMI-A-1 {
     mode 1920x1080@50Hz
-    bg /home/lelouch/Imágenes/wuwa/lucilla_july.jpeg fill
+    bg /home/lelouch/Imágenes/artix_2.png fill
 }
 
 exec_always setenv GTK_THEME Qogir-Dark
@@ -23,8 +23,8 @@ font JetBrains Mono 10
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
-set $mod Mod4
-set $mod2 Mod1
+set $mod Mod1
+set $mod2 Mod4
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -43,7 +43,6 @@ set $menu_emojis rofi -show emoji -modi emoji
 set $main_menu rofi -disable-history -modi "drun" -show-icons -show drun
 set $screen_blur grim /tmp/captura.png && magick /tmp/captura.png -blur 0x8 /tmp/captura.png
 set $sway_lock $screen_blur && swaylock -i /tmp/captura.png -e -f && rm /tmp/captura.png
-#exec copyq &
 
 exec wl-paste -t text --watch clipman store &
 #exec nm-applet &
@@ -51,6 +50,7 @@ exec flameshot &
 exec lxpolkit &
 exec waybar &
 exec copyq &
+exec conky -c ~/.config/conky/config.conf &
 exec kdeconnect-indicator &
 exec swaync 
 
@@ -88,7 +88,25 @@ exec swayidle -w \
     bindsym $mod+Return exec $term
 
     #start a folder 
-    bindsym $mod+n exec $folder &
+    #bindsym $mod+n exec $folder &
+    bindsym XF86Explorer exec thunar
+
+    #Start firefox
+    bindsym XF86Search exec firefox
+
+    #Restar waybar
+    bindsym $mod+shift+m exec killall waybar && waybar &
+    
+    #flameshot gui
+    bindsym $mod+s exec flameshot gui
+
+    #Start database manager
+    bindsym XF86Tools exec kitty /opt/tui/lazydb
+
+    #Player Controls
+    bindsym XF86AudioPlay exec playerctl play-pause
+    bindsym XF86AudioNext exec playerctl next
+    bindsym XF86AudioPrev exec playerctl previous
 
     # Start a clipboard history
     bindsym $mod+shift+v exec clipman pick -t wofi
@@ -98,6 +116,7 @@ exec swayidle -w \
     #Lock Screeen Linux 
     bindsym $mod+x exec $sway_lock
     bindsym $mod2+x exec wshowkeys -a bottom -m 30 -F "JetBrains Mono 20" &
+    bindsym $mod2+shift+x exec killall wshowkeys
 
     # Kill focused window
     bindsym $mod+q kill
@@ -116,7 +135,7 @@ exec swayidle -w \
     floating_modifier $mod normal
 
     # Reload the configuration file
-    bindsym $mod+Shift+r reload
+    bindsym $mod+Shift+r reload 
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec killall swaynag || swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -253,14 +272,14 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position bottom
-    tray_output none
+    #tray_output none
 
     workspace_buttons no
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     #status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-    status_command /home/lelouch/Source/bumblebee-status/bumblebee-status -m progress uptime kernel \
-                                                                             dnf disk date \
+    status_command /mnt/videogames/Source/bumblebee-status/bumblebee-status -m progress uptime kernel \
+                                                                             disk dnf date  \
                                                                              -t moonlight-powerline
 
     colors {
@@ -280,6 +299,7 @@ default_border pixel 0
 default_floating_border pixel 0
 
 for_window [app_id="showmethekey-gtk"] floating enable, border none, sticky enable, resize set width 500 px height 100 px, move position 10 10
+#for_window [app_id="conky"] floating enable, border pixel 0, move position 1500 20
 
 smart_gaps off
 gaps inner 3

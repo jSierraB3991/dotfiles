@@ -77,17 +77,17 @@
   },
   "memory": {
     "format": " {: >3}%",
-    "on-click": "NeoHtop"
+    "on-click": "kitty -e below"
   },
   "cpu": {
     "format": "󰻟 {usage: >3}%",
-    "on-click": "NeoHtop"
+    "on-click": "kitty -e below"
   },
   "temperature": {
     "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
     "critical-threshold": 80,
     "format": "  {temperatureC}°C",
-    "on-click": "NeoHtop"
+    "on-click": "kitty -e below"
   },
   "idle_inhibitor": {
     "format": "{icon}",
